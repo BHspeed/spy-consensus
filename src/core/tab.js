@@ -4,8 +4,9 @@
  */
 import { getClient, evaluate } from '../connection.js';
 
-const CDP_HOST = 'localhost';
-const CDP_PORT = 9222;
+// IPv4 literal — see note in src/connection.js (Node fetch → ::1 vs CDP on 127.0.0.1).
+const CDP_HOST = process.env.CDP_HOST || '127.0.0.1';
+const CDP_PORT = Number(process.env.CDP_PORT) || 9222;
 
 /**
  * List all open chart tabs (CDP page targets).

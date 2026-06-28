@@ -64,12 +64,16 @@ const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 describe('TradingView MCP — Full E2E (70 tools)', () => {
 
   before(async () => {
+    // IPv4 literal: Node resolves 'localhost' to IPv6 ::1, but CDP listens on
+    // 127.0.0.1 only — see src/connection.js. Override with CDP_HOST if needed.
+    const cdpHost = process.env.CDP_HOST || '127.0.0.1';
+    const cdpPort = Number(process.env.CDP_PORT) || 9222;
     try {
-      const targets = await CDP.List({ host: 'localhost', port: 9222 });
+      const targets = await CDP.List({ host: cdpHost, port: cdpPort });
       const chartTarget = targets.find(t => t.url && t.url.includes('tradingview.com/chart'));
       if (!chartTarget) throw new Error('No TradingView chart target found');
 
-      client = await CDP({ host: 'localhost', port: 9222, target: chartTarget.id });
+      client = await CDP({ host: cdpHost, port: cdpPort, target: chartTarget.id });
       await client.Runtime.enable();
       await client.Page.enable();
       await client.DOM.enable();

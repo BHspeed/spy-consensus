@@ -1,14 +1,18 @@
 /**
  * Core drawing logic.
  */
-import { evaluate as _evaluate, getChartApi as _getChartApi, safeString, requireFinite } from '../connection.js';
+import { evaluate as _evaluate, evaluateAsync as _evaluateAsync, getChartApi as _getChartApi, safeString, requireFinite } from '../connection.js';
 
 function _resolve(deps) {
-  return { evaluate: deps?.evaluate || _evaluate, getChartApi: deps?.getChartApi || _getChartApi };
+  return {
+    evaluate: deps?.evaluate || _evaluate,
+    evaluateAsync: deps?.evaluateAsync || _evaluateAsync,
+    getChartApi: deps?.getChartApi || _getChartApi,
+  };
 }
 
 export async function drawShape({ shape, point, point2, overrides: overridesRaw, text, _deps }) {
-  const { evaluate, getChartApi } = _resolve(_deps);
+  const { evaluateAsync, getChartApi } = _resolve(_deps);
   const overrides = overridesRaw ? (typeof overridesRaw === 'string' ? JSON.parse(overridesRaw) : overridesRaw) : {};
   const apiPath = await getChartApi();
   const overridesStr = JSON.stringify(overrides || {});
@@ -17,34 +21,37 @@ export async function drawShape({ shape, point, point2, overrides: overridesRaw,
   const p1time = requireFinite(point.time, 'point.time');
   const p1price = requireFinite(point.price, 'point.price');
 
-  const before = await evaluate(`${apiPath}.getAllShapes().map(function(s) { return s.id; })`);
-
+  // createShape / createMultipointShape return a Promise (resolving to the
+  // entity id) in TV Desktop builds, so we must await it — otherwise the shape
+  // is fired but not yet created when we read the id back. Use evaluateAsync
+  // (awaitPromise:true) and return the resolved id directly.
+  let expr;
   if (point2) {
     const p2time = requireFinite(point2.time, 'point2.time');
     const p2price = requireFinite(point2.price, 'point2.price');
-    await evaluate(`
-      ${apiPath}.createMultipointShape(
+    expr = `(async function() {
+      var id = await ${apiPath}.createMultipointShape(
         [{ time: ${p1time}, price: ${p1price} }, { time: ${p2time}, price: ${p2price} }],
         { shape: ${safeString(shape)}, overrides: ${overridesStr}, text: ${textStr} }
-      )
-    `);
+      );
+      return id == null ? null : String(id);
+    })()`;
   } else {
-    await evaluate(`
-      ${apiPath}.createShape(
+    expr = `(async function() {
+      var id = await ${apiPath}.createShape(
         { time: ${p1time}, price: ${p1price} },
         { shape: ${safeString(shape)}, overrides: ${overridesStr}, text: ${textStr} }
-      )
-    `);
+      );
+      return id == null ? null : String(id);
+    })()`;
   }
 
-  await new Promise(r => setTimeout(r, 200));
-  const after = await evaluate(`${apiPath}.getAllShapes().map(function(s) { return s.id; })`);
-  const newId = (after || []).find(id => !(before || []).includes(id)) || null;
-  const result = { entity_id: newId };
-  return { success: true, shape, entity_id: result?.entity_id };
+  const newId = await evaluateAsync(expr);
+  return { success: true, shape, entity_id: newId || null };
 }
 
-export async function listDrawings() {
+export async function listDrawings({ _deps } = {}) {
+  const { evaluate, getChartApi } = _resolve(_deps);
   const apiPath = await getChartApi();
   const shapes = await evaluate(`
     (function() {
@@ -56,7 +63,8 @@ export async function listDrawings() {
   return { success: true, count: shapes?.length || 0, shapes: shapes || [] };
 }
 
-export async function getProperties({ entity_id }) {
+export async function getProperties({ entity_id, _deps }) {
+  const { evaluate, getChartApi } = _resolve(_deps);
   const apiPath = await getChartApi();
   const result = await evaluate(`
     (function() {
@@ -85,7 +93,8 @@ export async function getProperties({ entity_id }) {
   return { success: true, ...result };
 }
 
-export async function removeOne({ entity_id }) {
+export async function removeOne({ entity_id, _deps }) {
+  const { evaluate, getChartApi } = _resolve(_deps);
   const apiPath = await getChartApi();
   const result = await evaluate(`
     (function() {
@@ -106,7 +115,8 @@ export async function removeOne({ entity_id }) {
   return { success: true, entity_id: result?.entity_id, removed: result?.removed, remaining_shapes: result?.remaining_shapes };
 }
 
-export async function clearAll() {
+export async function clearAll({ _deps } = {}) {
+  const { evaluate, getChartApi } = _resolve(_deps);
   const apiPath = await getChartApi();
   await evaluate(`${apiPath}.removeAllShapes()`);
   return { success: true, action: 'all_shapes_removed' };

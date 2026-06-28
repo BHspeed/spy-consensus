@@ -2,8 +2,11 @@ import CDP from 'chrome-remote-interface';
 
 let client = null;
 let targetInfo = null;
-const CDP_HOST = 'localhost';
-const CDP_PORT = 9222;
+// Default to IPv4 literal: Node's fetch/undici resolves 'localhost' to ::1
+// (IPv6) first, but the CDP server listens on 127.0.0.1 only, so 'localhost'
+// yields ECONNREFUSED on Windows. Override with CDP_HOST env var if needed.
+const CDP_HOST = process.env.CDP_HOST || '127.0.0.1';
+const CDP_PORT = Number(process.env.CDP_PORT) || 9222;
 const MAX_RETRIES = 5;
 const BASE_DELAY = 500;
 
