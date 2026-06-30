@@ -1,6 +1,13 @@
 node_modules/
 screenshots/
 logs/
+# transient run artifacts the cloud agent generates (keep them out of the repo)
+bundle.json
+premorning.json
+daily.json
+hourly.json
+options.json
+brief.txt
 scripts/current.pine
 temp_*
 *.log

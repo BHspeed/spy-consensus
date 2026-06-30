@@ -35,9 +35,10 @@ if (cmd === 'eval') {
   }
   L('  ' + day.note);
   if (process.argv.includes('--log')) {
-    mkdirSync('logs', { recursive: true });
-    appendFileSync(TRACE_LOG, JSON.stringify({ type: 'trace', ...day }) + '\n');
-    L(`  (logged → ${TRACE_LOG})`);
+    const logfile = arg('logfile') || TRACE_LOG;
+    mkdirSync(logfile.includes('/') ? logfile.replace(/\/[^/]*$/, '') : '.', { recursive: true });
+    appendFileSync(logfile, JSON.stringify({ type: 'trace', ...day }) + '\n');
+    L(`  (logged → ${logfile})`);
   }
   L('==================================================\n');
 } else if (cmd === 'summary') {
