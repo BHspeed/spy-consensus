@@ -1,0 +1,35 @@
+name: relay-to-discord
+# The scheduled cloud agent can't reach Discord (sandbox has no outbound HTTP),
+# but it CAN push to git. So it writes the brief to outbox/ and this Action —
+# which runs on GitHub's runners (open internet) — posts it to Discord.
+on:
+  push:
+    paths:
+      - 'outbox/**'
+permissions:
+  contents: read
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Post the brief(s) added in this push to Discord
+        env:
+          # Discord webhook. Private repo → only collaborators can read it.
+          # Prefer the repo secret DISCORD_WEBHOOK if set; else fall back.
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK || 'https://discord.com/api/webhooks/1521372099300687913/oGhlLzj3NvFWgMMW8xWE90CY2T56rs5pQjFEcTiZmyKbRwXBkpkK2Eu_Kus7mKoykNKj' }}
+        run: |
+          set -e
+          # Files under outbox/ added or changed in this push.
+          files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'outbox/' | grep -E '\.(md|txt)$' || true)
+          # Fallback: if the diff is empty (first commit etc.), take the newest file.
+          if [ -z "$files" ]; then files=$(ls -t outbox/*.md outbox/*.txt 2>/dev/null | head -1); fi
+          if [ -z "$files" ]; then echo "no outbox files to relay"; exit 0; fi
+          for f in $files; do
+            [ -f "$f" ] || continue
+            echo "relaying $f"
+            node -e "const fs=require('fs');const b=fs.readFileSync(process.argv[1],'utf8');const content=b.slice(0,1990);fetch(process.env.WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({content})}).then(r=>{console.log('discord',r.status);if(r.status>=300)process.exit(1)}).catch(e=>{console.error('err',e.message);process.exit(1)})" "$f"
+            sleep 1
+          done
