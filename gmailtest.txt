@@ -1,2 +1,2 @@
-GMAIL=ERR Gmail MCP server requires OAuth authentication; not authorized in this non-interactive cloud session
-TOOL=mcp__Gmail__send_email (unconfirmed; server tools unavailable due to missing auth)
+GMAIL=ERR Gmail MCP server requires OAuth authorization — not available in non-interactive cloud session (no tool reachable)
+TOOL=none
