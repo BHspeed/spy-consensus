@@ -17,9 +17,12 @@ from Robinhood, assembles a bundle, and runs `scripts/run.mjs`.
    - If `bias === 'NEUTRAL'` or `confidence < 45` → **STAND ASIDE**, stop here.
 5. **Expiry**: pick 0–3 DTE per the user's hold (default the 2-DTE expiry).
    Side = calls if bias UP, puts if DOWN.
-6. **Option chain** (bias side, ~6–8 strikes bracketing spot):
-   - `get_option_instruments` per strike (expiration + type) → instrument ids.
-   - `get_option_quotes` for those ids (one batched call, ≤20).
+6. **Option chain** — pull BOTH sides so the brief can show two spreads:
+   - Directional (debit) side: calls if UP / puts if DOWN, ~5 strikes bracketing
+     spot.
+   - Income (credit) side: the opposite type, ~4 strikes OTM (below spot for the
+     put credit on UP days; above spot for the call credit on DOWN days).
+   - `get_option_instruments` per strike → ids, then one batched `get_option_quotes`.
 7. **Assemble** `bundle.json`:
    ```json
    {

@@ -1,21 +1,20 @@
 #!/usr/bin/env node
 /**
- * "run it" — the whole pipeline in one shot, plain-English.
+ * "run it" — the whole pipeline in one shot, plain-English, spread-first.
  *
  *   OHLCV → consensus (UP / DOWN / SIDEWAYS + confidence)
- *         → if tradeable: option chain → ONE spread to trade (we favor spreads)
- *         → entry price, take-profit area, stop, in dollars.
+ *         → if tradeable: option chain → TWO spreads (buy-side + sell-side)
+ *         → entry / take-profit / stop in plain dollars.
  *
- * Offline demo uses scripts/_data.mjs. Live run: same, but bars + option quotes
- * come from a freshly-pulled Robinhood bundle (see RUNBOOK.md):
- *   node scripts/run.mjs <bundle.json>
+ * Offline demo uses scripts/_data.mjs. Live: pass a freshly-pulled Robinhood
+ * bundle (see RUNBOOK.md):  node scripts/run.mjs <bundle.json>
  */
 import { readFileSync } from 'node:fs';
 import { buildVerdict } from '../src/consensus/engine.js';
 import { selectTrades, fromRobinhood } from '../src/consensus/optionSelect.js';
 import * as sample from './_data.mjs';
 
-// ---- assemble inputs (bundle file overrides the offline sample) ------------
+// ---- assemble inputs -------------------------------------------------------
 let daily, hourly, intraday, priorDay, lastPrice, expiry, contracts, asOf;
 const file = process.argv[2];
 if (file) {
@@ -29,11 +28,15 @@ if (file) {
   intraday = hourly.slice(-6);
   priorDay = sample.priorDay; lastPrice = sample.lastPrice; expiry = sample.optionExpiry;
   asOf = '2026-06-29 close (offline sample)';
-  contracts = sample.optionQuotes.map(q => fromRobinhood(q.strike, 'call', q));
+  contracts = [
+    ...sample.optionQuotes.map(q => fromRobinhood(q.strike, 'call', q)),
+    ...sample.putQuotes.map(q => fromRobinhood(q.strike, 'put', q)),
+  ];
 }
 
 const verdict = buildVerdict({ daily, hourly, intraday, priorDay, lastPrice });
 const dir = verdict.bias.includes('UP') ? 'UP' : verdict.bias.includes('DOWN') ? 'DOWN' : 'SIDEWAYS';
+const oppDir = dir === 'UP' ? 'DOWN' : 'UP';
 const L = (s = '') => console.log(s);
 
 L('\n===================  SPY — RUN IT  ===================');
@@ -41,7 +44,6 @@ L(`  as of ${asOf}   price ~${verdict.lastPrice}`);
 L('');
 L(`  CONSENSUS:   ${dir}   ·   ${verdict.confidence}% confident`);
 
-// ---- stand-aside gate ------------------------------------------------------
 if (dir === 'SIDEWAYS' || verdict.confidence < 45) {
   L('');
   L('  >>> NO TRADE today — direction unclear / low confidence.');
@@ -50,46 +52,45 @@ if (dir === 'SIDEWAYS' || verdict.confidence < 45) {
   process.exit(0);
 }
 if (!contracts.length) {
-  L(`\n  (load the ${expiry} ${dir === 'DOWN' ? 'put' : 'call'} chain for trade choices)`);
-  L('=====================================================\n');
-  process.exit(0);
+  L(`\n  (load the ${expiry} chain for trade choices)`);
+  L('=====================================================\n'); process.exit(0);
 }
 
-const sel = selectTrades(verdict, contracts, { maxCandidates: 6 });
-const spreads = sel.candidates.filter(c => c.kind === 'debit_vertical');
-const longs = sel.candidates.filter(c => c.kind === 'long_single');
-const pick = spreads[0] || sel.candidates[0];          // we favor spreads
-const longAlt = longs[0];
-const spreadWord = verdict.side === 'LONG_PUTS' ? 'PUT spread' : 'CALL spread';
-const oppDir = dir === 'UP' ? 'DOWN' : 'UP';
+const sel = selectTrades(verdict, contracts, { maxCandidates: 8 });
+const debit = sel.candidates.find(c => c.kind === 'debit_vertical');
+const credit = sel.candidates.find(c => c.kind === 'credit_vertical');
+const longAlt = sel.candidates.find(c => c.kind === 'long_single');
+const buySideWord = dir === 'UP' ? 'CALL spread' : 'PUT spread';
+const sellSideWord = dir === 'UP' ? 'PUT spread' : 'CALL spread';
 
-// ---- concrete entry / take-profit / stop in dollars ------------------------
-const entry = pick.cost;
-const isSpread = pick.kind === 'debit_vertical';
-const maxProfit = isSpread ? pick.maxProfit : null;
-const takeProfit = isSpread ? Math.round(entry + 0.6 * maxProfit) : Math.round(entry * 1.5);
-const stop = Math.round(entry * (isSpread ? 0.6 : 0.65));
-const tpPct = Math.round(((takeProfit - entry) / entry) * 100);
-const shortStrike = pick.legs[pick.legs.length - 1].strike;
-const buyLine = pick.structure.replace('DEBIT ', 'BUY ').replace('LONG ', 'BUY ');
+// ---- TRADE A: buy-side (debit) ---------------------------------------------
+if (debit) {
+  const e = debit.cost, mp = debit.maxProfit;
+  const tp = Math.round(e + 0.6 * mp), st = Math.round(e * 0.6);
+  L('');
+  L(`  TRADE A — ${buySideWord}  (BUY, rides the move ${dir}):   conf ${debit.confidence}%`);
+  L(`     ${debit.structure.replace('DEBIT ', 'BUY ')}   (${expiry})`);
+  L(`     pay          $${e}`);
+  L(`     TAKE PROFIT ~$${tp}    <-- bank around here (+${Math.round((tp - e) / e * 100)}%)`);
+  L(`     stop       ~ $${st}    (or if consensus turns ${oppDir})`);
+  L(`     most worth   $${e + mp}`);
+}
+
+// ---- TRADE B: sell-side (credit) -------------------------------------------
+if (credit) {
+  const got = credit.credit, buyback = Math.max(1, Math.round(got * 0.4));
+  const shortK = credit.legs[0].strike;
+  L('');
+  L(`  TRADE B — ${sellSideWord}  (SELL, collect & wait):   conf ${credit.confidence}%`);
+  L(`     ${credit.structure.replace('CREDIT ', 'SELL ')}   (${expiry})`);
+  L(`     collect      $${got}`);
+  L(`     TAKE PROFIT ~$${buyback}    <-- buy back here (keep ~$${got - buyback})`);
+  L(`     max loss     $${credit.maxLoss}   (if SPY ${dir === 'UP' ? 'drops below' : 'runs above'} ${credit.legs[1].strike})`);
+  L(`     keeps profit if SPY stays ${dir === 'UP' ? 'above' : 'below'} ${shortK}`);
+}
 
 L('');
-L(`  TRADE  (${spreadWord}, ${expiry}):`);
-L(`     ${buyLine}`);
-L(`     pay about      $${entry}`);
-L(`     TAKE PROFIT ~  $${takeProfit}     <-- bank it around here (+${tpPct}%)`);
-L(`     stop out    ~  $${stop}      (or if consensus turns ${oppDir})`);
-if (isSpread) L(`     most it's worth:   $${entry + maxProfit}  (if it goes perfect)`);
-L('');
-L(`     why:  trend is ${dir}; this gains as SPY goes ${dir === 'UP' ? 'up toward' : 'down toward'} ${shortStrike}.`);
-L(`     size: ${verdict.confidence >= 60 ? 'normal' : 'half'} (${verdict.confidence}% confidence).  never add to a loser.`);
-if (longAlt) L(`     uncapped version: BUY ${longAlt.structure.replace('LONG ', '')} for ~$${longAlt.cost}.`);
-L('');
-L('  other choices:');
-sel.candidates.slice(0, 5).forEach(t => {
-  const tag = t.kind === 'debit_vertical' ? `spread, max +$${t.maxProfit}` : 'long, uncapped';
-  L(`     ${String(t.confidence).padStart(2)}%  ${t.structure.replace('DEBIT ', '').replace('LONG ', 'long ')}  $${t.cost} (${tag})`);
-});
-L('');
-L(`  note: on ${oppDir === 'UP' ? 'DOWN' : 'UP'}-consensus days this is a ${verdict.side === 'LONG_PUTS' ? 'put' : 'call'} spread; a DOWN day gives a put spread (your usual).`);
+L(`  size: ${verdict.confidence >= 60 ? 'normal' : 'half'} (${verdict.confidence}% confidence).  never add to a loser.`);
+if (longAlt) L(`  uncapped alt: BUY ${longAlt.structure.replace('LONG ', '')} for ~$${longAlt.cost}.`);
+L(`  read: trend is ${dir}. A profits if it keeps going; B profits if it just doesn't reverse.`);
 L('=====================================================\n');

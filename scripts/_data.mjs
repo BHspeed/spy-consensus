@@ -53,7 +53,14 @@ export const optionQuotes = [
   { strike: 740, mark_price: 5.18, bid_price: 5.12, ask_price: 5.24, delta: 0.540, implied_volatility: 0.179, open_interest: 7392, volume: 23974, break_even_price: 745.18, chance_of_profit_long: 0.359 },
   { strike: 741, mark_price: 4.54, bid_price: 4.53, ask_price: 4.55, delta: 0.506, implied_volatility: 0.175, open_interest: 1857, volume: 7033, break_even_price: 745.54, chance_of_profit_long: 0.344 },
   { strike: 743, mark_price: 3.42, bid_price: 3.41, ask_price: 3.43, delta: 0.433, implied_volatility: 0.167, open_interest: 2145, volume: 4224, break_even_price: 746.42, chance_of_profit_long: 0.309 },
-  { strike: 745, mark_price: 2.46, bid_price: 2.45, ask_price: 2.47, delta: 0.355, implied_volatility: 0.160, open_interest: 11600, volume: 16859, break_even_price: 747.46, chance_of_profit_long: 0.267 },
+  { strike: 745, mark_price: 2.46, bid_price: 2.45, ask_price: 2.47, delta: 0.355, implied_volatility: 0.160, open_interest: 11600, volume: 16859, break_even_price: 747.46, chance_of_profit_long: 0.267, chance_of_profit_short: 0.733 },
+];
+// Real SPY 7/2 put quotes (below spot) for credit-spread choices.
+export const putQuotes = [
+  { strike: 738, mark_price: 2.805, bid_price: 2.79, ask_price: 2.82, delta: -0.382, implied_volatility: 0.164, open_interest: 2825, volume: 11617, break_even_price: 735.19, chance_of_profit_long: 0.289, chance_of_profit_short: 0.711 },
+  { strike: 736, mark_price: 2.255, bid_price: 2.24, ask_price: 2.27, delta: -0.318, implied_volatility: 0.171, open_interest: 4227, volume: 6620, break_even_price: 733.74, chance_of_profit_long: 0.252, chance_of_profit_short: 0.748 },
+  { strike: 735, mark_price: 2.025, bid_price: 2.02, ask_price: 2.03, delta: -0.289, implied_volatility: 0.174, open_interest: 4333, volume: 22750, break_even_price: 732.97, chance_of_profit_long: 0.234, chance_of_profit_short: 0.766 },
+  { strike: 733, mark_price: 1.615, bid_price: 1.61, ask_price: 1.62, delta: -0.238, implied_volatility: 0.180, open_interest: 3328, volume: 5961, break_even_price: 731.38, chance_of_profit_long: 0.200, chance_of_profit_short: 0.800 },
 ];
 
 export const toBars = (rows) => rows.map((r, i) => ({ time: i, open: r[0], high: r[1], low: r[2], close: r[3], volume: 0 }));

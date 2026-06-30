@@ -52,6 +52,17 @@ describe('option selector', () => {
     assert.ok(r.candidates.every(c => c.legs.every(l => l.type === 'put')));
   });
 
+  test('UP with puts present → produces a put credit spread (sell-side)', () => {
+    const withPuts = [...chain, put(737, 0.36, 2.6), put(735, 0.30, 2.0), put(733, 0.24, 1.5)];
+    const r = selectTrades(upVerdict, withPuts);
+    const credit = r.candidates.find(c => c.kind === 'credit_vertical');
+    assert.ok(credit, 'should produce a credit vertical');
+    assert.ok(credit.legs.every(l => l.type === 'put'));
+    assert.equal(credit.legs[0].action, 'SELL');
+    assert.equal(credit.legs[1].action, 'BUY');
+    assert.ok(credit.credit > 0 && credit.maxLoss > 0);
+  });
+
   test('confidence is bounded 0..95', () => {
     const r = selectTrades(upVerdict, chain);
     assert.ok(r.candidates.every(c => c.confidence >= 0 && c.confidence <= 95));
