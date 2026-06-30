@@ -30,6 +30,7 @@ jobs:
           for f in $files; do
             [ -f "$f" ] || continue
             echo "relaying $f"
-            node -e "const fs=require('fs');const b=fs.readFileSync(process.argv[1],'utf8');const content=b.slice(0,1990);fetch(process.env.WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({content})}).then(r=>{console.log('discord',r.status);if(r.status>=300)process.exit(1)}).catch(e=>{console.error('err',e.message);process.exit(1)})" "$f"
+            # Retry up to 4x on any non-2xx (incl. 429 rate-limit) before failing.
+            node -e "const fs=require('fs');const content=fs.readFileSync(process.argv[1],'utf8').slice(0,1990);(async()=>{for(let i=1;i<=4;i++){try{const r=await fetch(process.env.WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({content})});console.log('attempt '+i+' -> '+r.status);if(r.status<300)return;if(r.status===429){const j=await r.json().catch(()=>({}));await new Promise(s=>setTimeout(s,((j.retry_after||2))*1000+500));}else{await new Promise(s=>setTimeout(s,2000*i));}}catch(e){console.log('attempt '+i+' err '+e.message);await new Promise(s=>setTimeout(s,2000*i));}}console.error('DELIVERY FAILED after 4 attempts: '+process.argv[1]);process.exit(1);})()" "$f"
             sleep 1
           done

@@ -1,1 +1,0 @@
-**🧪 relay test** — if you see THIS in Discord, the cloud→git→GitHub-Action→Discord delivery works. Auto-reports are back on.
