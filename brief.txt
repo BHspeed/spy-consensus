@@ -1,26 +1,26 @@
 
 ===================  SPY — RUN IT  ===================
-  as of 2026-06-30T12:43:50.788Z   price ~741.13
+  as of 2026-06-30T13:51:29.223Z   price ~741.96
 
-  CONSENSUS:   UP   ·   68% confident
+  CONSENSUS:   UP   ·   69% confident
 
-  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 82%
-     BUY 740/742C   (2026-07-02)
-     pay          $122
-     SCALP OUT  ~ $159    <-- bank the pop (+30%); trail if it keeps flipping up
-     stop       ~ $85    (-30%, or if consensus turns DOWN)
+  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 83%
+     BUY 742/744C   (2026-07-02)
+     pay          $112
+     SCALP OUT  ~ $146    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $78    (-30%, or if consensus turns DOWN)
      room to max  $200
 
   TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 71%
-     SELL 737/735P   (2026-07-02)
-     collect      $49
-     TAKE HALF  ~ $25    <-- buy back here, bank ~$24 (don't hold for the last dollar)
-     max loss     $151   (if SPY drops below 735)
-     keeps profit if SPY stays above 737
+     SELL 738/736P   (2026-07-02)
+     collect      $46.5
+     TAKE HALF  ~ $23    <-- buy back here, bank ~$23.5 (don't hold for the last dollar)
+     max loss     $153.5   (if SPY drops below 736)
+     keeps profit if SPY stays above 738
 
   GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
-  size: normal (68% confidence).  never add to a loser.
-  fastest mover (most scalp-y): BUY 741C for ~$454.
+  size: normal (69% confidence).  never add to a loser.
+  fastest mover (most scalp-y): BUY 742C for ~$416.
   read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 
