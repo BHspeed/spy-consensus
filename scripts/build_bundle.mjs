@@ -31,8 +31,12 @@ function bars(resp) {
 }
 const dayOf = (t) => new Date(t * 1000).toISOString().slice(0, 10);
 
-const daily = bars(load(arg('daily')));
-const hourly = bars(load(arg('hourly')));
+// --drop-from=YYYY-MM-DD drops bars on/after that date — used to reconstruct
+// the pre-open ("morning") view for the forward trace.
+const dropFrom = arg('drop-from');
+const keep = (b) => !dropFrom || dayOf(b.time) < dropFrom;
+const daily = bars(load(arg('daily'))).filter(keep);
+const hourly = bars(load(arg('hourly'))).filter(keep);
 
 // If today's session is in the hourly feed but not yet a daily bar, synthesize it.
 if (daily.length && hourly.length) {
