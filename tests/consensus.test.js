@@ -6,7 +6,7 @@ import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import { ema, rsi, atr, swingScore } from '../src/consensus/indicators.js';
 import { buildVerdict } from '../src/consensus/engine.js';
-import { decideExit } from '../src/consensus/valueFlip.js';
+import { decideExit, SCALP_CONFIG } from '../src/consensus/valueFlip.js';
 
 // Build bars from a close series; OHLC derived with a small symmetric range.
 function barsFromCloses(closes, t0 = 1_700_000_000, step = 86400) {
@@ -90,5 +90,10 @@ describe('value-flip exit', () => {
   });
   test('consensus flip forces exit', () => {
     assert.equal(decideExit(1.00, [1.00, 1.05], { consensusFlipped: true }).action, 'EXIT_SIGNAL');
+  });
+  test('SCALP preset banks a small pop that DEFAULT would still hold', () => {
+    const marks = [1.00, 1.15, 1.18, 1.13]; // peaked +18%, gave back ~28% of it
+    assert.equal(decideExit(1.00, marks, { config: SCALP_CONFIG }).action, 'TAKE_PROFIT');
+    assert.equal(decideExit(1.00, marks).action, 'HOLD'); // DEFAULT arms at +25% peak
   });
 });

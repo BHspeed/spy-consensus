@@ -18,6 +18,19 @@ export const DEFAULT_CONFIG = {
 };
 
 /**
+ * SCALP preset — the house style: bank the value pop fast, don't wait to be
+ * 100% right. Arms on small gains, trails tight, stops tight, takes a quick rip
+ * outright. Use this for the live monitor; DEFAULT_CONFIG is the patient/swing
+ * variant.
+ */
+export const SCALP_CONFIG = {
+  minProfitPct: 12,   // arm fast — a small pop is enough
+  trailPct: 25,       // give back only a quarter of the peak gain, then out
+  stopPct: 25,        // tight stop — small losses, get back in
+  hardTakePct: 50,    // bank a +50% rip outright
+};
+
+/**
  * @param {number} entryMark      premium paid/received per share at entry (>0)
  * @param {number[]} marks        series of marks since entry, most recent last
  * @param {object} [opts]
