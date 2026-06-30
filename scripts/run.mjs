@@ -8,15 +8,20 @@
  *
  * Offline demo uses scripts/_data.mjs. Live: pass a freshly-pulled Robinhood
  * bundle (see RUNBOOK.md):  node scripts/run.mjs <bundle.json>
+ * Add --log to append the run to logs/spy_runs.jsonl.
  */
-import { readFileSync } from 'node:fs';
+import { readFileSync, appendFileSync, mkdirSync } from 'node:fs';
 import { buildVerdict } from '../src/consensus/engine.js';
 import { selectTrades, fromRobinhood } from '../src/consensus/optionSelect.js';
 import * as sample from './_data.mjs';
 
+const args = process.argv.slice(2);
+const wantLog = args.includes('--log');
+const file = args.find(a => !a.startsWith('--'));
+const LOG_PATH = 'logs/spy_runs.jsonl';
+
 // ---- assemble inputs -------------------------------------------------------
 let daily, hourly, intraday, priorDay, lastPrice, expiry, contracts, asOf;
-const file = process.argv[2];
 if (file) {
   const b = JSON.parse(readFileSync(file, 'utf8'));
   ({ priorDay, lastPrice, expiry, asOf } = b);
@@ -39,6 +44,18 @@ const dir = verdict.bias.includes('UP') ? 'UP' : verdict.bias.includes('DOWN') ?
 const oppDir = dir === 'UP' ? 'DOWN' : 'UP';
 const L = (s = '') => console.log(s);
 
+const logEntry = {
+  loggedAt: new Date().toISOString(), asOf, expiry, spot: verdict.lastPrice,
+  consensus: { dir, score: verdict.score, confidence: verdict.confidence, adx: verdict.adx },
+  decision: null, tradeA: null, tradeB: null,
+};
+function writeLog() {
+  if (!wantLog) return;
+  mkdirSync('logs', { recursive: true });
+  appendFileSync(LOG_PATH, JSON.stringify(logEntry) + '\n');
+  L(`  (logged → ${LOG_PATH})`);
+}
+
 L('\n===================  SPY — RUN IT  ===================');
 L(`  as of ${asOf}   price ~${verdict.lastPrice}`);
 L('');
@@ -48,11 +65,15 @@ if (dir === 'SIDEWAYS' || verdict.confidence < 45) {
   L('');
   L('  >>> NO TRADE today — direction unclear / low confidence.');
   L('      Sitting out is the call (a result, not a miss).');
+  logEntry.decision = 'STAND_ASIDE';
+  writeLog();
   L('=====================================================\n');
   process.exit(0);
 }
 if (!contracts.length) {
   L(`\n  (load the ${expiry} chain for trade choices)`);
+  logEntry.decision = 'NO_CHAIN';
+  writeLog();
   L('=====================================================\n'); process.exit(0);
 }
 
@@ -63,10 +84,10 @@ const longAlt = sel.candidates.find(c => c.kind === 'long_single');
 const buySideWord = dir === 'UP' ? 'CALL spread' : 'PUT spread';
 const sellSideWord = dir === 'UP' ? 'PUT spread' : 'CALL spread';
 
-// ---- TRADE A: buy-side (debit) ---------------------------------------------
 if (debit) {
   const e = debit.cost, mp = debit.maxProfit;
   const tp = Math.round(e + 0.6 * mp), st = Math.round(e * 0.6);
+  logEntry.tradeA = { structure: debit.structure, pay: e, takeProfit: tp, stop: st, confidence: debit.confidence };
   L('');
   L(`  TRADE A — ${buySideWord}  (BUY, rides the move ${dir}):   conf ${debit.confidence}%`);
   L(`     ${debit.structure.replace('DEBIT ', 'BUY ')}   (${expiry})`);
@@ -75,11 +96,10 @@ if (debit) {
   L(`     stop       ~ $${st}    (or if consensus turns ${oppDir})`);
   L(`     most worth   $${e + mp}`);
 }
-
-// ---- TRADE B: sell-side (credit) -------------------------------------------
 if (credit) {
   const got = credit.credit, buyback = Math.max(1, Math.round(got * 0.4));
   const shortK = credit.legs[0].strike;
+  logEntry.tradeB = { structure: credit.structure, collect: got, takeProfit: buyback, maxLoss: credit.maxLoss, confidence: credit.confidence };
   L('');
   L(`  TRADE B — ${sellSideWord}  (SELL, collect & wait):   conf ${credit.confidence}%`);
   L(`     ${credit.structure.replace('CREDIT ', 'SELL ')}   (${expiry})`);
@@ -93,4 +113,6 @@ L('');
 L(`  size: ${verdict.confidence >= 60 ? 'normal' : 'half'} (${verdict.confidence}% confidence).  never add to a loser.`);
 if (longAlt) L(`  uncapped alt: BUY ${longAlt.structure.replace('LONG ', '')} for ~$${longAlt.cost}.`);
 L(`  read: trend is ${dir}. A profits if it keeps going; B profits if it just doesn't reverse.`);
+logEntry.decision = 'IDEAS';
+writeLog();
 L('=====================================================\n');
