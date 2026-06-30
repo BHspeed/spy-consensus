@@ -20,6 +20,7 @@
     "test:cli": "node --test tests/cli.test.js",
     "test:consensus": "node --test tests/consensus.test.js tests/option_select.test.js",
     "consensus": "node scripts/consensus.mjs",
+    "run:pipeline": "node scripts/run.mjs",
     "test:all": "node --test tests/e2e.test.js tests/pine_analyze.test.js tests/cli.test.js tests/consensus.test.js tests/option_select.test.js",
     "test:verbose": "node --test --test-reporter=spec tests/e2e.test.js tests/pine_analyze.test.js",
     "test:count": "node --test --test-reporter=spec tests/e2e.test.js 2>&1 | tail -5"
