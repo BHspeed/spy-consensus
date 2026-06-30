@@ -1,0 +1,1 @@
+**🧪 relay test #2** — confirming the GitHub Action posts to Discord. If this lands, auto-reports are fixed.
