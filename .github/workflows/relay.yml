@@ -23,6 +23,7 @@ jobs:
           # Prefer repo secrets; fall back to inline (private repo).
           MAIN_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK || 'https://discord.com/api/webhooks/1521372099300687913/oGhlLzj3NvFWgMMW8xWE90CY2T56rs5pQjFEcTiZmyKbRwXBkpkK2Eu_Kus7mKoykNKj' }}
           GRADES_WEBHOOK: ${{ secrets.DISCORD_GRADES_WEBHOOK || 'https://discord.com/api/webhooks/1522062524302753814/qFtK2QEFa_qMXM_yGuFGTI_VX2TlSWqT8OZ2HOw0A9ir_xY4LlvUEf04TXoP0wdiO8P4' }}
+          SWINGS_WEBHOOK: ${{ secrets.DISCORD_SWINGS_WEBHOOK || 'https://discord.com/api/webhooks/1522074758559039568/h80g9YEsvyt6zza4hKg_iGFUFvBUxk1XyPpXnzRKGvJYlu0mZdC4yL67_Gzodv-9TbjD' }}
         run: |
           set -e
           files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'outbox/' | grep -E '\.(md|txt)$' || true)
@@ -32,6 +33,7 @@ jobs:
             [ -f "$f" ] || continue
             case "$(basename "$f")" in
               grades-*) WH="$GRADES_WEBHOOK"; echo "routing $f -> private grades channel" ;;
+              swings-*) WH="$SWINGS_WEBHOOK"; echo "routing $f -> swings channel" ;;
               *)        WH="$MAIN_WEBHOOK";   echo "routing $f -> trading channel" ;;
             esac
             # Retry up to 4x on any non-2xx (incl. 429 rate-limit) before failing.

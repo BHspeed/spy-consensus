@@ -12,3 +12,5 @@ scripts/current.pine
 temp_*
 *.log
 discovery-log.json
+scan.json
+fund.json
