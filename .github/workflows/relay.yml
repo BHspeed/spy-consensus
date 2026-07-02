@@ -1,7 +1,8 @@
 name: relay-to-discord
 # The scheduled cloud agent can't reach Discord (sandbox has no outbound HTTP),
-# but it CAN push to git. So it writes the brief to outbox/ and this Action —
-# which runs on GitHub's runners (open internet) — posts it to Discord.
+# but it CAN push to git. So it writes reports to outbox/ and this Action —
+# which runs on GitHub's runners (open internet) — posts them to Discord.
+# Routing: eod-*.md  -> scorecard/grades channel; everything else -> trading channel.
 on:
   push:
     paths:
@@ -15,22 +16,23 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 2
-      - name: Post the brief(s) added in this push to Discord
+      - name: Post the report(s) added in this push to the right Discord channel
         env:
-          # Discord webhook. Private repo → only collaborators can read it.
-          # Prefer the repo secret DISCORD_WEBHOOK if set; else fall back.
-          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK || 'https://discord.com/api/webhooks/1521372099300687913/oGhlLzj3NvFWgMMW8xWE90CY2T56rs5pQjFEcTiZmyKbRwXBkpkK2Eu_Kus7mKoykNKj' }}
+          # Prefer repo secrets; fall back to inline (private repo).
+          MAIN_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK || 'https://discord.com/api/webhooks/1521372099300687913/oGhlLzj3NvFWgMMW8xWE90CY2T56rs5pQjFEcTiZmyKbRwXBkpkK2Eu_Kus7mKoykNKj' }}
+          EOD_WEBHOOK: ${{ secrets.DISCORD_EOD_WEBHOOK || 'https://discord.com/api/webhooks/1522062524302753814/qFtK2QEFa_qMXM_yGuFGTI_VX2TlSWqT8OZ2HOw0A9ir_xY4LlvUEf04TXoP0wdiO8P4' }}
         run: |
           set -e
-          # Files under outbox/ added or changed in this push.
           files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'outbox/' | grep -E '\.(md|txt)$' || true)
-          # Fallback: if the diff is empty (first commit etc.), take the newest file.
           if [ -z "$files" ]; then files=$(ls -t outbox/*.md outbox/*.txt 2>/dev/null | head -1); fi
           if [ -z "$files" ]; then echo "no outbox files to relay"; exit 0; fi
           for f in $files; do
             [ -f "$f" ] || continue
-            echo "relaying $f"
+            case "$(basename "$f")" in
+              eod-*)  WH="$EOD_WEBHOOK";  echo "routing $f -> scorecard channel" ;;
+              *)      WH="$MAIN_WEBHOOK"; echo "routing $f -> trading channel" ;;
+            esac
             # Retry up to 4x on any non-2xx (incl. 429 rate-limit) before failing.
-            node -e "const fs=require('fs');const content=fs.readFileSync(process.argv[1],'utf8').slice(0,1990);(async()=>{for(let i=1;i<=4;i++){try{const r=await fetch(process.env.WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({content})});console.log('attempt '+i+' -> '+r.status);if(r.status<300)return;if(r.status===429){const j=await r.json().catch(()=>({}));await new Promise(s=>setTimeout(s,((j.retry_after||2))*1000+500));}else{await new Promise(s=>setTimeout(s,2000*i));}}catch(e){console.log('attempt '+i+' err '+e.message);await new Promise(s=>setTimeout(s,2000*i));}}console.error('DELIVERY FAILED after 4 attempts: '+process.argv[1]);process.exit(1);})()" "$f"
+            WH="$WH" node -e "const fs=require('fs');const content=fs.readFileSync(process.argv[1],'utf8').slice(0,1990);(async()=>{for(let i=1;i<=4;i++){try{const r=await fetch(process.env.WH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({content})});console.log('attempt '+i+' -> '+r.status);if(r.status<300)return;if(r.status===429){const j=await r.json().catch(()=>({}));await new Promise(s=>setTimeout(s,((j.retry_after||2))*1000+500));}else{await new Promise(s=>setTimeout(s,2000*i));}}catch(e){console.log('attempt '+i+' err '+e.message);await new Promise(s=>setTimeout(s,2000*i));}}console.error('DELIVERY FAILED after 4 attempts: '+process.argv[1]);process.exit(1);})()" "$f"
             sleep 1
           done
