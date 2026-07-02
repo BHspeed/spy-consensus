@@ -3,3 +3,7 @@ SYMBOLS=ACMR,TVTX,MTRN,FROG,LNTH,ALAB,VIK,LUV,URI,MTH
 step3 45308
 step4 done
 step4 swingcheck: 10 open, 0 closed this week, 0 total closed
+step1 6846
+step2 tickers: ACMR,VIK,ALAB,TVTX,URI,MTH,MTRN,FROG,LUV,LNTH
+step3 16302
+step4 stdout: swings: 0 new, 10 already active
