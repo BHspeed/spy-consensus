@@ -1,0 +1,4 @@
+step1 4718
+step2 tickers: ACMR,MTH,TVTX,URI,ALAB,LNTH,MTRN,VIK,FROG,LUV
+step3 15956
+step4 swings: 10 new, 0 already active
