@@ -58,7 +58,11 @@ const pctOf = (n, d) => (d ? Math.round((n / d) * 1000) / 10 : 0);
 
 /** Aggregate over many evaluated days → the learning scorecard. */
 export function summarizeTraces(records) {
-  const traces = records.filter(t => t && t.verdict && t.verdict !== 'NO-TRADE');
+  // Dedupe by date (keep the latest entry per day) so a re-run can't double-count.
+  const seen = {};
+  (records || []).forEach((t, i) => { if (t) seen[t.date || `_${i}`] = t; });
+  const deduped = Object.values(seen);
+  const traces = deduped.filter(t => t && t.verdict && t.verdict !== 'NO-TRADE');
   const directional = traces.filter(t => t.verdict !== 'FLAT' || t.mfePct != null);
   const scored = traces.filter(t => t.mfePct != null);
 
