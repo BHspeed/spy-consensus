@@ -57,8 +57,15 @@ if (cmd === 'eval') {
     if (v.n) L(`    ${b}%: ${v.n} days · ${v.scalpablePct}% scalpable · ${v.closedRightPct}% closed-right · avg peak ${v.avgMfe}%`);
   }
   L('===========================================\n');
+} else if (cmd === 'record') {
+  // Compact one-liner for the SPY channel EOD trace (public running record).
+  const path = process.argv[3] || TRACE_LOG;
+  let recs = [];
+  try { recs = readFileSync(path, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)); } catch { process.exit(0); }
+  const s = summarizeTraces(recs);
+  L(`\n📈 SPY record: ${s.right}R · ${s.wrong}W · ${s.flat}F · ${s.closedRightPct}% hit-rate · ${s.scalpablePct}% scalpable (${s.days} graded)`);
 } else {
   console.error('usage: trace.mjs eval --dir=UP --conf=69 --open=.. --high=.. --low=.. --close=.. [--midday=..] [--log]');
-  console.error('       trace.mjs summary [logs/spy_trace.jsonl]');
+  console.error('       trace.mjs summary [logs/spy_trace.jsonl]  |  trace.mjs record [logs/spy_trace.jsonl]');
   process.exit(1);
 }
