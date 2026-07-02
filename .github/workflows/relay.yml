@@ -2,7 +2,9 @@ name: relay-to-discord
 # The scheduled cloud agent can't reach Discord (sandbox has no outbound HTTP),
 # but it CAN push to git. So it writes reports to outbox/ and this Action —
 # which runs on GitHub's runners (open internet) — posts them to Discord.
-# Routing: eod-*.md  -> scorecard/grades channel; everything else -> trading channel.
+# Routing by filename:
+#   grades-*.md -> PRIVATE scorecard/grades channel (the user's personal data)
+#   everything else (morning-*, eod-*) -> the shared trading channel
 on:
   push:
     paths:
@@ -20,7 +22,7 @@ jobs:
         env:
           # Prefer repo secrets; fall back to inline (private repo).
           MAIN_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK || 'https://discord.com/api/webhooks/1521372099300687913/oGhlLzj3NvFWgMMW8xWE90CY2T56rs5pQjFEcTiZmyKbRwXBkpkK2Eu_Kus7mKoykNKj' }}
-          EOD_WEBHOOK: ${{ secrets.DISCORD_EOD_WEBHOOK || 'https://discord.com/api/webhooks/1522062524302753814/qFtK2QEFa_qMXM_yGuFGTI_VX2TlSWqT8OZ2HOw0A9ir_xY4LlvUEf04TXoP0wdiO8P4' }}
+          GRADES_WEBHOOK: ${{ secrets.DISCORD_GRADES_WEBHOOK || 'https://discord.com/api/webhooks/1522062524302753814/qFtK2QEFa_qMXM_yGuFGTI_VX2TlSWqT8OZ2HOw0A9ir_xY4LlvUEf04TXoP0wdiO8P4' }}
         run: |
           set -e
           files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'outbox/' | grep -E '\.(md|txt)$' || true)
@@ -29,8 +31,8 @@ jobs:
           for f in $files; do
             [ -f "$f" ] || continue
             case "$(basename "$f")" in
-              eod-*)  WH="$EOD_WEBHOOK";  echo "routing $f -> scorecard channel" ;;
-              *)      WH="$MAIN_WEBHOOK"; echo "routing $f -> trading channel" ;;
+              grades-*) WH="$GRADES_WEBHOOK"; echo "routing $f -> private grades channel" ;;
+              *)        WH="$MAIN_WEBHOOK";   echo "routing $f -> trading channel" ;;
             esac
             # Retry up to 4x on any non-2xx (incl. 429 rate-limit) before failing.
             WH="$WH" node -e "const fs=require('fs');const content=fs.readFileSync(process.argv[1],'utf8').slice(0,1990);(async()=>{for(let i=1;i<=4;i++){try{const r=await fetch(process.env.WH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({content})});console.log('attempt '+i+' -> '+r.status);if(r.status<300)return;if(r.status===429){const j=await r.json().catch(()=>({}));await new Promise(s=>setTimeout(s,((j.retry_after||2))*1000+500));}else{await new Promise(s=>setTimeout(s,2000*i));}}catch(e){console.log('attempt '+i+' err '+e.message);await new Promise(s=>setTimeout(s,2000*i));}}console.error('DELIVERY FAILED after 4 attempts: '+process.argv[1]);process.exit(1);})()" "$f"
