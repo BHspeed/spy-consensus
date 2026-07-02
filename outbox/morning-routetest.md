@@ -1,1 +1,0 @@
-**🧪 route test — TRADING channel** (morning-*). If this is in your trading channel, routing works.
