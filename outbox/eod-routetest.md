@@ -1,0 +1,1 @@
+**🧪 route test — SCORECARD channel** (eod-*). If this is in your grades channel, routing works.
