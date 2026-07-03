@@ -1,0 +1,29 @@
+name: news-fetch
+# Pulls market + company news from Finnhub (this runner has internet + the
+# NEWS_API_KEY secret) and commits data/news_feed.json. The cloud News routine
+# then reads that file and writes the critical analysis (it has no egress).
+# Committing data/ does NOT trigger the relay (that watches outbox/**).
+on:
+  schedule:
+    - cron: '0 11 * * 1-5'    # ~7:00 AM ET — overnight/pre-market news
+    - cron: '30 20 * * 1-5'   # ~4:30 PM ET — the day's news, before the 4:50 digest
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch news → data/news_feed.json
+        env:
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+        run: node scripts/news_fetch.mjs
+      - name: Commit the feed
+        run: |
+          git config user.name news-fetch
+          git config user.email news@local
+          git add data/news_feed.json
+          git commit -m "news feed $(date -u +%FT%H%MZ)" || { echo "no changes"; exit 0; }
+          git pull --rebase origin main || true
+          git push || (git pull --rebase origin main && git push)
