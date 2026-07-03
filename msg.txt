@@ -1,28 +1,16 @@
-**SPY morning — 2026-07-02**
-CONSENSUS: UP · 80% (spot 749.69)
+⚠️ MACRO RISK: NFP jobs report today — a scheduled report can override the technical read; size down or wait for the reaction.
+
+**SPY morning — 2026-07-03**
+CONSENSUS: SIDEWAYS · 49% (spot 744.80)
+
 ```
+
 ===================  SPY — RUN IT  ===================
-  as of 2026-07-02T13:48:57Z   price ~749.69
+  as of 2026-07-03T13:49:58.782Z   price ~744.8
 
-  CONSENSUS:   UP   ·   80% confident
+  CONSENSUS:   SIDEWAYS   ·   49% confident
 
-  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 90%
-     BUY 750/752C   (2026-07-06)
-     pay          $108.5
-     SCALP OUT  ~ $141    <-- bank the pop (+30%); trail if it keeps flipping up
-     stop       ~ $76    (-30%, or if consensus turns DOWN)
-     room to max  $200
-
-  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 76%
-     SELL 747/745P   (2026-07-06)
-     collect      $38
-     TAKE HALF  ~ $19    <-- buy back here, bank ~$19 (don't hold for the last dollar)
-     max loss     $162   (if SPY drops below 745)
-     keeps profit if SPY stays above 747
-
-  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
-  size: normal (80% confidence).  never add to a loser.
-  fastest mover (most scalp-y): BUY 750C for ~$279.
-  read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
+  >>> NO TRADE today — direction unclear / low confidence.
+      Sitting out is the call (a result, not a miss).
 =====================================================
 ```
