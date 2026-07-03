@@ -11,3 +11,13 @@ step1 ok
 LNN,GIS,UNF,MSM,FIZZ,FDS,GBX
 step3 8415
 earnings: 7 posted, 0 swing picks upcoming
+=== STEP 1 dirs ===
+SPY UP spot 744.78 move 0.98% -> pull CALLS strikes 744,745,746,747,748
+QQQ DOWN spot 712.60 move 1.69% -> pull PUTS strikes 714,713,712,711,710
+NVDA DOWN spot 194.83 move 2.28% -> pull PUTS strikes 196,195,194,193,192
+TSLA UP spot 393.45 move 2.5% -> pull CALLS strikes 392,393,394,395,396
+AMD DOWN spot 517.82 move 2.5% -> pull PUTS strikes 519,518,517,516,515
+=== log at Fri Jul  3 16:44:08 UTC 2026 ===
+opts 4190
+weeklies: 5 picks
+step3: weeklies 5 picks
