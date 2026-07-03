@@ -21,3 +21,8 @@ AMD DOWN spot 517.82 move 2.5% -> pull PUTS strikes 519,518,517,516,515
 opts 4190
 weeklies: 5 picks
 step3: weeklies 5 picks
+=== WEEKLY GRADE START 2026-07-03 ===
+Fri Jul  3 20:15:52 UTC 2026
+SYMS=
+step2 empty
+weeklygrade: graded 0 today, 0 total
