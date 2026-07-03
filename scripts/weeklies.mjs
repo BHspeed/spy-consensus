@@ -15,8 +15,9 @@
  * Direction here is a light momentum lean (close vs EMA20 + 5-day slope); the
  * value flip works on small moves, and the full SPY consensus posts separately.
  */
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, appendFileSync, mkdirSync } from 'node:fs';
 import { selectWeeklies } from '../src/strategies/weeklies/weeklyOption.js';
+import { flipTriggers } from '../src/strategies/weeklies/weeklyGrade.js';
 
 const num = (s) => parseFloat(String(s).replace(/[,$]/g, '')) || 0;
 const load = (p) => JSON.parse(readFileSync(p, 'utf8'));
@@ -76,16 +77,17 @@ if (mode === 'run') {
     if (!bySym[sym] || b.length < 6) continue;
     const { spot, dir, expectedMovePct } = readDir(b);
     const sel = selectWeeklies(bySym[sym], { spot, expectedMovePct, dir }, 1);
-    if (sel[0]) picks.push({ ...sel[0], dir, expectedMovePct });
+    if (sel[0]) picks.push({ ...sel[0], dir, expectedMovePct, entrySpot: spot });
   }
   picks.sort((a, b) => b.score - a.score);
+  const posted = picks.slice(0, 4);
 
   const out = [
     `**⚡ Weekly Value-Flip Plays — ${date}**`,
     "_buy one, scalp the premium flip 10%+ — don't wait to be right on strike_",
   ];
   if (!picks.length) out.push('\n_No clean value-flip setups today (thin/wide markets or no clear direction)._');
-  for (const p of picks.slice(0, 4)) {
+  for (const p of posted) {
     out.push(`\n**${p.contract}**  @ $${p.mark}  (${p.dir}, Δ${p.delta}, ${p.moneyness > 0 ? '+' : ''}${p.moneyness}%)`);
     out.push(`➡️ bank +10% $${p.plan.arm} · target +20% $${p.plan.take} · stop $${p.plan.stop}`);
     out.push(`   ~${p.valueFlipPct}% flip if ${p.symbol} moves ${p.expectedMovePct}% your way`);
@@ -93,8 +95,18 @@ if (mode === 'run') {
   out.push('\n_value-flip levels — take the 10%+ when it comes; this is separate from the SPY spread system._');
 
   mkdirSync('outbox', { recursive: true });
+  mkdirSync('data', { recursive: true });
   writeFileSync(`outbox/weekly-${date}.md`, out.join('\n'));
-  console.log(`weeklies: ${picks.length} picks`);
+  // log each posted callout with its flip/stop triggers so it can be graded later
+  for (const p of posted) {
+    const t = flipTriggers({ type: p.type, entrySpot: p.entrySpot, entryMark: p.mark, delta: p.delta });
+    appendFileSync('data/weekly_trace.jsonl', JSON.stringify({
+      date, symbol: p.symbol, type: p.type, strike: p.strike, expiry: p.expiry, dir: p.dir,
+      entrySpot: p.entrySpot, entryMark: p.mark, delta: p.delta, contract: p.contract,
+      flipUnderlying: t.flipUnderlying, stopUnderlying: t.stopUnderlying, status: 'open',
+    }) + '\n');
+  }
+  console.log(`weeklies: ${picks.length} picks (${posted.length} logged)`);
   process.exit(0);
 }
 
