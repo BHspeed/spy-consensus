@@ -7,3 +7,7 @@ step1 6846
 step2 tickers: ACMR,VIK,ALAB,TVTX,URI,MTH,MTRN,FROG,LUV,LNTH
 step3 16302
 step4 stdout: swings: 0 new, 10 already active
+step1 ok
+LNN,GIS,UNF,MSM,FIZZ,FDS,GBX
+step3 8415
+earnings: 7 posted, 0 swing picks upcoming
