@@ -30,3 +30,8 @@ step1 8041
 step2 tickers: WTS,ETSY,BMO,TD,VIK,MTH,LUV,TVTX,FTNT,RY
 step3 17407
 step4 stdout: swings: 6 new, 10 already active
+step1 ok
+LNN,GIS,UNF,MSM,FIZZ,FDS,GBX
+step3 8067
+step5 ok (earnings restored from prior run, all seen)
+step6 news appended
