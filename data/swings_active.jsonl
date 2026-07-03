@@ -8,3 +8,9 @@
 {"symbol":"LUV","added":"2026-07-02","entry":50.9,"tier":"core","targetPct":11.3,"targetPrice":56.7,"stopPrice":47.3,"status":"open","lastGainPct":-0.8,"peakPct":null}
 {"symbol":"URI","added":"2026-07-02","entry":1111.8,"tier":"core","targetPct":10,"targetPrice":1222.9,"stopPrice":1033.9,"status":"open","lastGainPct":0.1,"peakPct":null}
 {"symbol":"MTH","added":"2026-07-02","entry":81.6,"tier":"core","targetPct":10,"targetPrice":89.7,"stopPrice":75.8,"status":"open","lastGainPct":0,"peakPct":null}
+{"symbol":"FTNT","added":"2026-07-03","entry":155.1,"tier":"core","targetPct":15,"targetPrice":178.3,"stopPrice":144.2,"status":"open"}
+{"symbol":"ETSY","added":"2026-07-03","entry":76.9,"tier":"core","targetPct":10.3,"targetPrice":84.8,"stopPrice":71.5,"status":"open"}
+{"symbol":"TD","added":"2026-07-03","entry":118.9,"tier":"core","targetPct":10,"targetPrice":130.8,"stopPrice":110.6,"status":"open"}
+{"symbol":"RY","added":"2026-07-03","entry":204.8,"tier":"core","targetPct":10,"targetPrice":225.3,"stopPrice":190.5,"status":"open"}
+{"symbol":"BMO","added":"2026-07-03","entry":177.6,"tier":"core","targetPct":10,"targetPrice":195.4,"stopPrice":165.2,"status":"open"}
+{"symbol":"WTS","added":"2026-07-03","entry":368.6,"tier":"core","targetPct":10,"targetPrice":405.4,"stopPrice":342.8,"status":"open"}
