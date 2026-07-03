@@ -71,6 +71,20 @@ export function summarizeTraces(records) {
   const flat = traces.filter(t => t.verdict === 'FLAT').length;
   const scalpable = scored.filter(t => t.scalpablePop).length;
 
+  // Segment by day type: normal vs report days (NFP/CPI/FOMC, flagged via t.event).
+  // Report days are tracked as a SEPARATE cohort because macro overrides technicals.
+  const cohort = (subset) => {
+    const r = subset.filter(t => t.verdict === 'RIGHT').length;
+    const w = subset.filter(t => t.verdict === 'WRONG').length;
+    const sc = subset.filter(t => t.mfePct != null);
+    return {
+      days: subset.length, right: r, wrong: w,
+      flat: subset.filter(t => t.verdict === 'FLAT').length,
+      closedRightPct: pctOf(r, r + w),
+      scalpablePct: pctOf(sc.filter(t => t.scalpablePop).length, sc.length),
+    };
+  };
+
   const bucket = (lo, hi) => {
     const b = scored.filter(t => t.confidence >= lo && t.confidence < hi);
     return {
@@ -89,5 +103,9 @@ export function summarizeTraces(records) {
     avgMfe: r2(avg(scored.map(t => t.mfePct))),
     avgMae: r2(avg(scored.map(t => t.maePct))),
     byConfidence: { '45-60': bucket(45, 60), '60-75': bucket(60, 75), '75-100': bucket(75, 101) },
+    byDayType: {
+      normal: cohort(traces.filter(t => !t.event)),
+      report: cohort(traces.filter(t => t.event)),
+    },
   };
 }

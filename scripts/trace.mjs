@@ -11,6 +11,9 @@
  */
 import { readFileSync, appendFileSync, mkdirSync } from 'node:fs';
 import { evaluateDay, summarizeTraces } from '../src/consensus/forwardTrace.js';
+import { eventFor } from '../src/consensus/econEvents.js';
+
+const loadEvents = () => { try { return JSON.parse(readFileSync('data/econ_events.json', 'utf8')); } catch { return {}; } };
 
 const cmd = process.argv[2];
 const arg = (k, d) => { const h = process.argv.find(a => a.startsWith(`--${k}=`)); return h ? h.slice(k.length + 3) : d; };
@@ -23,8 +26,11 @@ if (cmd === 'eval') {
     date: arg('date'), predictedDir: (arg('dir') || 'SIDEWAYS').toUpperCase(), confidence: num('conf') || 0,
     open: num('open'), midday: num('midday'), high: num('high'), low: num('low'), close: num('close'),
   });
+  // Report-day label: explicit --event=, else look it up from the calendar.
+  const event = arg('event') || (day.date ? eventFor(day.date, loadEvents()) : null) || null;
   L('\n========  FORWARD TRACE — ' + (day.date || 'today') + '  ========');
   L(`  called:  ${day.predictedDir} ${day.confidence}%   open ${day.open}`);
+  if (event) L(`  ⚠️ report day: ${event}  (tracked separately)`);
   L(`  path:    open → midday ${day.midday ?? '—'} (${day.middayMovePct ?? '—'}%) → close ${day.close} (${day.closeMovePct >= 0 ? '+' : ''}${day.closeMovePct}%)`);
   L(`  range:   high ${day.high} / low ${day.low}`);
   if (day.verdict !== 'NO-TRADE') {
@@ -37,7 +43,7 @@ if (cmd === 'eval') {
   if (process.argv.includes('--log')) {
     const logfile = arg('logfile') || TRACE_LOG;
     mkdirSync(logfile.includes('/') ? logfile.replace(/\/[^/]*$/, '') : '.', { recursive: true });
-    appendFileSync(logfile, JSON.stringify({ type: 'trace', ...day }) + '\n');
+    appendFileSync(logfile, JSON.stringify({ type: 'trace', ...day, event }) + '\n');
     L(`  (logged → ${logfile})`);
   }
   L('==================================================\n');
@@ -58,14 +64,21 @@ if (cmd === 'eval') {
   }
   L('===========================================\n');
 } else if (cmd === 'record') {
-  // Compact one-liner for the SPY channel EOD trace (public running record).
+  // Segmented running record for the SPY channel EOD trace — normal vs report days.
   const path = process.argv[3] || TRACE_LOG;
   let recs = [];
   try { recs = readFileSync(path, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)); } catch { process.exit(0); }
   const s = summarizeTraces(recs);
-  L(`\n📈 SPY record: ${s.right}R · ${s.wrong}W · ${s.flat}F · ${s.closedRightPct}% hit-rate · ${s.scalpablePct}% scalpable (${s.days} graded)`);
+  const n = s.byDayType.normal, rp = s.byDayType.report;
+  L(`\n📈 SPY record — normal days: ${n.right}R · ${n.wrong}W · ${n.flat}F · ${n.closedRightPct}% hit-rate (${n.days}d)`);
+  if (rp.days) L(`⚠️ report days (NFP/CPI/FOMC): ${rp.right}R · ${rp.wrong}W · ${rp.flat}F · ${rp.closedRightPct}% hit-rate (${rp.days}d)`);
+  L(`   overall ${s.closedRightPct}% · ${s.scalpablePct}% scalpable (${s.days} graded)`);
+} else if (cmd === 'event') {
+  // Report-day lookup: prints the label for a date (empty line if a normal day).
+  const date = process.argv[3];
+  L(eventFor(date, loadEvents()) || '');
 } else {
-  console.error('usage: trace.mjs eval --dir=UP --conf=69 --open=.. --high=.. --low=.. --close=.. [--midday=..] [--log]');
-  console.error('       trace.mjs summary [logs/spy_trace.jsonl]  |  trace.mjs record [logs/spy_trace.jsonl]');
+  console.error('usage: trace.mjs eval --dir=UP --conf=69 --open=.. [--event=..] [--log]');
+  console.error('       trace.mjs summary|record [logs/spy_trace.jsonl]  |  trace.mjs event YYYY-MM-DD');
   process.exit(1);
 }
