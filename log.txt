@@ -26,3 +26,7 @@ Fri Jul  3 20:15:52 UTC 2026
 SYMS=
 step2 empty
 weeklygrade: graded 0 today, 0 total
+step1 8041
+step2 tickers: WTS,ETSY,BMO,TD,VIK,MTH,LUV,TVTX,FTNT,RY
+step3 17407
+step4 stdout: swings: 6 new, 10 already active
