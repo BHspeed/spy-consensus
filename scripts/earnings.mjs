@@ -13,8 +13,10 @@
  * Covers the whole high-market-cap tape, ranked by |EPS surprise|; active swing
  * picks are always included and labeled. news-* routes to the News channel.
  */
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, appendFileSync, mkdirSync, existsSync } from 'node:fs';
 import { analyzeEarnings } from '../src/strategies/earnings/earningsAnalyze.js';
+
+const SEEN = 'data/earnings_seen.jsonl';
 
 const CAP = 10;
 const num = (s) => parseFloat(String(s).replace(/[,$]/g, '')) || 0;
@@ -62,12 +64,18 @@ if (mode === 'run') {
     return before ? ((after - before) / before) * 100 : null;
   };
 
+  const seen = new Set();
+  try { readFileSync(SEEN, 'utf8').split('\n').filter(Boolean).forEach((l) => seen.add(JSON.parse(l).key)); } catch { /* first run */ }
+
   const analyzed = reporters(cal).map((e) => {
     const a = analyzeEarnings({ symbol: e.symbol, epsEstimate: e.eps.estimate, epsActual: e.eps.actual, quarter: e.quarter, year: e.year, priceReactionPct: reaction(e) });
     a.isSwing = sw.has(e.symbol);
+    a.reportDate = e.report.date;
+    a.key = `${e.symbol}|${e.report.date}`;
     return a;
   }).sort((a, b) => (b.isSwing ? 1 : 0) - (a.isSwing ? 1 : 0) || Math.abs(b.surprisePct || 0) - Math.abs(a.surprisePct || 0));
-  const top = analyzed.slice(0, CAP);
+  // Post once, when the reaction has resolved (AMC reporters land the next run).
+  const top = analyzed.filter((a) => a.priceReactionPct != null && !seen.has(a.key)).slice(0, CAP);
 
   const out = [`**📰 Earnings & News — ${today}**`];
   const emit = (a) => { out.push(`\n**${a.headline}**${a.isSwing ? '  _(your swing)_' : ''}`); out.push(`   ${a.note}`); };
@@ -79,7 +87,7 @@ if (mode === 'run') {
   if (bull.length) { out.push('\n__📈 bullish__'); bull.forEach(emit); }
   if (bear.length) { out.push('\n__📉 bearish__'); bear.forEach(emit); }
   if (mixed.length) { out.push('\n__➖ mixed / muted__'); mixed.forEach(emit); }
-  if (!top.length) out.push('\n_No notable large-cap earnings reported in the window._');
+  if (!top.length) out.push('\n_No new large-cap earnings with confirmed reactions today._');
 
   const upSwing = (upcoming?.data?.results || []).filter((e) => sw.has(e.symbol) && (!e.eps || e.eps.actual == null || e.eps.actual === ''));
   if (upSwing.length) {
@@ -89,8 +97,10 @@ if (mode === 'run') {
   out.push('\n_critical read = EPS surprise × price reaction; divergences (beat-but-sold-off, miss-but-rallied) are the real tell._');
 
   mkdirSync('outbox', { recursive: true });
+  mkdirSync('data', { recursive: true });
   writeFileSync(`outbox/news-${today}.md`, out.join('\n'));
-  console.log(`earnings: ${top.length} analyzed, ${upSwing.length} swing picks upcoming`);
+  for (const a of top) appendFileSync(SEEN, JSON.stringify({ key: a.key, on: today }) + '\n'); // dedupe future runs
+  console.log(`earnings: ${top.length} posted, ${upSwing.length} swing picks upcoming`);
   process.exit(0);
 }
 

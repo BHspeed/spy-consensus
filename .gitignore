@@ -14,3 +14,6 @@ temp_*
 discovery-log.json
 scan.json
 fund.json
+reported.json
+upcoming.json
+histE.json
