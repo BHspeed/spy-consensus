@@ -59,6 +59,7 @@ const last = daily[daily.length - 1];
 const optionQuotes = load(arg('options')).map(q => ({ ...q, strike: +q.strike }));
 
 const bundle = {
+  symbol: arg('symbol', 'SPY'),
   asOf: arg('asof', new Date().toISOString()),
   expiry: arg('expiry'),
   lastPrice: +arg('spot', last ? last.close : 0),

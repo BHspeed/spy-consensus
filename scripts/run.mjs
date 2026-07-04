@@ -21,10 +21,10 @@ const file = args.find(a => !a.startsWith('--'));
 const LOG_PATH = 'logs/spy_runs.jsonl';
 
 // ---- assemble inputs -------------------------------------------------------
-let daily, hourly, intraday, priorDay, lastPrice, expiry, contracts, asOf;
+let daily, hourly, intraday, priorDay, lastPrice, expiry, contracts, asOf, symbol;
 if (file) {
   const b = JSON.parse(readFileSync(file, 'utf8'));
-  ({ priorDay, lastPrice, expiry, asOf } = b);
+  ({ priorDay, lastPrice, expiry, asOf, symbol } = b);
   daily = b.daily; hourly = b.hourly || []; intraday = b.intraday || [];
   contracts = (b.optionQuotes || []).map(q => fromRobinhood(q.strike, q.type || 'call', q));
 } else {
@@ -42,6 +42,7 @@ if (file) {
 const verdict = buildVerdict({ daily, hourly, intraday, priorDay, lastPrice });
 const dir = verdict.bias.includes('UP') ? 'UP' : verdict.bias.includes('DOWN') ? 'DOWN' : 'SIDEWAYS';
 const oppDir = dir === 'UP' ? 'DOWN' : 'UP';
+const SYMBOL = symbol || process.env.SYMBOL || 'SPY';
 const L = (s = '') => console.log(s);
 
 const logEntry = {
@@ -56,7 +57,7 @@ function writeLog() {
   L(`  (logged → ${LOG_PATH})`);
 }
 
-L('\n===================  SPY — RUN IT  ===================');
+L(`\n===================  ${SYMBOL} — RUN IT  ===================`);
 L(`  as of ${asOf}   price ~${verdict.lastPrice}`);
 L('');
 L(`  CONSENSUS:   ${dir}   ·   ${verdict.confidence}% confident`);
@@ -105,8 +106,8 @@ if (credit) {
   L(`     ${credit.structure.replace('CREDIT ', 'SELL ')}   (${expiry})`);
   L(`     collect      $${got}`);
   L(`     TAKE HALF  ~ $${buyback}    <-- buy back here, bank ~$${got - buyback} (don't hold for the last dollar)`);
-  L(`     max loss     $${credit.maxLoss}   (if SPY ${dir === 'UP' ? 'drops below' : 'runs above'} ${credit.legs[1].strike})`);
-  L(`     keeps profit if SPY stays ${dir === 'UP' ? 'above' : 'below'} ${shortK}`);
+  L(`     max loss     $${credit.maxLoss}   (if ${SYMBOL} ${dir === 'UP' ? 'drops below' : 'runs above'} ${credit.legs[1].strike})`);
+  L(`     keeps profit if ${SYMBOL} stays ${dir === 'UP' ? 'above' : 'below'} ${shortK}`);
 }
 
 L('');
