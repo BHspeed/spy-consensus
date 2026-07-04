@@ -26,6 +26,7 @@ jobs:
           SWINGS_WEBHOOK: ${{ secrets.DISCORD_SWINGS_WEBHOOK || 'https://discord.com/api/webhooks/1522074758559039568/h80g9YEsvyt6zza4hKg_iGFUFvBUxk1XyPpXnzRKGvJYlu0mZdC4yL67_Gzodv-9TbjD' }}
           NEWS_WEBHOOK: ${{ secrets.DISCORD_NEWS_WEBHOOK || 'https://discord.com/api/webhooks/1522614208309628930/tF92f7AqyTL_6KTH6St7zQ3iL06bcyT0Gottb9zq4Fz_mnl9PenCYtYuMCZu7GJu9-e0' }}
           WEEKLY_WEBHOOK: ${{ secrets.DISCORD_WEEKLY_WEBHOOK || 'https://discord.com/api/webhooks/1522638148855795872/2C9HAtr6fKJNWXAC5TJflGWgKhU4AT6qBOPCPq2YISwdYwS8VkiaSFd4unAkSJhPH3I5' }}
+          TSLA_WEBHOOK: ${{ secrets.DISCORD_TSLA_WEBHOOK || 'https://discord.com/api/webhooks/1523037727426089051/SyWqZ7LCavzjj93QHaoJ-ruMa98Q37Qcsm9ujXoEqLb3Wad0AWwdWemmbHbyGy_w8TMv' }}
         run: |
           set -e
           files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'outbox/' | grep -E '\.(md|txt)$' || true)
@@ -38,6 +39,7 @@ jobs:
               swings-*) WH="$SWINGS_WEBHOOK"; echo "routing $f -> swings channel" ;;
               news-*)   WH="$NEWS_WEBHOOK";   echo "routing $f -> news channel" ;;
               weekly-*) WH="$WEEKLY_WEBHOOK"; echo "routing $f -> weekly options channel" ;;
+              tsla-*)   WH="$TSLA_WEBHOOK";   echo "routing $f -> tsla channel" ;;
               *)        WH="$MAIN_WEBHOOK";   echo "routing $f -> trading channel" ;;
             esac
             # Retry up to 4x on any non-2xx (incl. 429 rate-limit) before failing.
