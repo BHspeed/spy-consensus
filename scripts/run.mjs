@@ -17,6 +17,7 @@ import * as sample from './_data.mjs';
 
 const args = process.argv.slice(2);
 const wantLog = args.includes('--log');
+const wantSingle = args.includes('--single');
 const file = args.find(a => !a.startsWith('--'));
 const LOG_PATH = 'logs/spy_runs.jsonl';
 
@@ -110,10 +111,22 @@ if (credit) {
   L(`     keeps profit if ${SYMBOL} stays ${dir === 'UP' ? 'above' : 'below'} ${shortK}`);
 }
 
+if (wantSingle && longAlt) {
+  const e = longAlt.cost;
+  logEntry.tradeC = { structure: longAlt.structure, pay: e, bank: Math.round(e * 1.10), target: Math.round(e * 1.20), stop: Math.round(e * 0.80) };
+  L('');
+  L(`  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):`);
+  L(`     BUY ${longAlt.structure.replace('LONG ', '')}   (${expiry})`);
+  L(`     pay          $${e}`);
+  L(`     BANK +10%  ~ $${Math.round(e * 1.10)}    <-- take the flip when it comes (don't need to be right on strike)`);
+  L(`     TARGET +20% ~ $${Math.round(e * 1.20)}`);
+  L(`     stop       ~ $${Math.round(e * 0.80)}    (-20%, or if consensus turns ${oppDir})`);
+}
+
 L('');
 L(`  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.`);
 L(`  size: ${verdict.confidence >= 60 ? 'normal' : 'half'} (${verdict.confidence}% confidence).  never add to a loser.`);
-if (longAlt) L(`  fastest mover (most scalp-y): BUY ${longAlt.structure.replace('LONG ', '')} for ~$${longAlt.cost}.`);
+if (longAlt && !wantSingle) L(`  fastest mover (most scalp-y): BUY ${longAlt.structure.replace('LONG ', '')} for ~$${longAlt.cost}.`);
 L(`  read: trend is ${dir}. A rides+scalps the move; B is slower income if it just doesn't reverse.`);
 logEntry.decision = 'IDEAS';
 writeLog();
