@@ -4,3 +4,9 @@ step1 complete
 quotes.json written: 8439 bytes
 step3 75428
 step4: swingcheck: 14 open, 0 closed this week, 2 total closed
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 done
+wrote NVDL
+done writing TQQQ
+step2 wrote 10 files
+levetf: 1 new, 0 closed this run, 0 graded total
