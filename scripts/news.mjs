@@ -10,7 +10,7 @@
  *   node scripts/news.mjs prep [news_feed.json] [n]
  */
 import { readFileSync } from 'node:fs';
-import { lexiconSentiment, scoreNews } from '../src/news/newsSignal.js';
+import { lexiconSentiment, scoreNews, newsVsConsensus } from '../src/news/newsSignal.js';
 
 const mode = process.argv[2];
 const rest = process.argv.slice(3);
@@ -44,5 +44,38 @@ if (mode === 'prep') {
   process.exit(0);
 }
 
-console.error('usage: news.mjs prep [news_feed.json] [n]');
+if (mode === 'factor') {
+  // News decision-aid for one ticker: tone + how it lines up with the consensus.
+  const sym = (rest[0] || '').toUpperCase();
+  const dir = (rest[1] || '').toUpperCase();
+  const has = (it) => (it.tickers || []).map((t) => String(t).toUpperCase()).includes(sym);
+  const symItems = items.filter(has);
+  const pool = symItems.length ? symItems : items.filter((it) => (it.tickers || []).includes('general')).slice(0, 6);
+
+  const seen = new Set();
+  const uniq = [];
+  for (const it of pool) {
+    const k = (it.headline || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().slice(0, 80);
+    if (!k || seen.has(k)) continue;
+    seen.add(k);
+    uniq.push(it);
+  }
+  const net = scoreNews(uniq.map((it) => ({ title: `${it.headline} ${it.summary || ''}`, source: it.source })));
+  const align = dir ? newsVsConsensus(net.score, dir) : null;
+  const alignWord = !align ? ''
+    : align === 'agrees' ? ` · agrees with the ${dir} read ✅`
+      : align === 'disagrees' ? ` · DISAGREES with the ${dir} read ⚠️ (caution)`
+        : ` · neutral to the ${dir} read`;
+  const src = symItems.length ? `${sym}-specific` : 'market';
+
+  console.log(`**📰 ${sym} news check** — ${net.label} (${src}, ${uniq.length} headlines)${alignWord}`);
+  uniq.slice(0, 3).forEach((it) => {
+    const s = lexiconSentiment(`${it.headline} ${it.summary || ''}`);
+    const dot = s > 0.05 ? '🟢' : s < -0.05 ? '🔴' : '⚪';
+    console.log(`${dot} ${it.headline}`);
+  });
+  process.exit(0);
+}
+
+console.error('usage: news.mjs prep [feed] [n]  |  news.mjs factor <SYMBOL> [DIR] [feed]');
 process.exit(1);
