@@ -1,0 +1,12 @@
+[
+  { "etf": "TSLL", "parent": "TSLA", "lev": 2 },
+  { "etf": "NVDL", "parent": "NVDA", "lev": 2 },
+  { "etf": "TQQQ", "parent": "Nasdaq-100", "lev": 3 },
+  { "etf": "SOXL", "parent": "Semis", "lev": 3 },
+  { "etf": "UPRO", "parent": "S&P 500", "lev": 3 },
+  { "etf": "AMZU", "parent": "AMZN", "lev": 2 },
+  { "etf": "GGLL", "parent": "GOOGL", "lev": 2 },
+  { "etf": "MSFU", "parent": "MSFT", "lev": 2 },
+  { "etf": "METU", "parent": "META", "lev": 2 },
+  { "etf": "FNGU", "parent": "FANG+", "lev": 3 }
+]
