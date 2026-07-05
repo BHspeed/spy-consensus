@@ -53,14 +53,21 @@ export function scoreLevSwing(bars, meta) {
   const sma50 = sma(closes, Math.min(50, closes.length));
   const aboveMA = price > sma50;
 
-  // Oversold-bounce setup: cheap (low RSI), near a recent low, meaningfully dipped.
-  // Leveraged ETFs rarely hit classic <30 RSI without crashing, so the bar is ~45.
-  const qualifies = r < 45 && distToLowPct < 8 && pullbackPct > 12;
+  // FLOOR: the multi-month low (the strongest tell). A 2x/3x near a floor it hasn't
+  // broken in months is a high-odds bounce — that's the core of this strategy.
+  const floor = Math.min(...lows);
+  const distToFloorPct = r1(((price - floor) / floor) * 100);
+  const nearFloor = distToFloorPct <= 10 && r < 58;
+
+  // Buy either at the multi-month floor OR a fresh oversold 20-day-low dip.
+  const oversoldDip = r < 45 && distToLowPct < 8 && pullbackPct > 12;
+  const qualifies = nearFloor || oversoldDip;
   const score = r1(
-    (42 - Math.min(r, 42)) * 1.2       // more oversold = better
-    + Math.max(0, 6 - distToLowPct) * 2 // closer to the low = better
-    + Math.min(pullbackPct, 40) * 0.4   // deeper pullback = more to recover
-    + (aboveMA ? 4 : 0),                // dip in an uptrend > falling knife
+    Math.max(0, 12 - distToFloorPct) * 3  // near the multi-month FLOOR = strongest
+    + (42 - Math.min(r, 42)) * 1.2        // more oversold
+    + Math.max(0, 6 - distToLowPct) * 1.5 // near the recent low
+    + Math.min(pullbackPct, 40) * 0.3     // deeper pullback = more to recover
+    + (aboveMA ? 4 : 0),                  // dip in an uptrend > falling knife
   );
 
   const targetPct = clamp(r1(a * 2.5), 8, 25);   // a bounce ≈ a few daily ATRs (amplified)
@@ -68,6 +75,7 @@ export function scoreLevSwing(bars, meta) {
   return {
     etf: meta.etf, parent: meta.parent, lev: meta.lev, price: r2(price),
     rsi: Math.round(r), pullbackPct, distToLowPct, atrPct: r1(a), aboveMA, qualifies, score,
+    floor: r2(floor), distToFloorPct, nearFloor,
     targetPct, target: r2(price * (1 + targetPct / 100)),
     stopPct, stop: r2(price * (1 - stopPct / 100)),
     parentMovePct: r1(targetPct / meta.lev), // implied parent move for the target
