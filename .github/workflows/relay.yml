@@ -28,6 +28,7 @@ jobs:
           WEEKLY_WEBHOOK: ${{ secrets.DISCORD_WEEKLY_WEBHOOK || 'https://discord.com/api/webhooks/1522638148855795872/2C9HAtr6fKJNWXAC5TJflGWgKhU4AT6qBOPCPq2YISwdYwS8VkiaSFd4unAkSJhPH3I5' }}
           TSLA_WEBHOOK: ${{ secrets.DISCORD_TSLA_WEBHOOK || 'https://discord.com/api/webhooks/1523037727426089051/SyWqZ7LCavzjj93QHaoJ-ruMa98Q37Qcsm9ujXoEqLb3Wad0AWwdWemmbHbyGy_w8TMv' }}
           LEVETF_WEBHOOK: ${{ secrets.DISCORD_LEVETF_WEBHOOK || 'https://discord.com/api/webhooks/1523168361628827789/rHHMdq-Fnb5iA7BZzUeY8tKOAsAbZ93i8xbnVXKRbCU7WRC0rdbY95pHO9aWhm1bgydJ' }}
+          THEME_WEBHOOK: ${{ secrets.DISCORD_THEME_WEBHOOK || 'https://discord.com/api/webhooks/1523673943591096362/qvRECuDLNQzvdK--uC2_59WRX3hne4UhqtNe8gaCR7Q4NvbaX6aUhPOqKLa_6tkonYWm' }}
         run: |
           set -e
           files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'outbox/' | grep -E '\.(md|txt)$' || true)
@@ -42,6 +43,7 @@ jobs:
               weekly-*) WH="$WEEKLY_WEBHOOK"; echo "routing $f -> weekly options channel" ;;
               tsla-*)   WH="$TSLA_WEBHOOK";   echo "routing $f -> tsla channel" ;;
               levetf-*) WH="$LEVETF_WEBHOOK"; echo "routing $f -> leveraged ETF channel" ;;
+              theme-*)  WH="$THEME_WEBHOOK";  echo "routing $f -> quantum/nuclear channel" ;;
               *)        WH="$MAIN_WEBHOOK";   echo "routing $f -> trading channel" ;;
             esac
             # Retry up to 4x on any non-2xx (incl. 429 rate-limit) before failing.
