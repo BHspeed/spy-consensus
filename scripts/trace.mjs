@@ -64,13 +64,14 @@ if (cmd === 'eval') {
   }
   L('===========================================\n');
 } else if (cmd === 'record') {
-  // Segmented running record for the SPY channel EOD trace — normal vs report days.
-  const path = process.argv[3] || TRACE_LOG;
+  // Segmented running record for the EOD trace — normal vs report days.
+  const path = process.argv.slice(3).find(a => !a.startsWith('--')) || TRACE_LOG;
+  const label = arg('label', 'SPY');
   let recs = [];
   try { recs = readFileSync(path, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)); } catch { process.exit(0); }
   const s = summarizeTraces(recs);
   const n = s.byDayType.normal, rp = s.byDayType.report;
-  L(`\n📈 SPY record — normal days: ${n.right}R · ${n.wrong}W · ${n.flat}F · ${n.closedRightPct}% hit-rate (${n.days}d)`);
+  L(`\n📈 ${label} record — normal days: ${n.right}R · ${n.wrong}W · ${n.flat}F · ${n.closedRightPct}% hit-rate (${n.days}d)`);
   if (rp.days) L(`⚠️ report days (NFP/CPI/FOMC): ${rp.right}R · ${rp.wrong}W · ${rp.flat}F · ${rp.closedRightPct}% hit-rate (${rp.days}d)`);
   L(`   overall ${s.closedRightPct}% · ${s.scalpablePct}% scalpable (${s.days} graded)`);
 } else if (cmd === 'event') {
