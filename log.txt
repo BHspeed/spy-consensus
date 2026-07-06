@@ -24,11 +24,7 @@ SYMS=SPY,NVDA,TSLA
 step2 placeholder
 step2 3345
 step3: weeklygrade: graded 3 today, 3 total
-step1 8182
-step2 tickers: LUV,IHG,FTNT,MTH,TVTX,ETSY,BMO,WTS,VIK,CFG
-step3 15775
-step4: swings: 0 new, 18 already active
-step1 ok
-SYMS=
-step2 SYMS empty, placeholder written
-step6 news appended
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 done
+step2 wrote 19 files
+theme: 19 scored, 4 setups
