@@ -111,16 +111,28 @@ if (credit) {
   L(`     keeps profit if ${SYMBOL} stays ${dir === 'UP' ? 'above' : 'below'} ${shortK}`);
 }
 
-if (wantSingle && longAlt) {
-  const e = longAlt.cost;
-  logEntry.tradeC = { structure: longAlt.structure, pay: e, bank: Math.round(e * 1.10), target: Math.round(e * 1.20), stop: Math.round(e * 0.80) };
-  L('');
-  L(`  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):`);
-  L(`     BUY ${longAlt.structure.replace('LONG ', '')}   (${expiry})`);
-  L(`     pay          $${e}`);
-  L(`     BANK +10%  ~ $${Math.round(e * 1.10)}    <-- take the flip when it comes (don't need to be right on strike)`);
-  L(`     TARGET +20% ~ $${Math.round(e * 1.20)}`);
-  L(`     stop       ~ $${Math.round(e * 0.80)}    (-20%, or if consensus turns ${oppDir})`);
+// TRADE C — value-flip single: a CHEAPER OTM leg (delta ~0.35-0.5) that flips
+// 10%+ on a small move, NOT the pricey ATM. (The ATM long_single is high-delta
+// and costs 2-3x as much; for a scalp we want the cheaper, higher-leverage OTM.)
+if (wantSingle && contracts.length) {
+  const side = dir === 'UP' ? 'call' : 'put';
+  const liquid = (c) => c.oi >= 300 || c.volume >= 300;
+  const pool = contracts.filter((c) => c.type === side && c.mark >= 0.2 && Number.isFinite(c.delta));
+  const band = pool.filter((c) => Math.abs(c.delta) >= 0.33 && Math.abs(c.delta) <= 0.5 && liquid(c));
+  const vf = (band.length ? band : pool.filter(liquid)).sort((a, b) => a.mark - b.mark)[0]
+    || pool.sort((a, b) => a.mark - b.mark)[0];
+  if (vf) {
+    const e = Math.round(vf.mark * 100);
+    const label = `${vf.strike}${side[0].toUpperCase()}`;
+    logEntry.tradeC = { structure: `LONG ${label}`, pay: e, delta: +Math.abs(vf.delta).toFixed(2), bank: Math.round(e * 1.10), target: Math.round(e * 1.20), stop: Math.round(e * 0.80) };
+    L('');
+    L('  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):');
+    L(`     BUY ${label}   (${expiry})   ~${Math.round(Math.abs(vf.delta) * 100)}Δ`);
+    L(`     pay          $${e}   (cheaper OTM — flips 10%+ on a small move)`);
+    L(`     BANK +10%  ~ $${Math.round(e * 1.10)}    <-- take the flip when it comes (don't need to be right on strike)`);
+    L(`     TARGET +20% ~ $${Math.round(e * 1.20)}`);
+    L(`     stop       ~ $${Math.round(e * 0.80)}    (-20%, or if consensus turns ${oppDir})`);
+  }
 }
 
 L('');
