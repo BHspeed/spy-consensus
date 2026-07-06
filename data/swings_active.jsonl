@@ -14,3 +14,5 @@
 {"symbol":"RY","added":"2026-07-03","entry":204.8,"tier":"core","targetPct":10,"targetPrice":225.3,"stopPrice":190.5,"status":"open","lastGainPct":0,"peakPct":null}
 {"symbol":"BMO","added":"2026-07-03","entry":177.6,"tier":"core","targetPct":10,"targetPrice":195.4,"stopPrice":165.2,"status":"open","lastGainPct":-2,"peakPct":null}
 {"symbol":"WTS","added":"2026-07-03","entry":368.6,"tier":"core","targetPct":10,"targetPrice":405.4,"stopPrice":342.8,"status":"open","lastGainPct":0.1,"peakPct":null}
+{"symbol":"CFG","added":"2026-07-06","entry":72.1,"tier":"core","targetPct":10,"targetPrice":79.3,"stopPrice":67.1,"status":"open"}
+{"symbol":"IHG","added":"2026-07-06","entry":166.4,"tier":"core","targetPct":10,"targetPrice":183.1,"stopPrice":154.8,"status":"open"}
