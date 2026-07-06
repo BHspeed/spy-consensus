@@ -1,16 +1,32 @@
-⚠️ MACRO RISK: NFP jobs report today — a scheduled report can override the technical read; size down or wait for the reaction.
+**TSLA morning — 2026-07-06**
+CONSENSUS: DOWN · 57% (spot 400.15)
 
-**SPY morning — 2026-07-03**
-CONSENSUS: SIDEWAYS · 49% (spot 744.80)
-
+**📰 TSLA news check** — neutral (TSLA-specific, 4 headlines) · neutral to the DOWN read
+⚪ Tesla Stock Rises as the Slow Robo-Taxi Rollout Heads to Miami
+🟢 Electric Vehicles Today - Wireless Charging Revolutionizing Future of Vehicle Technology
+⚪ The Investors Scrambling to Keep SpaceX - and Elon Musk - Out of Their Portfolios
 ```
+===================  TSLA — RUN IT  ===================
+  as of 2026-07-06   price ~400.15
 
-===================  SPY — RUN IT  ===================
-  as of 2026-07-03T13:49:58.782Z   price ~744.8
+  CONSENSUS:   DOWN   ·   57% confident
 
-  CONSENSUS:   SIDEWAYS   ·   49% confident
+  TRADE A — PUT spread  (BUY, scalp the move DOWN):   conf 75%
+     BUY 400/390P   (2026-07-08)
+     pay          $353
+     SCALP OUT  ~ $459    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $247    (-30%, or if consensus turns UP)
+     room to max  $1000
 
-  >>> NO TRADE today — direction unclear / low confidence.
-      Sitting out is the call (a result, not a miss).
+  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
+     BUY 400P   (2026-07-08)
+     pay          $632.5
+     BANK +10%  ~ $696    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $759
+     stop       ~ $506    (-20%, or if consensus turns UP)
+
+  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
+  size: half (57% confidence).  never add to a loser.
+  read: trend is DOWN. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
