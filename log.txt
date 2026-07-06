@@ -10,3 +10,6 @@ wrote NVDL
 done writing TQQQ
 step2 wrote 10 files
 levetf: 1 new, 0 closed this run, 0 graded total
+=== QUANTUM & NUCLEAR THEME RUN 2026-07-06 ===
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step2 wrote 19 files
