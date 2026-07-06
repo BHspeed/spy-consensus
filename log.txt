@@ -20,3 +20,7 @@ TSLA UP spot 393.45 move 2.5% -> pull CALLS strikes 392,393,394,395,396
 AMD DOWN spot 517.82 move 2.5% -> pull PUTS strikes 519,518,517,516,515
 opts 4505
 weeklies: 3 picks (3 logged)
+SYMS=SPY,NVDA,TSLA
+step2 placeholder
+step2 3345
+step3: weeklygrade: graded 3 today, 3 total
