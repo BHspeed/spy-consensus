@@ -16,7 +16,7 @@
     "tv": "node src/cli/index.js",
     "test": "node --test tests/e2e.test.js tests/pine_analyze.test.js",
     "test:e2e": "node --test tests/e2e.test.js",
-    "test:unit": "node --test tests/pine_analyze.test.js tests/cli.test.js tests/consensus.test.js tests/option_select.test.js tests/log_stats.test.js tests/forward_trace.test.js tests/news_signal.test.js tests/swing_score.test.js tests/swing_grade.test.js tests/econ_events.test.js tests/earnings_analyze.test.js tests/weekly_option.test.js tests/weekly_grade.test.js tests/lev_swing.test.js tests/lev_grade.test.js",
+    "test:unit": "node --test tests/pine_analyze.test.js tests/cli.test.js tests/consensus.test.js tests/option_select.test.js tests/log_stats.test.js tests/forward_trace.test.js tests/news_signal.test.js tests/swing_score.test.js tests/swing_grade.test.js tests/econ_events.test.js tests/earnings_analyze.test.js tests/weekly_option.test.js tests/weekly_grade.test.js tests/lev_swing.test.js tests/lev_grade.test.js tests/theme_score.test.js",
     "test:cli": "node --test tests/cli.test.js",
     "test:consensus": "node --test tests/consensus.test.js tests/option_select.test.js tests/log_stats.test.js tests/forward_trace.test.js",
     "consensus": "node scripts/consensus.mjs",

@@ -1,0 +1,21 @@
+[
+  { "ticker": "IONQ", "group": "Quantum", "name": "IonQ" },
+  { "ticker": "RGTI", "group": "Quantum", "name": "Rigetti" },
+  { "ticker": "QBTS", "group": "Quantum", "name": "D-Wave" },
+  { "ticker": "QUBT", "group": "Quantum", "name": "Quantum Computing Inc" },
+  { "ticker": "ARQQ", "group": "Quantum", "name": "Arqit" },
+  { "ticker": "LAES", "group": "Quantum", "name": "SEALSQ" },
+  { "ticker": "OKLO", "group": "Nuclear/SMR", "name": "Oklo" },
+  { "ticker": "SMR", "group": "Nuclear/SMR", "name": "NuScale" },
+  { "ticker": "NNE", "group": "Nuclear/SMR", "name": "Nano Nuclear" },
+  { "ticker": "LEU", "group": "Nuclear/SMR", "name": "Centrus" },
+  { "ticker": "BWXT", "group": "Nuclear/SMR", "name": "BWX Technologies" },
+  { "ticker": "CCJ", "group": "Uranium", "name": "Cameco" },
+  { "ticker": "UEC", "group": "Uranium", "name": "Uranium Energy" },
+  { "ticker": "UUUU", "group": "Uranium", "name": "Energy Fuels" },
+  { "ticker": "DNN", "group": "Uranium", "name": "Denison" },
+  { "ticker": "NXE", "group": "Uranium", "name": "NexGen" },
+  { "ticker": "URA", "group": "Uranium", "name": "Uranium ETF" },
+  { "ticker": "VST", "group": "Nuclear Power", "name": "Vistra" },
+  { "ticker": "CEG", "group": "Nuclear Power", "name": "Constellation" }
+]
