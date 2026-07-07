@@ -28,3 +28,6 @@ SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,UR
 step1 done
 step2 wrote 19 files
 theme: 19 scored, 4 setups
+SYMS=SPY,NVDA,TSLA
+step2 3342
+weeklygrade: graded 3 today, 6 total
