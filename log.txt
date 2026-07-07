@@ -31,3 +31,7 @@ theme: 19 scored, 4 setups
 SYMS=SPY,NVDA,TSLA
 step2 3342
 weeklygrade: graded 3 today, 6 total
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 done
+step2 wrote 10 files
+levetf: 0 new, 0 closed this run, 0 graded total
