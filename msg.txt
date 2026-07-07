@@ -1,32 +1,35 @@
-**TSLA morning — 2026-07-06**
-CONSENSUS: DOWN · 57% (spot 400.15)
+**SPY morning — 2026-07-07**
+CONSENSUS: UP · 77% (spot 749.95)
 
-**📰 TSLA news check** — neutral (TSLA-specific, 4 headlines) · neutral to the DOWN read
-⚪ Tesla Stock Rises as the Slow Robo-Taxi Rollout Heads to Miami
-🟢 Electric Vehicles Today - Wireless Charging Revolutionizing Future of Vehicle Technology
-⚪ The Investors Scrambling to Keep SpaceX - and Elon Musk - Out of Their Portfolios
 ```
-===================  TSLA — RUN IT  ===================
-  as of 2026-07-06   price ~400.15
+===================  SPY — RUN IT  ===================
+  as of 2026-07-07T13:49:07.766Z   price ~749.95
 
-  CONSENSUS:   DOWN   ·   57% confident
+  CONSENSUS:   UP   ·   77% confident
 
-  TRADE A — PUT spread  (BUY, scalp the move DOWN):   conf 75%
-     BUY 400/390P   (2026-07-08)
-     pay          $353
-     SCALP OUT  ~ $459    <-- bank the pop (+30%); trail if it keeps flipping up
-     stop       ~ $247    (-30%, or if consensus turns UP)
-     room to max  $1000
+  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 87%
+     BUY 749/751C   (2026-07-09)
+     pay          $114.5
+     SCALP OUT  ~ $149    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $80    (-30%, or if consensus turns DOWN)
+     room to max  $200
+
+  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 72%
+     SELL 747/745P   (2026-07-09)
+     collect      $46
+     TAKE HALF  ~ $23    <-- buy back here, bank ~$23 (don't hold for the last dollar)
+     max loss     $154   (if SPY drops below 745)
+     keeps profit if SPY stays above 747
 
   TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
-     BUY 400P   (2026-07-08)
-     pay          $632.5
-     BANK +10%  ~ $696    <-- take the flip when it comes (don't need to be right on strike)
-     TARGET +20% ~ $759
-     stop       ~ $506    (-20%, or if consensus turns UP)
+     BUY 753C   (2026-07-09)   ~34Δ
+     pay          $145   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $160    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $174
+     stop       ~ $116    (-20%, or if consensus turns DOWN)
 
   GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
-  size: half (57% confidence).  never add to a loser.
-  read: trend is DOWN. A rides+scalps the move; B is slower income if it just doesn't reverse.
+  size: normal (77% confidence).  never add to a loser.
+  read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
