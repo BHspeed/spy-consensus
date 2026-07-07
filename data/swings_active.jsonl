@@ -16,3 +16,9 @@
 {"symbol":"WTS","added":"2026-07-03","entry":368.6,"tier":"core","targetPct":10,"targetPrice":405.4,"stopPrice":342.8,"status":"open","lastGainPct":0.1,"peakPct":null}
 {"symbol":"CFG","added":"2026-07-06","entry":72.1,"tier":"core","targetPct":10,"targetPrice":79.3,"stopPrice":67.1,"status":"open"}
 {"symbol":"IHG","added":"2026-07-06","entry":166.4,"tier":"core","targetPct":10,"targetPrice":183.1,"stopPrice":154.8,"status":"open"}
+{"symbol":"OSCR","added":"2026-07-07","entry":31.1,"tier":"aggressive","targetPct":30,"targetPrice":40.4,"stopPrice":28,"status":"open"}
+{"symbol":"CIB","added":"2026-07-07","entry":81.1,"tier":"core","targetPct":12.9,"targetPrice":91.5,"stopPrice":75.4,"status":"open"}
+{"symbol":"DAL","added":"2026-07-07","entry":88.5,"tier":"core","targetPct":11.8,"targetPrice":98.9,"stopPrice":82.3,"status":"open"}
+{"symbol":"UAL","added":"2026-07-07","entry":128,"tier":"core","targetPct":10,"targetPrice":140.8,"stopPrice":119,"status":"open"}
+{"symbol":"BNS","added":"2026-07-07","entry":86.2,"tier":"core","targetPct":10,"targetPrice":94.8,"stopPrice":80.2,"status":"open"}
+{"symbol":"UHAL.B","added":"2026-07-07","entry":58.4,"tier":"core","targetPct":10,"targetPrice":64.2,"stopPrice":54.3,"status":"open"}
