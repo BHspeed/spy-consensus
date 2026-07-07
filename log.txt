@@ -35,3 +35,8 @@ step1 6997
 step2 tickers: WTS,MTH,CIB,TD,DAL,UHAL.B,OSCR,LUV,BNS,UAL
 step3 16135
 step4 stdout: swings: 6 new, 18 already active
+step1 ok
+SYMS=PENG
+step3 1677
+step5 earnings analysis done
+step6 news appended
