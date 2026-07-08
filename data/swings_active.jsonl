@@ -22,3 +22,9 @@
 {"symbol":"UAL","added":"2026-07-07","entry":128,"tier":"core","targetPct":10,"targetPrice":140.8,"stopPrice":119,"status":"open"}
 {"symbol":"BNS","added":"2026-07-07","entry":86.2,"tier":"core","targetPct":10,"targetPrice":94.8,"stopPrice":80.2,"status":"open"}
 {"symbol":"UHAL.B","added":"2026-07-07","entry":58.4,"tier":"core","targetPct":10,"targetPrice":64.2,"stopPrice":54.3,"status":"open"}
+{"symbol":"PSMT","added":"2026-07-08","entry":187,"tier":"core","targetPct":12.2,"targetPrice":209.8,"stopPrice":173.9,"status":"open"}
+{"symbol":"AAL","added":"2026-07-08","entry":16.5,"tier":"core","targetPct":10.8,"targetPrice":18.2,"stopPrice":15.3,"status":"open"}
+{"symbol":"CVS","added":"2026-07-08","entry":104.5,"tier":"core","targetPct":10.2,"targetPrice":115.1,"stopPrice":97.2,"status":"open"}
+{"symbol":"GE","added":"2026-07-08","entry":354.5,"tier":"core","targetPct":10,"targetPrice":389.9,"stopPrice":329.7,"status":"open"}
+{"symbol":"LOAR","added":"2026-07-08","entry":72,"tier":"core","targetPct":10,"targetPrice":79.2,"stopPrice":67,"status":"open"}
+{"symbol":"BPOP","added":"2026-07-08","entry":166.3,"tier":"core","targetPct":10,"targetPrice":182.9,"stopPrice":154.6,"status":"open"}
