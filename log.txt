@@ -56,3 +56,8 @@ SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step2 start
 step2 wrote 10 files
 levetf: 0 new, 0 closed this run, 0 graded total
+step1 ok
+SYMS=PSMT,PENG,EPAC,LEVI,AZZ
+step3 5353
+earnings: 0 posted, 1 swing picks upcoming
+step6 news appended
