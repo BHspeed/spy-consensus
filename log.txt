@@ -40,3 +40,11 @@ SYMS=PENG
 step3 1677
 step5 earnings analysis done
 step6 news appended
+STEP 1 dirs output:
+SPY UP spot 747.71 move 0.91% -> pull CALLS strikes 747,748,749,750,751
+QQQ DOWN spot 709.43 move 1.66% -> pull PUTS strikes 710,709,708,707,706
+NVDA UP spot 196.93 move 2.25% -> pull CALLS strikes 196,197,198,199,200
+TSLA DOWN spot 402.90 move 2.5% -> pull PUTS strikes 404,403,402,401,400
+AMD DOWN spot 516.11 move 2.5% -> pull PUTS strikes 517,516,515,514,513
+opts 3449
+weeklies: 5 picks (4 logged)
