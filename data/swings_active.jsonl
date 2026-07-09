@@ -28,3 +28,7 @@
 {"symbol":"GE","added":"2026-07-08","entry":354.5,"tier":"core","targetPct":10,"targetPrice":389.9,"stopPrice":329.7,"status":"open"}
 {"symbol":"LOAR","added":"2026-07-08","entry":72,"tier":"core","targetPct":10,"targetPrice":79.2,"stopPrice":67,"status":"open"}
 {"symbol":"BPOP","added":"2026-07-08","entry":166.3,"tier":"core","targetPct":10,"targetPrice":182.9,"stopPrice":154.6,"status":"open"}
+{"symbol":"GH","added":"2026-07-09","entry":164.1,"tier":"aggressive","targetPct":30,"targetPrice":213.3,"stopPrice":147.7,"status":"open"}
+{"symbol":"UHAL","added":"2026-07-09","entry":67,"tier":"core","targetPct":10,"targetPrice":73.7,"stopPrice":62.3,"status":"open"}
+{"symbol":"SIGI","added":"2026-07-09","entry":95.5,"tier":"core","targetPct":10,"targetPrice":105.1,"stopPrice":88.8,"status":"open"}
+{"symbol":"SYY","added":"2026-07-09","entry":82,"tier":"core","targetPct":10,"targetPrice":90.2,"stopPrice":76.3,"status":"open"}
