@@ -58,7 +58,6 @@ step2 wrote 19 files
 SYMS=
 step2 placeholder
 step3 weeklygrade: graded 0 today, 10 total
-step1 12630
-step2 tickers: SYY,CVS,BPOP,SIGI,GH,FTNT,FROG,UHAL,OSCR,RY
-step3 17980
-step4 swings: 4 new, 30 already active
+SYMS: TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step2 wrote 10 files
+levetf: 0 new, 0 closed this run, 0 graded total
