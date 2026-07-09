@@ -61,3 +61,8 @@ step3 weeklygrade: graded 0 today, 10 total
 SYMS: TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step2 wrote 10 files
 levetf: 0 new, 0 closed this run, 0 graded total
+step1 ok
+PSMT,PENG,WDFC,EPAC,SMPL,LEVI,AZZ,PEP
+step3 7388
+step5 earnings analysis done
+step6 news appended
