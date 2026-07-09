@@ -66,3 +66,7 @@ PSMT,PENG,WDFC,EPAC,SMPL,LEVI,AZZ,PEP
 step3 7388
 step5 earnings analysis done
 step6 news appended
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 complete
+step2 wrote 19 files
+step3 theme: 19 scored, 6 setups
