@@ -54,3 +54,7 @@ step2 4452
 step3 graded 4 today, 10 total
 SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
 step2 wrote 19 files
+=== weekly grade start Thu Jul  9 20:15:59 UTC 2026 ===
+SYMS=
+step2 placeholder
+step3 weeklygrade: graded 0 today, 10 total
