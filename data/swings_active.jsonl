@@ -32,3 +32,10 @@
 {"symbol":"UHAL","added":"2026-07-09","entry":67,"tier":"core","targetPct":10,"targetPrice":73.7,"stopPrice":62.3,"status":"open"}
 {"symbol":"SIGI","added":"2026-07-09","entry":95.5,"tier":"core","targetPct":10,"targetPrice":105.1,"stopPrice":88.8,"status":"open"}
 {"symbol":"SYY","added":"2026-07-09","entry":82,"tier":"core","targetPct":10,"targetPrice":90.2,"stopPrice":76.3,"status":"open"}
+{"symbol":"KRYS","added":"2026-07-10","entry":365.8,"tier":"aggressive","targetPct":30,"targetPrice":475.6,"stopPrice":329.2,"status":"open"}
+{"symbol":"SN","added":"2026-07-10","entry":152.7,"tier":"core","targetPct":10.7,"targetPrice":169,"stopPrice":142,"status":"open"}
+{"symbol":"GPC","added":"2026-07-10","entry":126.6,"tier":"core","targetPct":10,"targetPrice":139.2,"stopPrice":117.7,"status":"open"}
+{"symbol":"GOLF","added":"2026-07-10","entry":110.7,"tier":"core","targetPct":10,"targetPrice":121.8,"stopPrice":102.9,"status":"open"}
+{"symbol":"USFD","added":"2026-07-10","entry":101,"tier":"core","targetPct":10,"targetPrice":111.1,"stopPrice":93.9,"status":"open"}
+{"symbol":"PNC","added":"2026-07-10","entry":251.9,"tier":"core","targetPct":10,"targetPrice":277.1,"stopPrice":234.3,"status":"open"}
+{"symbol":"REYN","added":"2026-07-10","entry":26.3,"tier":"core","targetPct":10,"targetPrice":28.9,"stopPrice":24.4,"status":"open"}
