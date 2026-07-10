@@ -70,3 +70,8 @@ SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,UR
 step1 complete
 step2 wrote 19 files
 step3 theme: 19 scored, 6 setups
+=== weekly value-flip start Fri Jul 10 13:51:09 UTC 2026 ===
+TODAY=2026-07-10, 60d ago=2026-05-11
+step1 dirs: SPY UP 751.71, QQQ DOWN 723.28, NVDA UP 202.78, TSLA DOWN 406.55, AMD UP 546.72
+opts 4537
+weeklies: 5 picks (4 logged)
