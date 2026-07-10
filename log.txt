@@ -1,5 +1,5 @@
-
-START Fri Jul 10 20:15:56 UTC 2026
-SYMS: QQQ,SPY,TSLA,NVDA
-step2 4451
-weeklygrade: graded 4 today, 14 total
+=== LEVERAGED ETF SWING SCAN 2026-07-10 ===
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 complete
+step2 wrote 10 files
+levetf: 0 new, 0 closed this run, 0 graded total
