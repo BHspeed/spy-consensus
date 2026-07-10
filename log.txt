@@ -3,7 +3,10 @@ START Fri Jul 10 20:15:56 UTC 2026
 SYMS: QQQ,SPY,TSLA,NVDA
 step2 4451
 weeklygrade: graded 4 today, 14 total
-step1 12653
-step2 tickers: OSCR,GOLF,CIB,SN,PNC,USFD,KRYS,REYN,GPC,UHAL.B
-step3 17159
-step4 done: 7 new, 34 already active
+SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 done
+Fri Jul 10 20:35:54 UTC 2026
+step2 wrote 19 files
+step3 done
+step2 wrote 19 files
+step3 done
