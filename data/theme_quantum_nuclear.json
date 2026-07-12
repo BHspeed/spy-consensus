@@ -5,6 +5,7 @@
   { "ticker": "QUBT", "group": "Quantum", "name": "Quantum Computing Inc" },
   { "ticker": "ARQQ", "group": "Quantum", "name": "Arqit" },
   { "ticker": "LAES", "group": "Quantum", "name": "SEALSQ" },
+  { "ticker": "INFQ", "group": "Quantum", "name": "Infleqtion" },
   { "ticker": "OKLO", "group": "Nuclear/SMR", "name": "Oklo" },
   { "ticker": "SMR", "group": "Nuclear/SMR", "name": "NuScale" },
   { "ticker": "NNE", "group": "Nuclear/SMR", "name": "Nano Nuclear" },
