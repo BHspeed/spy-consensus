@@ -7,3 +7,7 @@ SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step2 starting history pulls
 step2 wrote 10 files
 step3: levetf: 0 new, 1 closed this run, 1 graded total
+step1 12042
+step2 tickers: PGR,SLF,TGTX,GH,RVMD,NBIX,KRYS,USFD,UHAL.B,ALKS
+step3 16211
+step4 swings: 6 new, 41 already active
