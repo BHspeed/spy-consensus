@@ -3,3 +3,7 @@ step1 start
 SYMS=SPY,NVDA,TSLA
 step2 3344
 step3 weeklygrade: graded 0 today, 17 total
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step2 starting history pulls
+step2 wrote 10 files
+step3: levetf: 0 new, 1 closed this run, 1 graded total
