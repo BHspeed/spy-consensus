@@ -11,3 +11,8 @@ step1 12042
 step2 tickers: PGR,SLF,TGTX,GH,RVMD,NBIX,KRYS,USFD,UHAL.B,ALKS
 step3 16211
 step4 swings: 6 new, 41 already active
+step1 ok
+SYMS=FBK
+step3 1671
+earnings: 0 posted, 5 swing picks upcoming
+step6 news appended
