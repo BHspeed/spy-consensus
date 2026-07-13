@@ -16,3 +16,8 @@ SYMS=FBK
 step3 1671
 earnings: 0 posted, 5 swing picks upcoming
 step6 news appended
+=== QUANTUM & NUCLEAR THEME RUN 2026-07-13 ===
+SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 done
+step2 wrote 20 files
+step3 done
