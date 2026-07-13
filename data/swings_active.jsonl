@@ -39,3 +39,9 @@
 {"symbol":"USFD","added":"2026-07-10","entry":101,"tier":"core","targetPct":10,"targetPrice":111.1,"stopPrice":93.9,"status":"open","lastGainPct":0,"peakPct":null}
 {"symbol":"PNC","added":"2026-07-10","entry":251.9,"tier":"core","targetPct":10,"targetPrice":277.1,"stopPrice":234.3,"status":"open","lastGainPct":0,"peakPct":null}
 {"symbol":"REYN","added":"2026-07-10","entry":26.3,"tier":"core","targetPct":10,"targetPrice":28.9,"stopPrice":24.4,"status":"open","lastGainPct":-0.2,"peakPct":null}
+{"symbol":"TGTX","added":"2026-07-13","entry":55.4,"tier":"aggressive","targetPct":22.4,"targetPrice":67.8,"stopPrice":49.9,"status":"open"}
+{"symbol":"ALKS","added":"2026-07-13","entry":51.9,"tier":"aggressive","targetPct":20.2,"targetPrice":62.3,"stopPrice":46.7,"status":"open"}
+{"symbol":"RVMD","added":"2026-07-13","entry":186.5,"tier":"core","targetPct":15,"targetPrice":214.5,"stopPrice":173.4,"status":"open"}
+{"symbol":"NBIX","added":"2026-07-13","entry":174.1,"tier":"core","targetPct":10,"targetPrice":191.5,"stopPrice":161.9,"status":"open"}
+{"symbol":"SLF","added":"2026-07-13","entry":78.5,"tier":"core","targetPct":10,"targetPrice":86.3,"stopPrice":73,"status":"open"}
+{"symbol":"PGR","added":"2026-07-13","entry":235,"tier":"core","targetPct":10,"targetPrice":258.5,"stopPrice":218.6,"status":"open"}
