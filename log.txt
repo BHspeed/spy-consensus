@@ -1,22 +1,12 @@
-
-START Fri Jul 10 20:15:56 UTC 2026
-SYMS: QQQ,SPY,TSLA,NVDA
-step2 4451
-weeklygrade: graded 4 today, 14 total
-SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-step1 done
-Fri Jul 10 20:35:54 UTC 2026
-step2 wrote 19 files
-step3 done
-step2 wrote 19 files
-step3 done
-step1 ok
-DAL,PSMT,WDFC,SMPL,LEVI,NRIX,AZZ,PEP
-step3 7391
-earnings: 5 posted, 2 swing picks upcoming
-step6 news appended
-=== SWING SCORECARD START Fri Jul 10 21:04:33 UTC 2026 ===
-SYMBOLS=TVTX,MTRN,FROG,LNTH,VIK,LUV,URI,MTH,FTNT,ETSY,TD,RY,BMO,WTS,CFG,IHG,OSCR,CIB,DAL,UAL,BNS,UHAL.B,PSMT,AAL,CVS,GE,LOAR,BPOP,GH,UHAL,SIGI,SYY,KRYS,SN,GPC,GOLF,USFD,PNC,REYN
-step2 done
-step3 198339
-swingcheck: 37 open, 2 closed this week, 4 total closed
+=== weekly run 2026-07-13 ===
+step1: fetching equity historicals start=Mon Jul 13 13:51:06 UTC 2026
+SPY UP spot 754.95 move 0.87% -> pull CALLS strikes 754,755,756,757,758
+QQQ UP spot 725.51 move 1.52% -> pull CALLS strikes 725,726,727,728,729
+NVDA UP spot 210.96 move 2.26% -> pull CALLS strikes 210,211,212,213,214
+TSLA UP spot 407.76 move 2.5% -> pull CALLS strikes 407,408,409,410,411
+AMD UP spot 557.89 move 2.5% -> pull CALLS strikes 557,558,559,560,561
+step1: done
+step2: fetching option chains
+opts 4563
+step3: running weeklies.mjs run
+weeklies: 3 picks (3 logged)
