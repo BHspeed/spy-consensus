@@ -1,0 +1,27 @@
+name: trump-watch
+# Fetches Trump's Truth Social posts (free CNN-mirrored archive, no key) on this
+# runner (has internet), flags the MARKET-RELEVANT ones, and writes them to
+# outbox/trump-*.md → the relay posts them to the Trump Watch channel. State
+# (last-seen timestamp) lives in data/trump_seen.json. First run sets a baseline
+# (no history spam); after that it only alerts on genuinely new market posts.
+on:
+  schedule:
+    - cron: '*/20 11-21 * * 1-5'   # every 20 min, ~7 AM-5 PM ET, weekdays (pre-market + RTH)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan Trump posts → alerts
+        run: node scripts/trump_watch.mjs
+      - name: Commit alerts + state
+        run: |
+          git config user.name trump-watch
+          git config user.email trump@local
+          git add outbox/ data/trump_seen.json
+          git commit -m "trump-watch $(date -u +%FT%H%MZ)" || { echo "nothing new"; exit 0; }
+          git pull --rebase origin main || true
+          git push || (git pull --rebase origin main && git push)
