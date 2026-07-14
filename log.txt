@@ -32,7 +32,11 @@ SYMS=TSLA,SPY,NVDA,QQQ
 step2 4447
 step3 done
 weeklygrade: graded 4 today, 21 total
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step1 done
-step2 wrote 10 files
-levetf: 0 new, 0 closed this run, 1 graded total
+step1 13590
+step2 tickers: OKTA,RVMD,ENVA,GPC,FTNT,HSIC,THG,MNST,PTGX,SN
+step3 17344
+step4: swings: 6 new, 47 already active
+step1 13590
+step2 tickers: OKTA,RVMD,ENVA,GPC,FTNT,HSIC,THG,MNST,PTGX,SN
+step3 17344
+step4: swings: 6 new, 47 already active
