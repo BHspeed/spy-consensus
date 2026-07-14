@@ -16,7 +16,13 @@ const CATS = [
 ];
 const esc = (w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
+// His endorsement/campaign posts recycle market words ("strengthen our Economy,
+// lower Inflation, unleash Energy...") as boilerplate praise — pure political noise.
+// Exclude them up front so they don't trip the keyword match.
+const NOISE = /\b(endorse|endorsed|endorses|endorsement|approval rating|congressional district|for (congress|senate|governor|president)|running for|reelect|re-elect|primary|MAGA|America First Patriot)\b/i;
+
 export function classify(text = '') {
+  if (NOISE.test(text)) return { relevant: false, matched: [], excluded: 'political' };
   const hits = [];
   for (const c of CATS) {
     const m = c.words.filter((w) => new RegExp('\\b' + esc(w) + '\\b', 'i').test(text));

@@ -20,6 +20,13 @@ describe('trump watch filter', () => {
     assert.equal(c.relevant, false);
   });
 
+  test('endorsement boilerplate with market words is excluded as political', () => {
+    // his campaign template recycles Economy/Inflation/Energy — must NOT alert
+    const c = classify('I fully endorse Steve! He will strengthen our Economy, crush Inflation, and unleash American Energy!');
+    assert.equal(c.relevant, false);
+    assert.equal(c.excluded, 'political');
+  });
+
   test('word-boundary: no false positive from substrings', () => {
     // "toward"/"warren"/"reward" must not trip the geopolitics/energy words
     assert.equal(classify('Elizabeth Warren was toward the podium, a great reward for all.').relevant, false);
