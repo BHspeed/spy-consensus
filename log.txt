@@ -32,3 +32,7 @@ SYMS=TSLA,SPY,NVDA,QQQ
 step2 4447
 step3 done
 weeklygrade: graded 4 today, 21 total
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 done
+step2 wrote 10 files
+levetf: 0 new, 0 closed this run, 1 graded total
