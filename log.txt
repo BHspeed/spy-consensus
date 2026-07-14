@@ -1,24 +1,6 @@
-=== Starting weekly grade for 2026-07-13 ===
-step1 start
-SYMS=SPY,NVDA,TSLA
-step2 3344
-step3 weeklygrade: graded 0 today, 17 total
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step2 starting history pulls
-step2 wrote 10 files
-step3: levetf: 0 new, 1 closed this run, 1 graded total
-step1 12042
-step2 tickers: PGR,SLF,TGTX,GH,RVMD,NBIX,KRYS,USFD,UHAL.B,ALKS
-step3 16211
-step4 swings: 6 new, 41 already active
-step1 ok
-SYMS=FBK
-step3 1671
-earnings: 0 posted, 5 swing picks upcoming
-step6 news appended
-=== QUANTUM & NUCLEAR THEME RUN 2026-07-13 ===
-SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-step1 done
+Run started Tue Jul 14 20:35:27 UTC 2026
+TODAY=2026-07-14
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
 step2 wrote 20 files
 step3 done
 SPY DOWN spot 749.17 move 0.88% -> pull PUTS strikes 750,749,748,747,746
