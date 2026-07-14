@@ -1,9 +1,9 @@
 name: trump-watch
 # Fetches Trump's Truth Social posts (free CNN-mirrored archive, no key) on this
-# runner (has internet), flags the MARKET-RELEVANT ones, and writes them to
-# outbox/trump-*.md → the relay posts them to the Trump Watch channel. State
-# (last-seen timestamp) lives in data/trump_seen.json. First run sets a baseline
-# (no history spam); after that it only alerts on genuinely new market posts.
+# runner (has internet), flags the MARKET-RELEVANT ones, and POSTS them straight to
+# the Trump Watch channel. (It posts directly, NOT via the relay: a GITHUB_TOKEN
+# push can't trigger another workflow.) State (last-seen ts) is in data/trump_seen.json;
+# first run sets a baseline (no history spam), then it only alerts on new market posts.
 on:
   schedule:
     - cron: '*/20 11-21 * * 1-5'   # every 20 min, ~7 AM-5 PM ET, weekdays (pre-market + RTH)
@@ -15,13 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Scan Trump posts → alerts
+      - name: Scan Trump posts and post market alerts
+        env:
+          TRUMP_WEBHOOK: ${{ secrets.DISCORD_TRUMP_WEBHOOK || 'https://discord.com/api/webhooks/1526409624411050087/9snIsqt4KorRoMPiCsaMjpUKlnOfnoT99jaoHrAwnGZ1BrZxnuyPNxkmaW0qD8Lff6MF' }}
         run: node scripts/trump_watch.mjs
-      - name: Commit alerts + state
+      - name: Commit state
         run: |
           git config user.name trump-watch
           git config user.email trump@local
-          git add outbox/ data/trump_seen.json
-          git commit -m "trump-watch $(date -u +%FT%H%MZ)" || { echo "nothing new"; exit 0; }
+          git add data/trump_seen.json
+          git commit -m "trump-watch $(date -u +%FT%H%MZ)" || { echo "no change"; exit 0; }
           git pull --rebase origin main || true
           git push || (git pull --rebase origin main && git push)
