@@ -45,3 +45,9 @@
 {"symbol":"NBIX","added":"2026-07-13","entry":174.1,"tier":"core","targetPct":10,"targetPrice":191.5,"stopPrice":161.9,"status":"open"}
 {"symbol":"SLF","added":"2026-07-13","entry":78.5,"tier":"core","targetPct":10,"targetPrice":86.3,"stopPrice":73,"status":"open"}
 {"symbol":"PGR","added":"2026-07-13","entry":235,"tier":"core","targetPct":10,"targetPrice":258.5,"stopPrice":218.6,"status":"open"}
+{"symbol":"PTGX","added":"2026-07-14","entry":131.3,"tier":"aggressive","targetPct":29.9,"targetPrice":170.5,"stopPrice":118.1,"status":"open"}
+{"symbol":"OKTA","added":"2026-07-14","entry":154.3,"tier":"aggressive","targetPct":24.7,"targetPrice":192.4,"stopPrice":138.8,"status":"open"}
+{"symbol":"ENVA","added":"2026-07-14","entry":230.6,"tier":"aggressive","targetPct":24.6,"targetPrice":287.4,"stopPrice":207.6,"status":"open"}
+{"symbol":"MNST","added":"2026-07-14","entry":98.3,"tier":"core","targetPct":10,"targetPrice":108.1,"stopPrice":91.4,"status":"open"}
+{"symbol":"HSIC","added":"2026-07-14","entry":86.9,"tier":"core","targetPct":10,"targetPrice":95.6,"stopPrice":80.8,"status":"open"}
+{"symbol":"THG","added":"2026-07-14","entry":214.2,"tier":"core","targetPct":10,"targetPrice":235.6,"stopPrice":199.2,"status":"open"}
