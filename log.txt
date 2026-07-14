@@ -21,3 +21,10 @@ SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,
 step1 done
 step2 wrote 20 files
 step3 done
+SPY DOWN spot 749.17 move 0.88% -> pull PUTS strikes 750,749,748,747,746
+QQQ DOWN spot 711.74 move 1.58% -> pull PUTS strikes 713,712,711,710,709
+NVDA UP spot 203.53 move 2.38% -> pull CALLS strikes 203,204,205,206,207
+TSLA DOWN spot 394.76 move 2.5% -> pull PUTS strikes 396,395,394,393,392
+AMD DOWN spot 534.39 move 2.5% -> pull PUTS strikes 535,534,533,532,531
+opts 4536
+weeklies: 5 picks (4 logged)
