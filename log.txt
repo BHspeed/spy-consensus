@@ -27,3 +27,4 @@ SYMS=AEHR,GS,C,KMTS,EQBK,WFC,PAC,JPM,PXED,BAC
 step3 10947
 earnings: 0 posted, 5 swing picks upcoming
 step6 news appended
+FINISH pushed levetf-2026-07-15.md at Wed Jul 15 20:43:43 UTC 2026
