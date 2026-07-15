@@ -1,15 +1,37 @@
-**TSLA morning — 2026-07-15**
-CONSENSUS: SIDEWAYS · 45% (spot 402.27)
-**📰 TSLA news check:** neutral for TSLA — neutral to the SIDEWAYS read — no TSLA-specific headlines (Elon/deliveries/EV/robotaxi absent); broad market tone is tech/AI mildly supportive but no directional catalyst
+**SPY morning — 2026-07-15**
+CONSENSUS: UP · 67% (spot 753.93)
+
+**📰 News check:** RISK-ON — AGREES with the UP read — Fed pivot expectations (JPMorgan) + broad AI/cloud demand (Amazon, Oracle, Equinix, NVDA) support buying; no macro shocks or geopolitical risk in feed
 
 ```
+===================  SPY — RUN IT  ===================
+  as of 2026-07-15T13:50:32.220Z   price ~753.93
 
-===================  TSLA — RUN IT  ===================
-  as of 2026-07-15T13:50:41.896Z   price ~402.27
+  CONSENSUS:   UP   ·   67% confident
 
-  CONSENSUS:   SIDEWAYS   ·   45% confident
+  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 83%
+     BUY 753/755C   (2026-07-17)
+     pay          $108
+     SCALP OUT  ~ $140    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $76    (-30%, or if consensus turns DOWN)
+     room to max  $200
 
-  >>> NO TRADE today — direction unclear / low confidence.
-      Sitting out is the call (a result, not a miss).
+  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 71%
+     SELL 751/749P   (2026-07-17)
+     collect      $51
+     TAKE HALF  ~ $26    <-- buy back here, bank ~$25 (don't hold for the last dollar)
+     max loss     $149   (if SPY drops below 749)
+     keeps profit if SPY stays above 751
+
+  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
+     BUY 756C   (2026-07-17)   ~37Δ
+     pay          $173   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $190    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $208
+     stop       ~ $138    (-20%, or if consensus turns DOWN)
+
+  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
+  size: normal (67% confidence).  never add to a loser.
+  read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
