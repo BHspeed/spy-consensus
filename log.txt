@@ -32,3 +32,11 @@ step1 12460
 step2 tickers: BTSG,ALL,PTGX,USFD,CIB,SEZL,GH,GPC,AIZ,ENVA
 step3 16083
 step4: swings: 4 new, 53 already active
+step1 ok
+UAL,PNC,PGR,AEHR,GS,MS,ELV,C,KMTS,EQBK
+step2 ok
+step3 11024
+step4 ok
+step5 earnings: 0 posted, 2 swing picks upcoming
+step5 ok
+step6 news appended
