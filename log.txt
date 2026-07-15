@@ -40,3 +40,4 @@ step4 ok
 step5 earnings: 0 posted, 2 swing picks upcoming
 step5 ok
 step6 news appended
+step3 done, pushed
