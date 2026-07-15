@@ -28,3 +28,7 @@ step3 10947
 earnings: 0 posted, 5 swing picks upcoming
 step6 news appended
 FINISH pushed levetf-2026-07-15.md at Wed Jul 15 20:43:43 UTC 2026
+step1 12460
+step2 tickers: BTSG,ALL,PTGX,USFD,CIB,SEZL,GH,GPC,AIZ,ENVA
+step3 16083
+step4: swings: 4 new, 53 already active
