@@ -1,37 +1,15 @@
-**SPY morning — 2026-07-14**
-CONSENSUS: UP · 57% (spot 751.61)
-
-**📰 News check:** MIXED — ⚠️ DISAGREES with the UP read — CPI report today + US-Iran tensions create macro headwind; bank earnings a partial offset
+**TSLA morning — 2026-07-15**
+CONSENSUS: SIDEWAYS · 45% (spot 402.27)
+**📰 TSLA news check:** neutral for TSLA — neutral to the SIDEWAYS read — no TSLA-specific headlines (Elon/deliveries/EV/robotaxi absent); broad market tone is tech/AI mildly supportive but no directional catalyst
 
 ```
-===================  SPY — RUN IT  ===================
-  as of 2026-07-14T13:49:42.798Z   price ~751.61
 
-  CONSENSUS:   UP   ·   57% confident
+===================  TSLA — RUN IT  ===================
+  as of 2026-07-15T13:50:41.896Z   price ~402.27
 
-  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 78%
-     BUY 751/753C   (2026-07-16)
-     pay          $100
-     SCALP OUT  ~ $130    <-- bank the pop (+30%); trail if it keeps flipping up
-     stop       ~ $70    (-30%, or if consensus turns DOWN)
-     room to max  $200
+  CONSENSUS:   SIDEWAYS   ·   45% confident
 
-  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 66%
-     SELL 749/747P   (2026-07-16)
-     collect      $62
-     TAKE HALF  ~ $31    <-- buy back here, bank ~$31 (don't hold for the last dollar)
-     max loss     $138   (if SPY drops below 747)
-     keeps profit if SPY stays above 749
-
-  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
-     BUY 754C   (2026-07-16)   ~35Δ
-     pay          $182   (cheaper OTM — flips 10%+ on a small move)
-     BANK +10%  ~ $200    <-- take the flip when it comes (don't need to be right on strike)
-     TARGET +20% ~ $218
-     stop       ~ $146    (-20%, or if consensus turns DOWN)
-
-  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
-  size: half (57% confidence).  never add to a loser.
-  read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
+  >>> NO TRADE today — direction unclear / low confidence.
+      Sitting out is the call (a result, not a miss).
 =====================================================
 ```
