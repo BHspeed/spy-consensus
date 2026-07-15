@@ -51,3 +51,7 @@
 {"symbol":"MNST","added":"2026-07-14","entry":98.3,"tier":"core","targetPct":10,"targetPrice":108.1,"stopPrice":91.4,"status":"open"}
 {"symbol":"HSIC","added":"2026-07-14","entry":86.9,"tier":"core","targetPct":10,"targetPrice":95.6,"stopPrice":80.8,"status":"open"}
 {"symbol":"THG","added":"2026-07-14","entry":214.2,"tier":"core","targetPct":10,"targetPrice":235.6,"stopPrice":199.2,"status":"open"}
+{"symbol":"SEZL","added":"2026-07-15","entry":191.9,"tier":"aggressive","targetPct":30,"targetPrice":249.4,"stopPrice":172.7,"status":"open"}
+{"symbol":"BTSG","added":"2026-07-15","entry":68.6,"tier":"aggressive","targetPct":30,"targetPrice":89.1,"stopPrice":61.7,"status":"open"}
+{"symbol":"AIZ","added":"2026-07-15","entry":273.9,"tier":"core","targetPct":10,"targetPrice":301.3,"stopPrice":254.7,"status":"open"}
+{"symbol":"ALL","added":"2026-07-15","entry":239.5,"tier":"core","targetPct":10,"targetPrice":263.4,"stopPrice":222.7,"status":"open"}
