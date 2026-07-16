@@ -41,3 +41,12 @@ step5 earnings: 0 posted, 2 swing picks upcoming
 step5 ok
 step6 news appended
 step3 done, pushed
+=== weekly 2026-07-16 ===
+step1 dirs:
+SPY UP spot 754.81 move 0.8% -> pull CALLS strikes 754,755,756,757,758
+QQQ UP spot 717.74 move 1.45% -> pull CALLS strikes 717,718,719,720,721
+NVDA UP spot 212.50 move 2.35% -> pull CALLS strikes 212,213,214,215,216
+TSLA UP spot 394.46 move 2.5% -> pull CALLS strikes 393,394,395,396,397
+AMD UP spot 529.14 move 2.5% -> pull CALLS strikes 528,529,530,531,532
+opts 4015
+weeklies: 3 picks (3 logged)
