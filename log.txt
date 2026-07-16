@@ -58,3 +58,9 @@ SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step2 wrote 10 files
 step3 done
 FINISH pushed levetf-2026-07-16.md at Thu Jul 16 20:43:56 UTC 2026
+starting earnings/news run
+step1 ok
+UAL,PNC,GE,PGR,CFG,AEHR,VIST,GS,UNH,MS
+step3 11032
+earnings: 4 posted, 1 swing picks upcoming
+step6 news appended
