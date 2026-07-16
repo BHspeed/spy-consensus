@@ -53,3 +53,8 @@ weeklies: 3 picks (3 logged)
 SYMS=SPY,NVDA,TSLA
 step2 3343
 weeklygrade: graded 3 today, 24 total
+=== levetf 2026-07-16 ===
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step2 wrote 10 files
+step3 done
+FINISH pushed levetf-2026-07-16.md at Thu Jul 16 20:43:56 UTC 2026
