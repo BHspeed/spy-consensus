@@ -55,3 +55,6 @@
 {"symbol":"BTSG","added":"2026-07-15","entry":68.6,"tier":"aggressive","targetPct":30,"targetPrice":89.1,"stopPrice":61.7,"status":"open"}
 {"symbol":"AIZ","added":"2026-07-15","entry":273.9,"tier":"core","targetPct":10,"targetPrice":301.3,"stopPrice":254.7,"status":"open"}
 {"symbol":"ALL","added":"2026-07-15","entry":239.5,"tier":"core","targetPct":10,"targetPrice":263.4,"stopPrice":222.7,"status":"open"}
+{"symbol":"DFTX","added":"2026-07-16","entry":45,"tier":"aggressive","targetPct":30,"targetPrice":58.5,"stopPrice":40.5,"status":"open"}
+{"symbol":"KYMR","added":"2026-07-16","entry":114,"tier":"aggressive","targetPct":30,"targetPrice":148.2,"stopPrice":102.6,"status":"open"}
+{"symbol":"CVLT","added":"2026-07-16","entry":149.8,"tier":"aggressive","targetPct":30,"targetPrice":194.7,"stopPrice":134.8,"status":"open"}
