@@ -73,3 +73,8 @@ step1 done
 opts 2391
 weeklies: 0 picks (0 logged)
 step3 done
+=== weekly grade run 2026-07-17 ===
+step1: SYMS=
+step1: SYMS empty, wrote empty whist.json
+step2 skipped (no symbols)
+step3: weeklygrade: graded 0 today, 24 total
