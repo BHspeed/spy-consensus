@@ -78,3 +78,7 @@ step1: SYMS=
 step1: SYMS empty, wrote empty whist.json
 step2 skipped (no symbols)
 step3: weeklygrade: graded 0 today, 24 total
+step1 11249
+step2 tickers: CORT,SN,PANW,KYMR,OKTA,GPC,PTGX,ALKS,AJG,AIZ
+step3 16811
+step4 stdout: swings: 3 new, 60 already active
