@@ -58,3 +58,6 @@
 {"symbol":"DFTX","added":"2026-07-16","entry":45,"tier":"aggressive","targetPct":30,"targetPrice":58.5,"stopPrice":40.5,"status":"open"}
 {"symbol":"KYMR","added":"2026-07-16","entry":114,"tier":"aggressive","targetPct":30,"targetPrice":148.2,"stopPrice":102.6,"status":"open"}
 {"symbol":"CVLT","added":"2026-07-16","entry":149.8,"tier":"aggressive","targetPct":30,"targetPrice":194.7,"stopPrice":134.8,"status":"open"}
+{"symbol":"CORT","added":"2026-07-17","entry":91,"tier":"aggressive","targetPct":30,"targetPrice":118.3,"stopPrice":81.9,"status":"open"}
+{"symbol":"PANW","added":"2026-07-17","entry":358.8,"tier":"core","targetPct":15,"targetPrice":412.6,"stopPrice":333.7,"status":"open"}
+{"symbol":"AJG","added":"2026-07-17","entry":253.9,"tier":"core","targetPct":10,"targetPrice":279.3,"stopPrice":236.1,"status":"open"}
