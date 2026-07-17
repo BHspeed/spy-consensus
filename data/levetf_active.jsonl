@@ -1,1 +1,3 @@
 {"etf":"NVDL","parent":"NVDA","lev":2,"added":"2026-07-05","entry":28.22,"rsi":40,"floor":21.54,"targetPct":16.8,"target":32.96,"stopPct":10.1,"stop":25.37,"status":"closed","daysHeld":8,"high":33.04,"low":27.22,"verdict":"RIGHT","closed":true}
+{"etf":"SOXL","parent":"Semis","lev":3,"added":"2026-07-17","entry":142.48,"rsi":40,"floor":39.52,"targetPct":25,"target":178.1,"stopPct":15,"stop":121.11,"status":"open"}
+{"etf":"TQQQ","parent":"Nasdaq-100","lev":3,"added":"2026-07-17","entry":70.74,"rsi":44,"floor":37.32,"targetPct":16,"target":82.06,"stopPct":9.6,"stop":63.95,"status":"open"}
