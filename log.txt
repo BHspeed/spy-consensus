@@ -63,3 +63,13 @@ step3 complete: theme 2026-07-16
 TODAY=2026-07-16
 step2 wrote 20 files
 step3 complete: theme 2026-07-16
+=== 2026-07-17 STEP1 ===
+SPY DOWN spot 750.72 move 0.78% -> pull PUTS strikes 752,751,750,749,748
+QQQ DOWN spot 705.94 move 1.43% -> pull PUTS strikes 707,706,705,704,703
+NVDA UP spot 207.40 move 2.36% -> pull CALLS strikes 206,207,208,209,210
+TSLA DOWN spot 391.06 move 2.5% -> pull PUTS strikes 392,391,390,389,388
+AMD DOWN spot 500.94 move 2.5% -> pull PUTS strikes 502,501,500,499,498
+step1 done
+opts 2391
+weeklies: 0 picks (0 logged)
+step3 done
