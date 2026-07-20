@@ -21,3 +21,14 @@ step6 news appended
 STEP1: SYMBOLS=TVTX,FROG,LNTH,VIK,LUV,URI,FTNT,ETSY,TD,RY,BMO,WTS,CFG,IHG,OSCR,CIB,DAL,UAL,BNS,UHAL.B,PSMT,AAL,CVS,GE,LOAR,BPOP,GH,UHAL,SIGI,SYY,KRYS,SN,GPC,GOLF,USFD,PNC,REYN,TGTX,ALKS,RVMD,NBIX,SLF,PGR,PTGX,OKTA,ENVA,MNST,HSIC,THG,SEZL,BTSG,AIZ,ALL,DFTX,KYMR,CVLT,CORT,PANW,AJG
 quotes.json written: 29632 bytes
 step3 295520
+=== weekly value-flip run 2026-07-20 ===
+step1 dirs:
+SPY DOWN spot 743.29 move 0.72% -> pull PUTS strikes 744,743,742,741,740
+QQQ DOWN spot 695.33 move 1.49% -> pull PUTS strikes 696,695,694,693,692
+NVDA DOWN spot 202.81 move 2.5% -> pull PUTS strikes 204,203,202,201,200
+TSLA DOWN spot 380.84 move 2.5% -> pull PUTS strikes 382,381,380,379,378
+AMD DOWN spot 495.76 move 2.5% -> pull PUTS strikes 497,496,495,494,493
+step1 done
+opts 4582
+step2 done
+step3 stdout: weeklies: 5 picks (4 logged)
