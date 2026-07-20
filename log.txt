@@ -32,3 +32,6 @@ step1 done
 opts 4582
 step2 done
 step3 stdout: weeklies: 5 picks (4 logged)
+SYMS=NVDA,SPY,QQQ,TSLA
+step2 4448
+step3 weeklygrade: graded 4 today, 28 total
