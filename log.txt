@@ -35,6 +35,7 @@ step3 stdout: weeklies: 5 picks (4 logged)
 SYMS=NVDA,SPY,QQQ,TSLA
 step2 4448
 step3 weeklygrade: graded 4 today, 28 total
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step2 wrote 10 files
-levetf: 2 new, 1 closed this run, 2 graded total
+step1 10433
+step2 tickers: GPC,TD,GOLF,CORT,DFTX,KYMR,AIZ,CVLT,ALKS,OKTA
+step3 17306
+step4 stdout: swings: 0 new, 63 already active
