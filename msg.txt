@@ -1,16 +1,37 @@
-**SPY morning — 2026-07-17**
-CONSENSUS: SIDEWAYS · 35% (spot 741.49)
+**SPY morning — 2026-07-20**
+CONSENSUS: DOWN · 45% (spot 748.23)
 
-**📰 News check:** RISK-OFF — ⚠️ DISAGREES with the SIDEWAYS read — AI/chip sell-off continuing, Netflix -9% miss, Iran strikes Syria add geopolitical risk pointing toward downside
+**📰 News check:** RISK-OFF — AGREES with the DOWN read — rising Treasury yields, Iran blockade reimposed (oil/geopolitical risk), and chip sector sell-off (AMD/Broadcom) weigh on risk assets.
 
 ```
-
 ===================  SPY — RUN IT  ===================
-  as of 2026-07-17T13:48:59.639Z   price ~741.49
+  as of 2026-07-20T13:49:24.876Z   price ~748.23
 
-  CONSENSUS:   SIDEWAYS   ·   35% confident
+  CONSENSUS:   DOWN   ·   45% confident
 
-  >>> NO TRADE today — direction unclear / low confidence.
-      Sitting out is the call (a result, not a miss).
+  TRADE A — PUT spread  (BUY, scalp the move DOWN):   conf 74%
+     BUY 748/746P   (2026-07-22)
+     pay          $75.5
+     SCALP OUT  ~ $98    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $53    (-30%, or if consensus turns UP)
+     room to max  $200
+
+  TRADE B — CALL spread  (SELL, slower — collect & scalp half):   conf 64%
+     SELL 750/752C   (2026-07-22)
+     collect      $82.5
+     TAKE HALF  ~ $41    <-- buy back here, bank ~$41.5 (don't hold for the last dollar)
+     max loss     $117.5   (if SPY runs above 752)
+     keeps profit if SPY stays below 750
+
+  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
+     BUY 745P   (2026-07-22)   ~37Δ
+     pay          $221   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $243    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $265
+     stop       ~ $177    (-20%, or if consensus turns UP)
+
+  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
+  size: half (45% confidence).  never add to a loser.
+  read: trend is DOWN. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
