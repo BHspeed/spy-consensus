@@ -39,3 +39,8 @@ step1 10433
 step2 tickers: GPC,TD,GOLF,CORT,DFTX,KYMR,AIZ,CVLT,ALKS,OKTA
 step3 17306
 step4 stdout: swings: 0 new, 63 already active
+step1 ok
+AMC,ZION,DX,BOKF,WRB,CCK,RYAAY,AGNC,WTFC,DPZ
+step3 9203
+earnings: 0 posted, 5 swing picks upcoming
+step6 news appended
