@@ -1,3 +1,5 @@
 {"etf":"NVDL","parent":"NVDA","lev":2,"added":"2026-07-05","entry":28.22,"rsi":40,"floor":21.54,"targetPct":16.8,"target":32.96,"stopPct":10.1,"stop":25.37,"status":"closed","daysHeld":8,"high":33.04,"low":27.22,"verdict":"RIGHT","closed":true}
-{"etf":"SOXL","parent":"Semis","lev":3,"added":"2026-07-17","entry":142.48,"rsi":40,"floor":39.52,"targetPct":25,"target":178.1,"stopPct":15,"stop":121.11,"status":"open"}
-{"etf":"TQQQ","parent":"Nasdaq-100","lev":3,"added":"2026-07-17","entry":70.74,"rsi":44,"floor":37.32,"targetPct":16,"target":82.06,"stopPct":9.6,"stop":63.95,"status":"open"}
+{"etf":"SOXL","parent":"Semis","lev":3,"added":"2026-07-17","entry":142.48,"rsi":40,"floor":39.52,"targetPct":25,"target":178.1,"stopPct":15,"stop":121.11,"status":"closed","daysHeld":3,"high":144.4,"low":116.47,"verdict":"WRONG","closed":true}
+{"etf":"TQQQ","parent":"Nasdaq-100","lev":3,"added":"2026-07-17","entry":70.74,"rsi":44,"floor":37.32,"targetPct":16,"target":82.06,"stopPct":9.6,"stop":63.95,"status":"open","daysHeld":3,"high":69.555,"low":64.91,"verdict":null,"closed":false}
+{"etf":"TSLL","parent":"TSLA","lev":2,"added":"2026-07-20","entry":11.39,"rsi":41,"floor":9.91,"targetPct":25,"target":14.23,"stopPct":15,"stop":9.68,"status":"open"}
+{"etf":"GGLL","parent":"GOOGL","lev":2,"added":"2026-07-20","entry":106.04,"rsi":41,"floor":70.15,"targetPct":17.1,"target":124.17,"stopPct":10.3,"stop":95.12,"status":"open"}
