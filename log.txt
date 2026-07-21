@@ -11,3 +11,7 @@ STEP 3 complete: outbox/weekly-2026-07-21.md written — 4 picks (NVDA 205P, SPY
 STEP1: SYMS=NVDA,SPY,QQQ,TSLA
 step2 4445
 step3 complete
+step1 7144
+step2 tickers: QLYS,RDN,OKTA,SN,PANW,AJG,CVLT,ETSY,XENE,TXG
+step3 15405
+step4 stdout: swings: 4 new, 63 already active
