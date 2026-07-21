@@ -11,14 +11,6 @@ STEP 3 complete: outbox/weekly-2026-07-21.md written — 4 picks (NVDA 205P, SPY
 STEP1: SYMS=NVDA,SPY,QQQ,TSLA
 step2 4445
 step3 complete
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step1 complete
-step2 wrote 10 files
-step3 done
-step2 wrote 10 files
-step3 done
-step1 ok
-GPC,AMC,ZION,VICR,WFRD,MCB,CALX,DX,SYF,COF
-step3 10890
-earnings: 2 posted, 4 swing picks upcoming
-step6 news appended
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 done
+step2 wrote 20 files
