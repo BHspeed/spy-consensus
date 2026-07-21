@@ -61,3 +61,7 @@
 {"symbol":"CORT","added":"2026-07-17","entry":91,"tier":"aggressive","targetPct":30,"targetPrice":118.3,"stopPrice":81.9,"status":"open","lastGainPct":-0.4,"peakPct":null}
 {"symbol":"PANW","added":"2026-07-17","entry":358.8,"tier":"core","targetPct":15,"targetPrice":412.6,"stopPrice":333.7,"status":"open","lastGainPct":0,"peakPct":null}
 {"symbol":"AJG","added":"2026-07-17","entry":253.9,"tier":"core","targetPct":10,"targetPrice":279.3,"stopPrice":236.1,"status":"open","lastGainPct":0,"peakPct":null}
+{"symbol":"TXG","added":"2026-07-21","entry":47,"tier":"aggressive","targetPct":30,"targetPrice":61.1,"stopPrice":42.3,"status":"open"}
+{"symbol":"XENE","added":"2026-07-21","entry":67.3,"tier":"aggressive","targetPct":23.7,"targetPrice":83.2,"stopPrice":60.6,"status":"open"}
+{"symbol":"QLYS","added":"2026-07-21","entry":143.8,"tier":"aggressive","targetPct":20.9,"targetPrice":173.8,"stopPrice":129.4,"status":"open"}
+{"symbol":"RDN","added":"2026-07-21","entry":38.5,"tier":"core","targetPct":10,"targetPrice":42.3,"stopPrice":35.8,"status":"open"}
