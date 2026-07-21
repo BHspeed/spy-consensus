@@ -8,3 +8,6 @@ AMD DOWN spot 503.57 move 2.5% -> pull PUTS strikes 505,504,503,502,501
 STEP2: fetching option chains...
 weeklies: 5 picks (4 logged)
 STEP 3 complete: outbox/weekly-2026-07-21.md written — 4 picks (NVDA 205P, SPY 743P, QQQ 697P, TSLA 365P)
+STEP1: SYMS=NVDA,SPY,QQQ,TSLA
+step2 4445
+step3 complete
