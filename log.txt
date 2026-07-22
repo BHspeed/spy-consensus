@@ -14,3 +14,11 @@ step3 complete
 SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
 step1 done
 step2 wrote 20 files
+=== STEP 1 dirs ===
+SPY DOWN spot 748.28 move 0.68% -> pull PUTS strikes 749,748,747,746,745
+QQQ DOWN spot 708.97 move 1.4% -> pull PUTS strikes 710,709,708,707,706
+NVDA DOWN spot 207.29 move 2.45% -> pull PUTS strikes 208,207,206,205,204
+TSLA DOWN spot 378.93 move 2.5% -> pull PUTS strikes 380,379,378,377,376
+AMD DOWN spot 544.43 move 2.5% -> pull PUTS strikes 545,544,543,542,541
+opts 4540
+weeklies: 5 picks (4 logged)
