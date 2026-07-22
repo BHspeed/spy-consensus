@@ -30,3 +30,8 @@ step2 tickers: ALKS,PTGX,CVLT,ACA,HUM,DFTX,PRI,XENE,VOYA,VRNS
 step3 17068
 step4 17 lines written
 stdout: swings: 5 new, 67 already active
+step1 ok
+URI,GPC,AMC,CALM,GOOGL,GOOG,KALU,CCS,ZION,LUV
+step3 10963
+step5 complete
+step6 news appended
