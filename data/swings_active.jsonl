@@ -65,3 +65,8 @@
 {"symbol":"XENE","added":"2026-07-21","entry":67.3,"tier":"aggressive","targetPct":23.7,"targetPrice":83.2,"stopPrice":60.6,"status":"open"}
 {"symbol":"QLYS","added":"2026-07-21","entry":143.8,"tier":"aggressive","targetPct":20.9,"targetPrice":173.8,"stopPrice":129.4,"status":"open"}
 {"symbol":"RDN","added":"2026-07-21","entry":38.5,"tier":"core","targetPct":10,"targetPrice":42.3,"stopPrice":35.8,"status":"open"}
+{"symbol":"VRNS","added":"2026-07-22","entry":45.5,"tier":"aggressive","targetPct":30,"targetPrice":59.1,"stopPrice":40.9,"status":"open"}
+{"symbol":"HUM","added":"2026-07-22","entry":397.6,"tier":"core","targetPct":15,"targetPrice":457.2,"stopPrice":369.8,"status":"open"}
+{"symbol":"ACA","added":"2026-07-22","entry":145.1,"tier":"core","targetPct":10,"targetPrice":159.6,"stopPrice":135,"status":"open"}
+{"symbol":"VOYA","added":"2026-07-22","entry":98.5,"tier":"core","targetPct":10,"targetPrice":108.4,"stopPrice":91.6,"status":"open"}
+{"symbol":"PRI","added":"2026-07-22","entry":312.8,"tier":"core","targetPct":10,"targetPrice":344.1,"stopPrice":290.9,"status":"open"}
