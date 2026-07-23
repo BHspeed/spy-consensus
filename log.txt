@@ -1,52 +1,69 @@
-=== Weekly Value-Flip Options — 2026-07-21 ===
-STEP1: fetching equity historicals...
-SPY DOWN spot 742.09 move 0.69% -> pull PUTS strikes 743,742,741,740,739
-QQQ DOWN spot 696.06 move 1.43% -> pull PUTS strikes 697,696,695,694,693
-NVDA DOWN spot 203.28 move 2.5% -> pull PUTS strikes 204,203,202,201,200
-TSLA DOWN spot 369.57 move 2.5% -> pull PUTS strikes 371,370,369,368,367
-AMD DOWN spot 503.57 move 2.5% -> pull PUTS strikes 505,504,503,502,501
-STEP2: fetching option chains...
-weeklies: 5 picks (4 logged)
-STEP 3 complete: outbox/weekly-2026-07-21.md written — 4 picks (NVDA 205P, SPY 743P, QQQ 697P, TSLA 365P)
-STEP1: SYMS=NVDA,SPY,QQQ,TSLA
-step2 4445
-step3 complete
+Run started Tue Jul 14 20:35:27 UTC 2026
+TODAY=2026-07-14
 SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-step1 done
 step2 wrote 20 files
-=== STEP 1 dirs ===
-SPY DOWN spot 748.28 move 0.68% -> pull PUTS strikes 749,748,747,746,745
-QQQ DOWN spot 708.97 move 1.4% -> pull PUTS strikes 710,709,708,707,706
-NVDA DOWN spot 207.29 move 2.45% -> pull PUTS strikes 208,207,206,205,204
-TSLA DOWN spot 378.93 move 2.5% -> pull PUTS strikes 380,379,378,377,376
-AMD DOWN spot 544.43 move 2.5% -> pull PUTS strikes 545,544,543,542,541
-opts 4540
+step3 done
+SPY DOWN spot 749.17 move 0.88% -> pull PUTS strikes 750,749,748,747,746
+QQQ DOWN spot 711.74 move 1.58% -> pull PUTS strikes 713,712,711,710,709
+NVDA UP spot 203.53 move 2.38% -> pull CALLS strikes 203,204,205,206,207
+TSLA DOWN spot 394.76 move 2.5% -> pull PUTS strikes 396,395,394,393,392
+AMD DOWN spot 534.39 move 2.5% -> pull PUTS strikes 535,534,533,532,531
+opts 4536
 weeklies: 5 picks (4 logged)
-SYMS=QQQ,NVDA,SPY,TSLA
-step2 4441
-weeklygrade: graded 4 today, 36 total
-SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-step1 done
-step2 wrote 20 files
-theme: 20 scored, 6 setups
-step3 complete
-=== STEP 1 dirs ===
-SPY DOWN spot 747.41 move 0.66% -> pull PUTS strikes 748,747,746,745,744
-QQQ DOWN spot 705.35 move 1.37% -> pull PUTS strikes 706,705,704,703,702
-NVDA DOWN spot 212.06 move 2.46% -> pull PUTS strikes 213,212,211,210,209
-TSLA DOWN spot 374.01 move 2.5% -> pull PUTS strikes 375,374,373,372,371
-AMD UP spot 552.33 move 2.5% -> pull CALLS strikes 551,552,553,554,555
-opts 4177
-weeklies: 2 picks (2 logged)
-SYMS=NVDA,AMD
-step2 2236
-step2 2235
-step3: weeklygrade: graded 0 today, 38 total
-SYMS: TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step2 wrote 10 files
-levetf: 0 new, 0 closed this run, 2 graded total
+SYMS=TSLA,SPY,NVDA,QQQ
+step2 4447
+step3 done
+weeklygrade: graded 4 today, 21 total
+step1 13590
+step2 tickers: OKTA,RVMD,ENVA,GPC,FTNT,HSIC,THG,MNST,PTGX,SN
+step3 17344
+step4: swings: 6 new, 47 already active
+step1 13590
+step2 tickers: OKTA,RVMD,ENVA,GPC,FTNT,HSIC,THG,MNST,PTGX,SN
+step3 17344
+step4: swings: 6 new, 47 already active
 step1 ok
-SYMS=BPOP,SIGI,URI,ENVA,GPC,TV,ATRC,MBLY,CALM,AAL
-step3 10894
-step5 earnings analyzed
+SYMS=AEHR,GS,C,KMTS,EQBK,WFC,PAC,JPM,PXED,BAC
+step3 10947
+earnings: 0 posted, 5 swing picks upcoming
 step6 news appended
+FINISH pushed levetf-2026-07-15.md at Wed Jul 15 20:43:43 UTC 2026
+step1 12460
+step2 tickers: BTSG,ALL,PTGX,USFD,CIB,SEZL,GH,GPC,AIZ,ENVA
+step3 16083
+step4: swings: 4 new, 53 already active
+step1 ok
+UAL,PNC,PGR,AEHR,GS,MS,ELV,C,KMTS,EQBK
+step2 ok
+step3 11024
+step4 ok
+step5 earnings: 0 posted, 2 swing picks upcoming
+step5 ok
+step6 news appended
+step3 done, pushed
+=== weekly 2026-07-16 ===
+step1 dirs:
+SPY UP spot 754.81 move 0.8% -> pull CALLS strikes 754,755,756,757,758
+QQQ UP spot 717.74 move 1.45% -> pull CALLS strikes 717,718,719,720,721
+NVDA UP spot 212.50 move 2.35% -> pull CALLS strikes 212,213,214,215,216
+TSLA UP spot 394.46 move 2.5% -> pull CALLS strikes 393,394,395,396,397
+AMD UP spot 529.14 move 2.5% -> pull CALLS strikes 528,529,530,531,532
+opts 4015
+weeklies: 3 picks (3 logged)
+SYMS=SPY,NVDA,TSLA
+step2 3343
+weeklygrade: graded 3 today, 24 total
+TODAY=2026-07-16
+Starting quantum/nuclear theme scan
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+Step 1 complete
+step2 wrote 20 files
+step3 complete: theme 2026-07-16
+=== quantum/nuclear ===
+TODAY=2026-07-16
+step2 wrote 20 files
+step3 complete: theme 2026-07-16
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 done
+step2 wrote 20 files
+theme: 11 scored, 4 setups
