@@ -1,13 +1,14 @@
-**SPY morning — 2026-07-22**
-CONSENSUS: SIDEWAYS · 50% (spot 747.895)
+**SPY morning — 2026-07-23**
+CONSENSUS: SIDEWAYS · 36% (spot 741.45)
 
-**📰 News check:** MIXED — neutral to the SIDEWAYS read — gold safe-haven bid + futures slip ahead of TSLA/GOOGL earnings offset by Meta growth optimism; no single macro driver dominates
+**📰 News check:** MIXED — neutral to the SIDEWAYS read — Tesla Q2 profit plunge + airline fuel cost spike (bearish drag) vs. NVDA strength; no single dominant driver to break the range
+
 ```
 
 ===================  SPY — RUN IT  ===================
-  as of 2026-07-22T13:50:38.951Z   price ~747.9
+  as of 2026-07-23T13:50:23.638Z   price ~741.45
 
-  CONSENSUS:   SIDEWAYS   ·   50% confident
+  CONSENSUS:   SIDEWAYS   ·   36% confident
 
   >>> NO TRADE today — direction unclear / low confidence.
       Sitting out is the call (a result, not a miss).
