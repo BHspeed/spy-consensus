@@ -70,3 +70,5 @@
 {"symbol":"ACA","added":"2026-07-22","entry":145.1,"tier":"core","targetPct":10,"targetPrice":159.6,"stopPrice":135,"status":"open"}
 {"symbol":"VOYA","added":"2026-07-22","entry":98.5,"tier":"core","targetPct":10,"targetPrice":108.4,"stopPrice":91.6,"status":"open"}
 {"symbol":"PRI","added":"2026-07-22","entry":312.8,"tier":"core","targetPct":10,"targetPrice":344.1,"stopPrice":290.9,"status":"open"}
+{"symbol":"LTH","added":"2026-07-23","entry":43.5,"tier":"core","targetPct":10.3,"targetPrice":48,"stopPrice":40.4,"status":"open"}
+{"symbol":"RGA","added":"2026-07-23","entry":234.3,"tier":"core","targetPct":10,"targetPrice":257.7,"stopPrice":217.9,"status":"open"}
