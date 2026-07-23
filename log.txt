@@ -42,7 +42,6 @@ SYMS=NVDA,AMD
 step2 2236
 step2 2235
 step3: weeklygrade: graded 0 today, 38 total
-step1 3209
-step2 tickers: VRNS,LTH,RGA,VOYA,XENE,ALKS
-step3 10832
-step4 stdout: swings: 2 new, 72 already active
+SYMS: TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step2 wrote 10 files
+levetf: 0 new, 0 closed this run, 2 graded total
