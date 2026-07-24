@@ -72,3 +72,4 @@
 {"symbol":"PRI","added":"2026-07-22","entry":312.8,"tier":"core","targetPct":10,"targetPrice":344.1,"stopPrice":290.9,"status":"open"}
 {"symbol":"LTH","added":"2026-07-23","entry":43.5,"tier":"core","targetPct":10.3,"targetPrice":48,"stopPrice":40.4,"status":"open"}
 {"symbol":"RGA","added":"2026-07-23","entry":234.3,"tier":"core","targetPct":10,"targetPrice":257.7,"stopPrice":217.9,"status":"open"}
+{"symbol":"AHR","added":"2026-07-24","entry":57.4,"tier":"core","targetPct":10,"targetPrice":63.2,"stopPrice":53.4,"status":"open"}
