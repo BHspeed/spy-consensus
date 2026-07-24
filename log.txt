@@ -80,3 +80,7 @@ weeklies: 4 picks (4 logged)
 SYMS=SPY,NVDA,TSLA,QQQ
 step2 4450
 step3: weeklygrade: graded 4 today, 42 total
+step1 5093
+step2 tickers: AHR,ALKS,RGA,LTH,CORT,PRI
+step3 10861
+step4: swings: 1 new, 74 already active
