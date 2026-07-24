@@ -84,3 +84,8 @@ step1 5093
 step2 tickers: AHR,ALKS,RGA,LTH,CORT,PRI
 step3 10861
 step4: swings: 1 new, 74 already active
+TODAY=2026-07-24
+run started Fri Jul 24 20:25:54 UTC 2026
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step2 wrote 10 files
+levetf: 2 new, 1 closed this run, 3 graded total
