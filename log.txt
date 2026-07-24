@@ -89,3 +89,7 @@ run started Fri Jul 24 20:25:54 UTC 2026
 SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step2 wrote 10 files
 levetf: 2 new, 1 closed this run, 3 graded total
+=== theme agent start Fri Jul 24 20:36:04 UTC 2026 ===
+SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step2 wrote 20 files
+step3: theme: 20 scored, 6 setups
