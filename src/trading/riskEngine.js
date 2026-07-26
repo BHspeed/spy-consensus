@@ -14,7 +14,7 @@
  *
  * @typedef {Object} Position
  * @property {string}  symbol
- * @property {'highcap'|'lowpriced'} tier
+ * @property {'core'|'amp'} tier
  * @property {number}  shares
  * @property {number}  entryPrice
  * @property {number}  entryTime   epoch ms
@@ -45,24 +45,36 @@ export function openPosition({ symbol, tier, shares, entryPrice, entryTime }, cf
   };
 }
 
+/** Resolve a per-tier risk number (maps like {core, amp}). */
+function tierParam(map, tier) {
+  const v = map[tier];
+  if (v == null) throw new Error(`no risk param for tier: ${tier}`);
+  return v;
+}
+
 /**
  * Advance a position's trailing state given the latest price. Ratchets the stop
- * UP only — never down. Returns a new Position; does not decide the exit.
+ * UP only — never down. Trail thresholds are per-tier (the amp tier is wider so
+ * a 3x ETF isn't shaken out by noise). Returns a new Position; no exit decision.
  */
 export function updatePositionRisk(pos, currentPrice, cfg) {
   if (!(currentPrice > 0)) return pos;
   const peak = Math.max(pos.peak, currentPrice);
   const peakGainPct = ((peak - pos.entryPrice) / pos.entryPrice) * 100;
 
-  let trailArmed = pos.trailArmed || peakGainPct >= cfg.risk.trailArmPct;
+  const armPct = tierParam(cfg.risk.trailArmPct, pos.tier);
+  const trailPct = tierParam(cfg.risk.trailPct, pos.tier);
+  const lockPct = tierParam(cfg.risk.lockBreakevenAfterPct, pos.tier);
+
+  let trailArmed = pos.trailArmed || peakGainPct >= armPct;
   let stop = pos.stop;
 
   if (trailArmed) {
     // Trail below the running peak; only ever move the stop higher.
-    const trailStop = peak * (1 - cfg.risk.trailPct / 100);
+    const trailStop = peak * (1 - trailPct / 100);
     stop = Math.max(stop, trailStop);
     // Once we're up enough, guarantee the stop never sits below break-even.
-    if (peakGainPct >= cfg.risk.lockBreakevenAfterPct) {
+    if (peakGainPct >= lockPct) {
       stop = Math.max(stop, pos.entryPrice);
     }
   }
@@ -90,7 +102,7 @@ export function decidePositionExit(pos, currentPrice, cfg) {
     action: 'HOLD',
     reason: updated.trailArmed
       ? `Hold — trailing (stop ${updated.stop}, peak ${updated.peak}, ${signed(gainPct)}%).`
-      : `Hold — ${signed(gainPct)}% (arms trail at +${cfg.risk.trailArmPct}%).`,
+      : `Hold — ${signed(gainPct)}% (arms trail at +${tierParam(cfg.risk.trailArmPct, updated.tier)}%).`,
     kind: null,
     gainPct,
     position: updated,

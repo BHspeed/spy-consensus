@@ -8,21 +8,43 @@ placing exactly the orders it returns.
 > **This trades real money.** Read the whole doc, especially *Safety* and
 > *Cash-account constraints*, before arming it.
 
+## Strategy (built to compete on return %)
+
+A **concentrated momentum / relative-strength rotation** over a curated, *liquid*
+universe — it is deliberately **not** a diversified index. The goal is to
+out-return a human account, so it takes the structural edges a small agentic
+account actually has and avoids the mistakes that quietly bleed one out:
+
+- **Only liquid names.** At $100 the bid/ask spread *is* your P&L, so the
+  universe is a hand-picked list of megacaps + liquid leveraged ETFs — no
+  penny-stock spread tax, no single-name blow-ups.
+- **Leverage from ETFs, not options.** The "amp" tier is 2–3x index/sector ETFs
+  (TQQQ, SOXL, …) bought **fractionally** — tight spreads, no expiry, no theta
+  bleed. (Options at $100 would be one contract of pure decay.)
+- **Concentration.** ≤3 positions so a winner actually moves the needle.
+- **Regime gate.** New longs only when the broad market is risk-on — the #1
+  small-account killer is buying momentum into a falling tape.
+- **Ride winners, cut losers fast.** Volatility-scaled trailing stops let
+  winners run; tight initial stops + the daily 3% breaker cap the downside.
+
 ## The rules (as configured)
 
 | Rule | Setting | Where |
 |------|---------|-------|
 | Daily account stop | Down **3%** on the day → flatten everything + halt new entries until next session | `config.daily.stopPct` |
-| Per-position initial stop | **3%** high-cap / **5%** low-priced below entry | `config.risk.initialStopPct` |
-| Trail trigger | Once a position is up **>3%**, arm a trailing stop | `config.risk.trailArmPct` |
-| Trailing distance | Trail **3%** below the running peak, ratchets up only | `config.risk.trailPct` |
-| Break-even lock | Once peak gain ≥ **5%**, the stop never drops below entry | `config.risk.lockBreakevenAfterPct` |
-| Reentry | After a stop-out, re-enter when the screen re-confirms, after a **30-min** cooldown, max **2×/symbol/day** | `config.reentry` |
-| Universe | Auto-screened mix: **high-cap** (fractional shares) + **low-priced $1.50–$15** (whole shares), momentum-ranked | `config.screen` |
-| Sizing | ≤ **5** positions, **60/40** high-cap/low-priced, **5%** cash buffer, **30%** max per position | `config.sizing` |
+| Per-position initial stop | **3%** core / **7%** amp below entry (amp is ~3x as volatile) | `config.risk.initialStopPct` |
+| Trail trigger | Up **>3%** core / **>5%** amp → arm a trailing stop | `config.risk.trailArmPct` |
+| Trailing distance | **3%** core / **6%** amp below the running peak, ratchets up only | `config.risk.trailPct` |
+| Break-even lock | Peak gain ≥ **5%** core / **9%** amp → stop never drops below entry | `config.risk.lockBreakevenAfterPct` |
+| Reentry | After a stop-out, re-enter when it re-ranks as a buy, after a **45-min** cooldown, max **2×/symbol/day** | `config.reentry` |
+| Universe | Curated & liquid: **core** = megacap leaders, **amp** = leveraged ETFs; all fractional, momentum-ranked | `config.screen.universe` |
+| Regime | New longs only when the broad market is **risk-on** | `config.screen.requireRiskOn` |
+| Sizing | ≤ **3** positions, **50/50** core/amp, **5%** cash buffer, **40%** max per position | `config.sizing` |
 
 Everything is a config number in [`src/trading/config.js`](../src/trading/config.js).
-Retune there — the engine is fully parameterized.
+Retune there — the engine is fully parameterized. **This is a strategy, not a
+guarantee: it's designed to maximize the competitive edge under these
+constraints, but no strategy promises alpha.**
 
 ## How it works
 

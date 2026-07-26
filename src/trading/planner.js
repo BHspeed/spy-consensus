@@ -80,6 +80,13 @@ export function planCycle(input, cfg) {
     return { actions, nextState: state, dailyStop, halted: true, notes };
   }
 
+  // Regime gate: don't open new longs into a falling tape.
+  if (cfg.screen.requireRiskOn && !(input.regime && input.regime.riskOn)) {
+    notes.push(`Risk-OFF regime${input.regime?.reason ? ` (${input.regime.reason})` : ''} — no new entries, holding/trailing only.`);
+    state = { ...state, lastCycle: iso(now) };
+    return { actions, nextState: state, dailyStop, halted: state.halted, notes };
+  }
+
   const { picks, rejected } = screen(candidates, cfg);
   if (rejected.length) notes.push(`Screened out ${rejected.length} candidate(s).`);
 
@@ -119,20 +126,13 @@ export function planCycle(input, cfg) {
 // ---- Action builders -------------------------------------------------------
 
 function sellAction(pos, price, cfg, reason) {
-  // Fractional (high-cap) must exit as MARKET; whole-share (low-priced) uses a
-  // marketable limit for price protection.
-  const fractional = pos.tier === 'highcap';
-  const base = { type: 'SELL', symbol: pos.symbol, shares: pos.shares, tier: pos.tier, reason };
-  if (fractional || !(price > 0)) return { ...base, orderType: 'market' };
-  const limitPrice = round2(price * (1 - cfg.exec.marketableLimitSlipPct / 100));
-  return { ...base, orderType: 'limit', limitPrice };
+  // Positions are fractional → exits are MARKET (RH has no fractional limit/stop).
+  return { type: 'SELL', symbol: pos.symbol, shares: pos.shares, tier: pos.tier, reason, orderType: 'market' };
 }
 
 function buyAction(entry, price, cfg) {
-  const base = { type: 'BUY', symbol: entry.symbol, tier: entry.tier, shares: entry.shares, usd: entry.usd };
-  if (entry.orderType === 'market' || !(price > 0)) return { ...base, orderType: 'market' };
-  const limitPrice = round2(price * (1 + cfg.exec.marketableLimitSlipPct / 100));
-  return { ...base, orderType: 'limit', limitPrice };
+  // Fractional entries are MARKET orders (RTH only).
+  return { type: 'BUY', symbol: entry.symbol, tier: entry.tier, shares: entry.shares, usd: entry.usd, orderType: 'market' };
 }
 
 // ---- helpers ---------------------------------------------------------------

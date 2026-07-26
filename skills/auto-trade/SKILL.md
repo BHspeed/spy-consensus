@@ -12,10 +12,12 @@ or sizes. Do not skip the planner.
 
 - **Account (the only tradeable one):** `521158774` — agentic-enabled **cash**
   account, options level 2. Never trade any other account.
-- **Rules (encoded in `src/trading/config.js`):** daily 3% account stop →
-  flatten + halt; per-position stop 3% (high-cap) / 5% (low-priced); once up >3%,
-  trailing stop ratchets up; reentry after a stop-out with a cooldown; auto-screen
-  a high-cap + low-priced mix; deploy settled cash only (cash-account GFV guard).
+- **Strategy (encoded in `src/trading/config.js`):** concentrated momentum
+  rotation over a curated liquid universe — **core** (megacaps) + **amp**
+  (leveraged ETFs), all fractional. Daily 3% account stop → flatten + halt;
+  per-position stop 3% core / 7% amp; trailing stop arms/ratchets per tier;
+  new entries only when the market is **risk-on**; reentry after a cooldown;
+  deploy settled cash only (cash-account GFV guard).
 
 ## Step 0 — Gate: is the regular session open?
 
@@ -44,25 +46,33 @@ Call in parallel:
 
 `get_equity_quotes` for all held symbols → `quotes[SYMBOL] = last_trade_price`.
 
-## Step 4 — Screen candidates (only if you may add positions)
+## Step 4 — Market regime (always) + screen the curated universe
 
-Skip screening if the account is already at `maxPositions` or has no settled
-cash. Otherwise build the candidate list:
+**Regime (always compute):** read SPY and QQQ — are they above their 20-day EMA
+and green on the day? Set `regime = { riskOn: <bool>, reason: "<why>" }`. Use
+Robinhood `get_equity_technical_indicators` / `get_equity_historicals` (or Webull
+bars). Risk-off ⇒ the planner takes no new entries (it still manages exits).
 
-1. **Discover movers** (both tiers): Webull `get_gainers_losers` /
-   `get_most_active` (US_STOCK), and/or Robinhood `run_scan`.
-2. For each candidate gather: `price`, `marketCap` (Robinhood
-   `get_equity_fundamentals` or Webull `get_company_profile`), `avgDollarVol`
-   (avg volume × price), `dayChangePct` (intraday % change), and optionally a
-   `trendScore` in [-1..+1] from `get_equity_technical_indicators`.
-3. Add current `quotes[SYMBOL]` for each candidate too.
+**Screen (only if you may add positions):** skip if already at `maxPositions` or
+no settled cash. Otherwise, the universe is **fixed and curated** — the lists in
+`config.screen.universe` (`core` megacaps + `amp` leveraged ETFs). Do NOT invent
+tickers; only these are tradeable. For each symbol in the universe:
 
-Keep it to ~15 raw candidates; the planner's screener filters and ranks them.
+- `price` and `dayChangePct` (intraday % change) — Robinhood `get_equity_quotes`
+  (batch) or Webull `get_stock_snapshot`.
+- `avgDollarVol` (avg volume × price) — from quotes/bars.
+- `trendScore` in [-1..+1] — a short-term trend read (e.g. price vs 20-EMA
+  sign/magnitude) from `get_equity_technical_indicators`.
+
+Pass the whole curated universe as `candidates`; the planner's screener applies
+the momentum + uptrend gates and ranks by relative strength. Add each candidate's
+price into `quotes` too.
 
 ## Step 5 — Run the planner (the decision)
 
 Write a bundle to `data/cycle_bundle.json` with **all** of:
 `now` (epoch ms), `today` (ET YYYY-MM-DD), `marketOpen`,
+`regime:{riskOn,reason}` (from Step 4),
 `account:{equity,buyingPower}`, `state` (from Step 1),
 `brokerPositions`, `quotes`, `candidates`.
 
@@ -75,16 +85,12 @@ The output gives `actions` (ordered SELL→BUY), `nextState`, `dailyStop`,
 
 Because the owner chose **unattended** operation, you may skip `review_*` and go
 straight to `place_equity_order`. Still send a fresh `ref_id` (UUID) per order.
-For each action:
+All actions are **fractional market** orders (`orderType:market`):
 
-- **SELL, `orderType:market`** (fractional high-cap): `place_equity_order`
-  side=sell, type=market, quantity=shares, market_hours=regular_hours.
-- **SELL, `orderType:limit`** (whole-share low-priced): type=limit,
-  limit_price=`limitPrice`, quantity=shares.
-- **BUY, `orderType:market`** (fractional high-cap): type=market,
-  quantity=shares (fractional ok), market_hours=regular_hours.
-- **BUY, `orderType:limit`** (whole-share low-priced): type=limit,
-  limit_price=`limitPrice`, quantity=shares.
+- **SELL:** `place_equity_order` side=sell, type=market, quantity=shares,
+  market_hours=regular_hours.
+- **BUY:** side=buy, type=market, quantity=shares (fractional ok),
+  market_hours=regular_hours.
 
 Run **all SELLs before any BUY**. If a SELL is rejected, still place the others
 and note it. Never place an order the planner did not return.

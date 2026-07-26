@@ -23,10 +23,11 @@
  *     "marketOpen": true,              // is it the regular session?
  *     "account": { "equity": 100, "buyingPower": 100 },
  *     "state": { ...persisted engine state... },   // {} on first run
- *     "brokerPositions": [ { "symbol":"AAPL","shares":0.1,"avgPrice":200,"tier":"highcap" } ],
- *     "quotes": { "AAPL": 201.2 },     // current price per held + candidate symbol
- *     "candidates": [ { "symbol":"AAPL","price":201.2,"marketCap":3e12,
- *                       "avgDollarVol":8e9,"dayChangePct":1.4,"trendScore":0.5 } ]
+ *     "regime": { "riskOn": true, "reason": "SPY > 20-EMA" },  // market gate
+ *     "brokerPositions": [ { "symbol":"NVDA","shares":0.1,"avgPrice":120,"tier":"core" } ],
+ *     "quotes": { "NVDA": 121.2 },     // current price per held + candidate symbol
+ *     "candidates": [ { "symbol":"NVDA","price":121.2,"avgDollarVol":30e9,
+ *                       "dayChangePct":1.4,"trendScore":0.6 } ]   // curated universe only
  *   }
  *
  * The printed "NEXT STATE" is what the agent must save back for the next cycle.
@@ -47,13 +48,15 @@ if (wantDemo || !file) {
     now: Date.parse('2026-07-27T14:00:00Z'),
     today: '2026-07-27',
     marketOpen: true,
+    regime: { riskOn: true, reason: 'SPY > 20-EMA (demo)' },
     account: { equity: 100, buyingPower: 100 },
     state: emptyState(),
     brokerPositions: [],
-    quotes: { AAPL: 201.2, SOFI: 8.4 },
+    quotes: { NVDA: 121.2, TQQQ: 78.5, SOXL: 32.1 },
     candidates: [
-      { symbol: 'AAPL', price: 201.2, marketCap: 3.1e12, avgDollarVol: 8e9, dayChangePct: 1.4, trendScore: 0.55 },
-      { symbol: 'SOFI', price: 8.4, marketCap: 9e9, avgDollarVol: 300e6, dayChangePct: 3.1, trendScore: 0.4 },
+      { symbol: 'NVDA', price: 121.2, avgDollarVol: 30e9, dayChangePct: 1.4, trendScore: 0.6 },
+      { symbol: 'TQQQ', price: 78.5, avgDollarVol: 3e9, dayChangePct: 2.8, trendScore: 0.5 },
+      { symbol: 'SOXL', price: 32.1, avgDollarVol: 2e9, dayChangePct: 3.6, trendScore: 0.45 },
     ],
   };
 } else {

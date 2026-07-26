@@ -1,8 +1,9 @@
 /**
  * Position sizing — allocates a small cash balance across ranked candidates,
- * mixing high-cap (fractional shares → market order) and low-priced (whole
- * shares → marketable limit), while respecting: cash buffer, settled-cash gate,
- * max positions, per-tier split, and per-position caps.
+ * CONCENTRATED into a few high-conviction names: core (megacap, fractional →
+ * market order) and amp (leveraged ETF, whole shares → marketable limit), while
+ * respecting the cash buffer, settled-cash gate, max positions, per-tier split,
+ * and per-position cap.
  *
  * Pure: takes the account snapshot + ranked picks, returns intended entries.
  *
@@ -34,12 +35,12 @@ export function planEntries({ equity, settledCash, openPositions = [], picks = [
   // Per-tier target counts, then subtract what's already held in each tier.
   const heldByTier = tally(openPositions.map(p => p.tier));
   const targetByTier = {
-    highcap: Math.round(s.maxPositions * s.tierSplit.highcap),
-    lowpriced: Math.round(s.maxPositions * s.tierSplit.lowpriced),
+    core: Math.round(s.maxPositions * s.tierSplit.core),
+    amp: Math.round(s.maxPositions * s.tierSplit.amp),
   };
   const remainingByTier = {
-    highcap: Math.max(0, targetByTier.highcap - (heldByTier.highcap || 0)),
-    lowpriced: Math.max(0, targetByTier.lowpriced - (heldByTier.lowpriced || 0)),
+    core: Math.max(0, targetByTier.core - (heldByTier.core || 0)),
+    amp: Math.max(0, targetByTier.amp - (heldByTier.amp || 0)),
   };
 
   const held = new Set(openPositions.map(p => p.symbol));
@@ -71,20 +72,13 @@ export function planEntries({ equity, settledCash, openPositions = [], picks = [
     const budget = Math.min(perPos, cashLeft);
     if (budget < s.minOrderUsd) { notes.push(`${c.symbol}: budget $${round2(budget)} < min $${s.minOrderUsd}, skipped.`); continue; }
 
-    if (c.tier === 'highcap') {
-      // Fractional shares → market order (RH fractional is market + RTH only).
-      const shares = round6(budget / c.price);
-      if (shares <= 0) continue;
-      entries.push({ symbol: c.symbol, tier: c.tier, usd: round2(budget), shares, orderType: 'market' });
-      cashLeft -= budget;
-    } else {
-      // Whole shares → marketable limit.
-      const shares = Math.floor(budget / c.price);
-      if (shares < 1) { notes.push(`${c.symbol}: $${round2(budget)} < 1 share @ ${c.price}, skipped.`); continue; }
-      const cost = shares * c.price;
-      entries.push({ symbol: c.symbol, tier: c.tier, usd: round2(cost), shares, orderType: 'limit' });
-      cashLeft -= cost;
-    }
+    // Both tiers use FRACTIONAL shares → market order (RH fractional is market +
+    // RTH only). Fractional is essential at $100: whole shares of a $78 leveraged
+    // ETF would blow the per-position cap and starve the mix.
+    const shares = round6(budget / c.price);
+    if (shares <= 0) continue;
+    entries.push({ symbol: c.symbol, tier: c.tier, usd: round2(budget), shares, orderType: 'market' });
+    cashLeft -= budget;
   }
   return { entries, notes };
 }

@@ -12,6 +12,7 @@
  * clock is always injected (today, nowMs) so this module stays pure/testable.
  */
 import { openPosition } from './riskEngine.js';
+import { tierOf } from './config.js';
 
 export const STATE_VERSION = 1;
 
@@ -71,7 +72,7 @@ export function reconcilePositions(brokerPositions, state, cfg) {
       if (known) {
         return { ...known, shares: bp.shares, entryPrice: known.entryPrice || bp.avgPrice };
       }
-      const tier = state.positions[bp.symbol]?.tier || bp.tier || 'highcap';
+      const tier = state.positions[bp.symbol]?.tier || bp.tier || tierOf(bp.symbol, cfg) || 'core';
       return openPosition({
         symbol: bp.symbol,
         tier,
