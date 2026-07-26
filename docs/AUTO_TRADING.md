@@ -87,19 +87,34 @@ faster cadence (see *Cadence*) or native whole-share stop orders.
 
 ## Cadence
 
-The durable scheduler fires at most **hourly**. The market-hours Routine runs a
-cycle each hour of the regular session — so intra-hour moves are unprotected
-until the next cycle. For tighter management while you're watching, run cycles
-by hand (or a short in-session loop) using the same `SKILL.md` path; it's the
-same code, just more often.
+The scheduler fires at most **hourly**, so a Routine runs one cycle per hour of
+the regular session — intra-hour moves are unprotected until the next cycle. For
+tighter management while you're watching, run cycles by hand (or a short
+in-session loop) using the same `SKILL.md` path; it's the same code, just more
+often.
 
 ## Arming / disarming
 
-- **Arm:** a scheduled Routine ("RH auto-trade cycle") runs the cycle each hour
-  during US regular hours. It begins at the next market session.
-- **Disarm (stop all trading):** delete the Routine. Ask the agent to "stop the
-  auto-trade schedule," or delete the trigger via the scheduler tools/UI. Nothing
-  trades once the Routine is gone.
+**The cycle must run in a session that has the Robinhood (and Webull) MCP
+connector tools.** This is the one real constraint on going unattended:
+
+- Scheduled sessions spawned by the CCR trigger tool in this org run **without**
+  connector (`mcp__*`) tools, so a cron-fired fresh session **cannot trade** — it
+  can't even read the account. (A trigger was attempted during setup and removed
+  for exactly this reason.)
+- Two ways to actually run cycles, both using the same committed code + `SKILL.md`:
+  1. **claude.ai Routines UI (recommended for unattended):** create a recurring
+     Routine there, on a session/environment that has the **RobinHood** connector
+     enabled, with the prompt "run the auto-trade skill" and a schedule of
+     `0 13-21 * * 1-5` UTC (hourly across US regular hours; the skill's Step 0
+     gate skips anything outside 09:30–16:00 ET). Because that Routine carries the
+     connector, its sessions can place orders.
+  2. **Active session (attended / semi-attended):** in a Claude Code session that
+     has the RobinHood connector (like the one this was built in), say "run an
+     auto-trade cycle" — or loop it (`/loop 60m run an auto-trade cycle`) while the
+     session/container stays alive.
+- **Disarm (stop all trading):** delete/disable the Routine (or stop the loop).
+  Nothing trades once it's gone.
 - **Pause for a day:** set `"halted": true` in `data/trading_state.json` (with
   today's `day`) — no new entries until the next day-roll.
 - **Flatten now:** ask the agent to sell all positions in `••••8774`.
