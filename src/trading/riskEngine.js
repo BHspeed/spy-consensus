@@ -116,11 +116,17 @@ export function decidePositionExit(pos, currentPrice, cfg) {
 export function decideDailyStop(baselineEquity, currentEquity, cfg) {
   if (!(baselineEquity > 0)) return { tripped: false, drawdownPct: 0, reason: 'No baseline yet.' };
   const drawdownPct = round2(((baselineEquity - currentEquity) / baselineEquity) * 100);
-  const tripped = drawdownPct >= cfg.daily.stopPct;
+  // A drawdown bigger than the suspect threshold is almost certainly a withdrawal,
+  // not a loss — don't liquidate; flag for re-baseline.
+  const suspect = cfg.daily.suspectMovePct != null && drawdownPct >= cfg.daily.suspectMovePct;
+  const tripped = drawdownPct >= cfg.daily.stopPct && !suspect;
   return {
     tripped,
     drawdownPct,
-    reason: tripped
+    suspectTransfer: suspect,
+    reason: suspect
+      ? `Drawdown ${drawdownPct}% exceeds ${cfg.daily.suspectMovePct}% — likely a withdrawal, not a loss. Re-baseline; NOT tripping the stop.`
+      : tripped
       ? `Daily stop TRIPPED: account down ${drawdownPct}% (limit ${cfg.daily.stopPct}%) — flatten + halt.`
       : `Daily drawdown ${drawdownPct}% (limit ${cfg.daily.stopPct}%).`,
   };
@@ -136,11 +142,17 @@ export function decideDailyGoal(baselineEquity, currentEquity, cfg) {
     return { reached: false, gainPct: 0, reason: 'No goal set / no baseline.' };
   }
   const gainPct = round2(((currentEquity - baselineEquity) / baselineEquity) * 100);
-  const reached = gainPct >= cfg.daily.goalPct;
+  // A gain bigger than the suspect threshold is almost certainly a deposit, not a
+  // win — don't liquidate the book; flag for re-baseline.
+  const suspect = cfg.daily.suspectMovePct != null && gainPct >= cfg.daily.suspectMovePct;
+  const reached = gainPct >= cfg.daily.goalPct && !suspect;
   return {
     reached,
     gainPct,
-    reason: reached
+    suspectTransfer: suspect,
+    reason: suspect
+      ? `Gain ${gainPct}% exceeds ${cfg.daily.suspectMovePct}% — likely a deposit, not a win. Re-baseline; NOT banking/halting.`
+      : reached
       ? `Daily GOAL reached: account up ${gainPct}% (target ${cfg.daily.goalPct}%) — bank it + halt.`
       : `Daily gain ${gainPct}% (goal ${cfg.daily.goalPct}%).`,
   };

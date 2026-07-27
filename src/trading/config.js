@@ -45,6 +45,10 @@ export const DEFAULT_CONFIG = {
     stopPct: 3,              // down 3% on the day → flatten all + halt new entries
     goalPct: 5,              // up 5% on the day → flatten all + bank the win, halt
     haltForRestOfDay: true,  // once tripped (either side), done for the session
+    // Deposit/withdrawal guard: a same-day equity move larger than this is almost
+    // certainly a cash transfer, not trading P&L — do NOT trip the stop/goal on it
+    // (that would liquidate the book on a deposit). Re-baseline instead.
+    suspectMovePct: 15,
   },
 
   // ---- Per-position risk (per tier — the amp tier is ~3x as volatile) ------

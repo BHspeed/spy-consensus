@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import { loadConfig } from '../src/trading/config.js';
 import {
   initialStop, openPosition, updatePositionRisk, decidePositionExit,
-  decideDailyStop, reentryEligible,
+  decideDailyStop, decideDailyGoal, reentryEligible,
 } from '../src/trading/riskEngine.js';
 
 const cfg = loadConfig();
@@ -122,3 +122,20 @@ describe('reentry gate', () => {
 });
 
 function round4(v) { return Math.round(v * 10000) / 10000; }
+
+describe('deposit/withdrawal guard', () => {
+  test('a huge "gain" (deposit) does NOT reach the goal', () => {
+    const d = decideDailyGoal(100, 150, cfg); // +50% = deposit, not a win
+    assert.equal(d.reached, false);
+    assert.equal(d.suspectTransfer, true);
+  });
+  test('a huge "drawdown" (withdrawal) does NOT trip the stop', () => {
+    const d = decideDailyStop(150, 100, cfg); // -33% = withdrawal, not a loss
+    assert.equal(d.tripped, false);
+    assert.equal(d.suspectTransfer, true);
+  });
+  test('normal goal/stop still fire under the suspect threshold', () => {
+    assert.equal(decideDailyGoal(100, 105, cfg).reached, true);
+    assert.equal(decideDailyStop(100, 97, cfg).tripped, true);
+  });
+});
