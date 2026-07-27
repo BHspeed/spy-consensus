@@ -107,9 +107,16 @@ and note it. Never place an order the planner did not return.
 
 ## Step 8 — Report
 
-One short summary: equity, daily drawdown vs the 3% limit, halted?, orders placed
-(with fills/rejections), and current open positions with their stops. If the
-daily stop tripped, say so plainly.
+Write one short summary: equity, daily drawdown vs the 3% limit, halted?, orders
+placed (with fills/rejections), and current open positions with their stops. If
+the daily stop tripped, say so plainly.
+
+Post it to the Discord channel (BEST-EFFORT — never let this block or fail the
+cycle): `node scripts/notify_discord.mjs --title "Auto-trade <today> <HH:MM ET>" --file <summary.txt>`.
+If it exits non-zero (e.g. `403 Host not in allowlist` — discord.com isn't in the
+environment's egress policy, or `DISCORD_WEBHOOK_URL` is unset), just note "Discord
+unreachable" and carry on — the git-committed `data/trade_cycles.jsonl` is the
+durable record regardless.
 
 ## Hard safety rails (always, even unattended)
 

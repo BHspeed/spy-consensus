@@ -143,6 +143,23 @@ that's the one real constraint on going unattended:
   today's `day`) — no new entries until the next day-roll.
 - **Flatten now:** ask the agent to sell all positions in `••••8774`.
 
+## Reporting to Discord
+
+Each cycle posts its summary to a Discord channel via
+`scripts/notify_discord.mjs` (best-effort — a failed post never blocks trading).
+Two things must be in place for it to work, both set in the **environment**
+config (not the repo):
+
+1. **Egress:** allow `discord.com` in the environment's network policy. Without
+   it the post fails `403 Host not in allowlist` and the cycle just logs
+   "Discord unreachable" and continues.
+2. **Webhook:** set `DISCORD_WEBHOOK_URL` to the channel webhook. It's read from
+   the env (preferred) or `data/discord_webhook.txt` (git-ignored — never commit
+   the webhook; it's a credential).
+
+Until both are set, the durable record is the git-committed
+`data/trade_cycles.jsonl` plus the per-cycle commit on the branch.
+
 ## Testing
 
 ```

@@ -22,3 +22,6 @@ wopts.json
 opts.json
 levhist.json
 hist_*.json
+
+# local secret — never commit (set DISCORD_WEBHOOK_URL env instead)
+data/discord_webhook.txt
