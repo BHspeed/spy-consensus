@@ -25,3 +25,6 @@ hist_*.json
 
 # local secret — never commit (set DISCORD_WEBHOOK_URL env instead)
 data/discord_webhook.txt
+
+# transient per-cycle planner input (regenerated each run)
+data/cycle_bundle.json
