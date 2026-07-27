@@ -1,9 +1,1 @@
-{
-  "version": 1,
-  "day": null,
-  "baselineEquity": 0,
-  "halted": false,
-  "positions": {},
-  "stoppedOut": {},
-  "lastCycle": null
-}
+{"version":1,"day":"2026-07-27","baselineEquity":100,"halted":false,"positions":{},"stoppedOut":{},"lastCycle":"2026-07-27T13:35:11.000Z"}
