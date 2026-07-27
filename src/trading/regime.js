@@ -30,4 +30,26 @@ export function assessRegime({ price, priorClose, ema }, cfg) {
   return { riskOn, reason, dayChangePct };
 }
 
+/**
+ * Fold the SPY consensus call-out into the price/EMA regime. The call-out can
+ * only ever RESTRICT (make us safer): an outright bearish call-out forces
+ * risk-off even on a green day. A bullish/neutral call-out passes the base
+ * regime through, annotated with the call-out and its conviction.
+ * @param {{riskOn:boolean, reason:string, dayChangePct:number}} base
+ * @param {object|null} spySig  from spyConsensus.normalizeSignal()
+ * @param {object} cfg
+ */
+export function combineRegime(base, spySig, cfg) {
+  if (!spySig) return base;
+  const block = cfg.screen.regime.requireConsensusNotBearish && spySig.bearish;
+  return {
+    riskOn: base.riskOn && !block,
+    dayChangePct: base.dayChangePct,
+    conviction: spySig.conviction,
+    reason: block
+      ? `${base.reason}; BLOCKED by ${spySig.reason}`
+      : `${base.reason}; ${spySig.reason}`,
+  };
+}
+
 function round2(v) { return Math.round(v * 100) / 100; }

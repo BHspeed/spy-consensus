@@ -59,10 +59,22 @@ Call in parallel:
 
 ## Step 4 — Market regime (always) + screen the curated universe
 
-**Regime (always compute):** read SPY and QQQ — are they above their 20-day EMA
-and green on the day? Set `regime = { riskOn: <bool>, reason: "<why>" }`. Use
-Robinhood `get_equity_technical_indicators` / `get_equity_historicals`. Risk-off
-⇒ the planner takes no new entries (it still manages exits).
+**Regime (always compute):** fetch SPY's current price, prior close, and 10-day
+EMA (`get_equity_quotes` + `get_equity_technical_indicators` ema period 10 day).
+Put them in the bundle as `spy: { price, priorClose, ema }` — the harness runs
+the deterministic assessor (green + at/above the 10-day EMA = risk-on).
+
+**SPY call-out (confirming signal):** also compute the repo's SPY direction
+consensus and pass it as `spyConsensus: { bias, confidence, score }`. Pull ~60
+SPY daily bars + ~2 weeks of hourly (`get_equity_historicals`) and run
+`buildVerdict` (src/consensus/engine.js) — or reuse the latest `outbox` SPY
+call-out. The harness folds it in: a **bearish** call-out (bias DOWN/STRONG_DOWN)
+forces risk-off even on a green day; bullish/neutral passes through. Risk-off ⇒
+no new entries (exits still managed).
+
+**Options (only if `config.options.enabled`):** on a **strong** bullish call-out
+you may route one slice into a single-leg long call per `config.options`
+(level-2 account). Off by default — at ~$100 a SPY contract is unaffordable.
 
 **Screen (only if you may add positions):** skip if already at `maxPositions` or
 no settled cash. Otherwise, the universe is **fixed and curated** — the lists in
@@ -83,7 +95,8 @@ price into `quotes` too.
 
 Write a bundle to `data/cycle_bundle.json` with **all** of:
 `now` (epoch ms), `today` (ET YYYY-MM-DD), `marketOpen`,
-`regime:{riskOn,reason}` (from Step 4),
+`spy:{price,priorClose,ema}` and `spyConsensus:{bias,confidence}` (from Step 4;
+the harness derives `regime` from them),
 `account:{equity,buyingPower}`, `state` (from Step 1),
 `brokerPositions`, `quotes`, `candidates`.
 

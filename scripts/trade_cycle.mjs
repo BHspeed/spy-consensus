@@ -36,7 +36,8 @@ import { readFileSync } from 'node:fs';
 import { loadConfig } from '../src/trading/config.js';
 import { normalizeState, emptyState } from '../src/trading/state.js';
 import { planCycle } from '../src/trading/planner.js';
-import { assessRegime } from '../src/trading/regime.js';
+import { assessRegime, combineRegime } from '../src/trading/regime.js';
+import { normalizeSignal } from '../src/trading/spyConsensus.js';
 
 const args = process.argv.slice(2);
 const wantJson = args.includes('--json');
@@ -66,10 +67,14 @@ if (wantDemo || !file) {
 }
 
 const cfg = loadConfig(bundle.config || {});
-// Regime: use an explicit bundle.regime if given, else derive it from bundle.spy
-// {price, priorClose, ema} via the deterministic assessor.
-const regime = bundle.regime
-  ?? (bundle.spy ? assessRegime(bundle.spy, cfg) : undefined);
+// Regime: an explicit bundle.regime wins; else derive it from bundle.spy
+// {price, priorClose, ema}, then fold in the SPY call-out (bundle.spyConsensus =
+// a consensus verdict / {bias, confidence, score}) — a bearish call-out blocks longs.
+let regime = bundle.regime;
+if (!regime && bundle.spy) {
+  const base = assessRegime(bundle.spy, cfg);
+  regime = combineRegime(base, normalizeSignal(bundle.spyConsensus), cfg);
+}
 const input = { ...bundle, regime, state: normalizeState(bundle.state), manageOnly: manageOnly || bundle.manageOnly };
 const result = planCycle(input, cfg);
 

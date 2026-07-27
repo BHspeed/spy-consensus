@@ -22,8 +22,14 @@ account actually has and avoids the mistakes that quietly bleed one out:
   (TQQQ, SOXL, …) bought **fractionally** — tight spreads, no expiry, no theta
   bleed. (Options at $100 would be one contract of pure decay.)
 - **Concentration.** ≤3 positions so a winner actually moves the needle.
-- **Regime gate.** New longs only when the broad market is risk-on — the #1
-  small-account killer is buying momentum into a falling tape.
+- **Regime gate.** New longs only when the broad market is risk-on (SPY green +
+  above its 10-day EMA), **and** the repo's SPY consensus call-out isn't bearish —
+  the #1 small-account killer is buying momentum into a falling tape.
+- **Daily goal.** Up `daily.goalPct` (default 5%) on the day → flatten + bank +
+  halt (the upside mirror of the 3% stop).
+- **Options hook** (off by default). On a strong bullish SPY call-out, an
+  optional single-leg long call can be routed per `config.options` — disabled
+  until the account is funded enough to afford a contract.
 - **Ride winners, cut losers fast.** Volatility-scaled trailing stops let
   winners run; tight initial stops + the daily 3% breaker cap the downside.
 

@@ -101,6 +101,9 @@ export const DEFAULT_CONFIG = {
       greenRequired: true,   // must be up on the day vs prior close
       trendEmaPeriod: 10,    // "short trend" = 10-day EMA (vs the old slow 20)
       emaTolerancePct: 0.2,  // count "on the line" (within 0.2% of the EMA) as above
+      // Fold in the repo's SPY consensus call-out: a bearish call-out forces
+      // risk-off even on a green day (confirming signal, only ever restricts).
+      requireConsensusNotBearish: true,
     },
     // Weights for the composite candidate score (momentum-forward for a race).
     scoreWeights: { momentum: 0.6, trend: 0.3, liquidity: 0.1 },
@@ -119,6 +122,21 @@ export const DEFAULT_CONFIG = {
     // fractional shares, so the cycle checks live price vs the stored stop each
     // run and sells when breached. Gap risk between cycles is accepted + logged.
     syntheticStops: true,
+  },
+
+  // ---- Options routing (gated OFF by default) ------------------------------
+  // When a SPY call-out is high-conviction bullish, optionally route a slice into
+  // a single-leg long call (account is options level 2). DISABLED by default:
+  // at ~$100 a SPY call costs more than the whole account (one contract ≈
+  // $100–300 premium), so this stays off until the account is funded enough or a
+  // cheaper underlying is set. Turn on deliberately via config override.
+  options: {
+    enabled: false,
+    underlying: 'SPY',
+    minConviction: 'strong', // only on a STRONG_UP call-out with high confidence
+    dte: [0, 3],             // near-dated
+    targetDelta: [0.35, 0.55],
+    maxPremiumUsd: 30,       // never spend more than this on one contract
   },
 
   // ---- Cash settlement / GFV protection (cash account) --------------------
