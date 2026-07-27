@@ -159,14 +159,26 @@ export const DEFAULT_CONFIG = {
   // that fits a small account. Fires only on a detected reversal (see snipe.js).
   snipe: {
     enabled: true,
+    alwaysActive: true,      // watch for the reversal even when the share book is
+                             // halted (snipe is a separate defined-risk scalp)
+    maxPerDay: 3,            // cap the number of snipes per day
+    maxDailyLossUsd: 25,     // stop sniping for the day after this much snipe loss
+                             // (prevents a repeat of a bleed day)
     underlying: 'SPY',
     side: 'call',            // reversal-UP snipe
     dte: [0, 2],             // near-dated for a fast pop (0-DTE allowed here)
     targetDelta: [0.25, 0.45], // cheaper OTM — flips 20–50% on a small SPY move
     minOpenInterest: 500,
-    maxPremiumUsd: 50,       // whole cost = max loss
-    takeProfitPct: 35,       // bank the contract at +35% (value flip)
-    stopPct: 30,             // cut fast at -30%
+    maxPremiumUsd: 45,       // whole cost = max loss
+    // Value-flip exit (NOT a tight fixed stop): arm on a gain, TRAIL the peak so a
+    // real pop runs, bank on the flip; only a WIDE hard-stop backstop so 0-DTE
+    // noise doesn't cut a winner early. Fed to consensus/valueFlip.decideExit.
+    exit: {
+      minProfitPct: 12,      // arm the trail once up +12%
+      trailPct: 30,          // exit after giving back 30% OF THE PEAK GAIN
+      stopPct: 45,           // wide hard backstop (was a too-tight 30%)
+      hardTakePct: 60,       // bank a +60% rip outright
+    },
     reversal: {
       lookbackBars: 6,       // recent 5-min SPY closes to inspect
       upRocPct: 0.12,        // last-2-bar SPY ROC must exceed this (turn up)
