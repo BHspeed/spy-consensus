@@ -1,1 +1,1 @@
-{"version":1,"day":"2026-07-27","baselineEquity":100,"halted":false,"positions":{},"stoppedOut":{},"lastCycle":"2026-07-27T13:39:09.000Z"}
+{"version":1,"day":"2026-07-27","baselineEquity":100,"halted":false,"positions":{"LABU":{"symbol":"LABU","tier":"amp","shares":0.12133,"entryPrice":260.9394,"entryTime":1785160252000,"stop":242.6737,"peak":260.9394,"trailArmed":false}},"stoppedOut":{},"lastCycle":"2026-07-27T13:51:00.000Z"}
