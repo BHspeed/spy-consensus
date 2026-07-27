@@ -127,6 +127,26 @@ export function decideDailyStop(baselineEquity, currentEquity, cfg) {
 }
 
 /**
+ * Account-level daily PROFIT goal — the upside mirror of the daily stop. When the
+ * account is up goalPct on the day, bank it: flatten + halt for the session.
+ * @returns {{reached:boolean, gainPct:number, reason:string}}
+ */
+export function decideDailyGoal(baselineEquity, currentEquity, cfg) {
+  if (!(baselineEquity > 0) || cfg.daily.goalPct == null) {
+    return { reached: false, gainPct: 0, reason: 'No goal set / no baseline.' };
+  }
+  const gainPct = round2(((currentEquity - baselineEquity) / baselineEquity) * 100);
+  const reached = gainPct >= cfg.daily.goalPct;
+  return {
+    reached,
+    gainPct,
+    reason: reached
+      ? `Daily GOAL reached: account up ${gainPct}% (target ${cfg.daily.goalPct}%) — bank it + halt.`
+      : `Daily gain ${gainPct}% (goal ${cfg.daily.goalPct}%).`,
+  };
+}
+
+/**
  * Is a symbol we were stopped out of eligible for re-entry now?
  * @param {object} stopRec  state.stoppedOut[symbol] = {lastStopTime, countToday, day}
  * @param {number} nowMs

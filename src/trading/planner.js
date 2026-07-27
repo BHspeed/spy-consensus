@@ -21,7 +21,7 @@
  * @param {Object} cfg
  * @returns {{actions:Array, nextState:Object, dailyStop:Object, halted:boolean, notes:string[]}}
  */
-import { decidePositionExit, decideDailyStop, reentryEligible, openPosition } from './riskEngine.js';
+import { decidePositionExit, decideDailyStop, decideDailyGoal, reentryEligible, openPosition } from './riskEngine.js';
 import { rollDay, reconcilePositions, recordStopOut } from './state.js';
 import { screen } from './screener.js';
 import { planEntries } from './sizing.js';
@@ -34,28 +34,31 @@ export function planCycle(input, cfg) {
   // ---- Day roll + baseline -------------------------------------------------
   let state = rollDay(input.state, today, account.equity);
 
-  // ---- Daily circuit breaker ----------------------------------------------
+  // ---- Daily circuit breaker + profit goal --------------------------------
   const dailyStop = decideDailyStop(state.baselineEquity, account.equity, cfg);
+  const dailyGoal = decideDailyGoal(state.baselineEquity, account.equity, cfg);
   let positions = reconcilePositions(input.brokerPositions, state, cfg);
 
   if (!marketOpen) {
     notes.push('Market closed — monitoring only, no orders.');
     // Still persist any freshly reconciled positions so stops are tracked.
     state = { ...state, positions: indexBy(positions), lastCycle: iso(now) };
-    return { actions, nextState: state, dailyStop, halted: state.halted, notes };
+    return { actions, nextState: state, dailyStop, dailyGoal, halted: state.halted, notes };
   }
 
-  if (dailyStop.tripped) {
+  // Either the daily loss stop OR the daily profit goal flattens + halts.
+  if (dailyStop.tripped || dailyGoal.reached) {
+    const trigger = dailyStop.tripped ? `DAILY STOP: ${dailyStop.reason}` : `DAILY GOAL: ${dailyGoal.reason}`;
     state = { ...state, halted: true };
-    if (cfg.daily.haltForRestOfDay) notes.push(dailyStop.reason);
+    if (cfg.daily.haltForRestOfDay) notes.push(dailyStop.tripped ? dailyStop.reason : dailyGoal.reason);
     // Flatten everything, fast.
     for (const pos of positions) {
       const px = quotes[pos.symbol];
-      actions.push(sellAction(pos, px, cfg, `DAILY STOP: ${dailyStop.reason}`));
+      actions.push(sellAction(pos, px, cfg, trigger));
       state = recordStopOut(state, pos.symbol, now, today);
     }
     state = { ...state, positions: {}, lastCycle: iso(now) };
-    return { actions, nextState: state, dailyStop, halted: true, notes };
+    return { actions, nextState: state, dailyStop, dailyGoal, halted: true, notes };
   }
 
   // ---- Manage open positions (exits + trailing ratchet) -------------------
@@ -80,21 +83,21 @@ export function planCycle(input, cfg) {
   if (input.manageOnly) {
     notes.push('Manage-only pass — exits/trailing checked, no new entries.');
     state = { ...state, lastCycle: iso(now) };
-    return { actions, nextState: state, dailyStop, halted: state.halted, notes };
+    return { actions, nextState: state, dailyStop, dailyGoal, halted: state.halted, notes };
   }
 
   // ---- Entries (skipped entirely if halted earlier today) -----------------
   if (state.halted && cfg.daily.haltForRestOfDay) {
     notes.push('Halted for the day — no new entries.');
     state = { ...state, lastCycle: iso(now) };
-    return { actions, nextState: state, dailyStop, halted: true, notes };
+    return { actions, nextState: state, dailyStop, dailyGoal, halted: true, notes };
   }
 
   // Regime gate: don't open new longs into a falling tape.
   if (cfg.screen.requireRiskOn && !(input.regime && input.regime.riskOn)) {
     notes.push(`Risk-OFF regime${input.regime?.reason ? ` (${input.regime.reason})` : ''} — no new entries, holding/trailing only.`);
     state = { ...state, lastCycle: iso(now) };
-    return { actions, nextState: state, dailyStop, halted: state.halted, notes };
+    return { actions, nextState: state, dailyStop, dailyGoal, halted: state.halted, notes };
   }
 
   const { picks, rejected } = screen(candidates, cfg);
@@ -130,7 +133,7 @@ export function planCycle(input, cfg) {
   }
 
   state = { ...state, lastCycle: iso(now) };
-  return { actions, nextState: state, dailyStop, halted: state.halted, notes };
+  return { actions, nextState: state, dailyStop, dailyGoal, halted: state.halted, notes };
 }
 
 // ---- Action builders -------------------------------------------------------

@@ -66,6 +66,24 @@ describe('planner — daily circuit breaker', () => {
   });
 });
 
+describe('planner — daily profit goal', () => {
+  test('up 5% on the day flattens all + halts + banks (no buys)', () => {
+    const state = { ...emptyState(), day: DAY, baselineEquity: 100 };
+    const r = planCycle(baseInput({
+      state,
+      account: { equity: 105.5, buyingPower: 20 }, // +5.5% → goal reached
+      brokerPositions: [{ symbol: 'TQQQ', shares: 0.4, avgPrice: 66, tier: 'amp' }],
+      quotes: { TQQQ: 72 },
+      candidates: [NVDA],
+    }), cfg);
+    assert.equal(r.halted, true);
+    assert.equal(r.dailyGoal.reached, true);
+    assert.ok(r.actions.every(a => a.type === 'SELL'));
+    assert.ok(r.actions.some(a => a.symbol === 'TQQQ' && /DAILY GOAL/.test(a.reason)));
+    assert.equal(Object.keys(r.nextState.positions).length, 0);
+  });
+});
+
 describe('planner — exit management', () => {
   test('a position under its stop is sold before any entry (core → market exit)', () => {
     const state = { ...emptyState(), day: DAY, baselineEquity: 100,

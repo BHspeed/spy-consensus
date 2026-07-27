@@ -40,10 +40,11 @@ export const DEFAULT_CONFIG = {
     type: 'cash',            // cash settlement → GFV-aware (see settlement below)
   },
 
-  // ---- Daily account circuit breaker --------------------------------------
+  // ---- Daily account circuit breaker + profit goal ------------------------
   daily: {
     stopPct: 3,              // down 3% on the day → flatten all + halt new entries
-    haltForRestOfDay: true,  // once tripped, no re-entries until next session
+    goalPct: 5,              // up 5% on the day → flatten all + bank the win, halt
+    haltForRestOfDay: true,  // once tripped (either side), done for the session
   },
 
   // ---- Per-position risk (per tier — the amp tier is ~3x as volatile) ------
@@ -90,8 +91,17 @@ export const DEFAULT_CONFIG = {
     minAvgDollarVol: 50e6,   // liquidity floor (all curated names clear this)
     minMomentumPct: 0.3,     // only buy names showing positive short-term momentum
     requireUptrend: true,    // trendScore must be ≥ 0 (don't buy falling knives)
-    // Only open new longs when the broad market is risk-on (see planner regime).
+    // Only open new longs when the broad market is risk-on (see regime.js).
     requireRiskOn: true,
+    // Regime definition — tuned to capture intraday up-moves (a 10-day EMA is
+    // responsive), not to demand a fully-confirmed multi-week uptrend. Risk-on
+    // when the market proxy is green on the day AND holding above its short EMA.
+    regime: {
+      indexSymbol: 'SPY',    // broad-market proxy
+      greenRequired: true,   // must be up on the day vs prior close
+      trendEmaPeriod: 10,    // "short trend" = 10-day EMA (vs the old slow 20)
+      emaTolerancePct: 0.2,  // count "on the line" (within 0.2% of the EMA) as above
+    },
     // Weights for the composite candidate score (momentum-forward for a race).
     scoreWeights: { momentum: 0.6, trend: 0.3, liquidity: 0.1 },
   },

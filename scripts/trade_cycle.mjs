@@ -36,6 +36,7 @@ import { readFileSync } from 'node:fs';
 import { loadConfig } from '../src/trading/config.js';
 import { normalizeState, emptyState } from '../src/trading/state.js';
 import { planCycle } from '../src/trading/planner.js';
+import { assessRegime } from '../src/trading/regime.js';
 
 const args = process.argv.slice(2);
 const wantJson = args.includes('--json');
@@ -65,7 +66,11 @@ if (wantDemo || !file) {
 }
 
 const cfg = loadConfig(bundle.config || {});
-const input = { ...bundle, state: normalizeState(bundle.state), manageOnly: manageOnly || bundle.manageOnly };
+// Regime: use an explicit bundle.regime if given, else derive it from bundle.spy
+// {price, priorClose, ema} via the deterministic assessor.
+const regime = bundle.regime
+  ?? (bundle.spy ? assessRegime(bundle.spy, cfg) : undefined);
+const input = { ...bundle, regime, state: normalizeState(bundle.state), manageOnly: manageOnly || bundle.manageOnly };
 const result = planCycle(input, cfg);
 
 if (wantJson) {
@@ -79,7 +84,9 @@ const money = (n) => `$${(Math.round(n * 100) / 100).toFixed(2)}`;
 L('\n=================  AUTO-TRADE CYCLE  =================');
 L(`  ${bundle.today}   ${bundle.marketOpen ? 'RTH open' : 'MARKET CLOSED'}   ·   equity ${money(bundle.account.equity)}  ·  settled ${money(bundle.account.buyingPower)}`);
 L(`  ${result.dailyStop.reason}`);
-if (result.halted) L('  *** HALTED FOR THE DAY (daily stop) ***');
+if (result.dailyGoal) L(`  ${result.dailyGoal.reason}`);
+if (regime) L(`  Regime: ${regime.riskOn ? 'RISK-ON' : 'RISK-OFF'} — ${regime.reason}`);
+if (result.halted) L('  *** HALTED FOR THE DAY (daily stop/goal) ***');
 L('');
 
 if (result.actions.length === 0) {
