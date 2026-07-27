@@ -152,6 +152,28 @@ export const DEFAULT_CONFIG = {
     maxConcurrent: 1,         // at most one option position at a time (small acct)
   },
 
+  // ---- SPY reversal "snipe" (value-flip option scalp) ----------------------
+  // Wait for SPY to turn UP off a dip, then buy a cheap near-dated OTM call and
+  // scalp the pop in the CONTRACT's value — snipe the value flip, don't marry the
+  // direction. Cheap OTM near-dated calls (~$0.30–0.55) are the one options play
+  // that fits a small account. Fires only on a detected reversal (see snipe.js).
+  snipe: {
+    enabled: true,
+    underlying: 'SPY',
+    side: 'call',            // reversal-UP snipe
+    dte: [0, 2],             // near-dated for a fast pop (0-DTE allowed here)
+    targetDelta: [0.25, 0.45], // cheaper OTM — flips 20–50% on a small SPY move
+    minOpenInterest: 500,
+    maxPremiumUsd: 50,       // whole cost = max loss
+    takeProfitPct: 35,       // bank the contract at +35% (value flip)
+    stopPct: 30,             // cut fast at -30%
+    reversal: {
+      lookbackBars: 6,       // recent 5-min SPY closes to inspect
+      upRocPct: 0.12,        // last-2-bar SPY ROC must exceed this (turn up)
+      requireBelowEma: true, // only snipe bounces from a dip (SPY below 10d-EMA)
+    },
+  },
+
   // ---- Cash settlement / GFV protection (cash account) --------------------
   settlement: {
     // In a cash account, sale proceeds settle T+1. Reusing unsettled proceeds to

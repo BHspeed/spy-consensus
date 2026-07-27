@@ -145,6 +145,21 @@ environment's egress policy, or `DISCORD_WEBHOOK_URL` is unset), just note "Disc
 unreachable" and carry on — the git-committed `data/trade_cycles.jsonl` is the
 durable record regardless.
 
+## Step 8b — SPY reversal snipe watch (every pass)
+
+If `config.snipe.enabled` and you don't already hold a snipe option: pull ~6 recent
+SPY 5-min closes (`get_equity_historicals` interval 5minute) and whether SPY is
+below its 10-day EMA, then call `detectReversal(closes, belowEma, cfg)`
+(src/trading/snipe.js). If `signal` is true, snipe it:
+1. Pull the SPY call chain (`get_option_chains`/`get_option_instruments`/
+   `get_option_quotes`) for the nearest `config.snipe.dte`.
+2. `selectOption({direction:'long', underlying:'SPY', chain, buyingPower, equity}, {...cfg, options: cfg.snipe})`
+   → a cheap OTM call within `maxPremiumUsd`.
+3. `review_option_order` then `place_option_order` (single-leg buy-to-open, fresh ref_id).
+4. Manage it every pass by its MARK via `valueFlip.decideExit` (SCALP): bank at
+   +`takeProfitPct`, cut at -`stopPct`. Sell to close on either.
+No reversal → do nothing (wait). Never snipe into a still-falling tape.
+
 ## Step 9 — Seed the 15-min manage passes (FULL pass only)
 
 To get a 15-minute risk cadence between the hourly full cycles, after a FULL
