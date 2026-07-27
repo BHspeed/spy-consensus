@@ -40,6 +40,7 @@ import { planCycle } from '../src/trading/planner.js';
 const args = process.argv.slice(2);
 const wantJson = args.includes('--json');
 const wantDemo = args.includes('--demo');
+const manageOnly = args.includes('--manage'); // 15-min risk heartbeat: exits/trailing only
 const file = args.find(a => !a.startsWith('--'));
 
 let bundle;
@@ -64,7 +65,7 @@ if (wantDemo || !file) {
 }
 
 const cfg = loadConfig(bundle.config || {});
-const input = { ...bundle, state: normalizeState(bundle.state) };
+const input = { ...bundle, state: normalizeState(bundle.state), manageOnly: manageOnly || bundle.manageOnly };
 const result = planCycle(input, cfg);
 
 if (wantJson) {

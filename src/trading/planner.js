@@ -73,6 +73,16 @@ export function planCycle(input, cfg) {
   }
   state = { ...state, positions: nextPositions };
 
+  // ---- Manage-only pass: stop here (the 15-min risk heartbeat) -------------
+  // Exits + trailing ratchet + the daily breaker have all run above; we just
+  // skip screening/entries. Used by the intra-hour passes so a rapid re-fire can
+  // only ever tighten risk, never open a duplicate position.
+  if (input.manageOnly) {
+    notes.push('Manage-only pass — exits/trailing checked, no new entries.');
+    state = { ...state, lastCycle: iso(now) };
+    return { actions, nextState: state, dailyStop, halted: state.halted, notes };
+  }
+
   // ---- Entries (skipped entirely if halted earlier today) -----------------
   if (state.halted && cfg.daily.haltForRestOfDay) {
     notes.push('Halted for the day — no new entries.');

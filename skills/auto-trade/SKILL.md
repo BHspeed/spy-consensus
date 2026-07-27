@@ -19,6 +19,17 @@ or sizes. Do not skip the planner.
   new entries only when the market is **risk-on**; reentry after a cooldown;
   deploy settled cash only (cash-account GFV guard).
 
+## Two kinds of pass
+
+- **FULL pass** — the default (hourly Routine, or when you say "Run Auto Trades").
+  Screen → enter → manage. Do every step below, including Step 9 (seed the
+  15-min manage passes).
+- **MANAGE pass** — the 15-minute risk heartbeat. The fire prompt says **"MANAGE
+  pass"**. Only checks stops / trailing / the daily breaker on *open* positions —
+  **no screening, no new entries**. Do Steps 0–3, then 5–8 with the `--manage`
+  flag, and **skip** Step 4 (regime/screen) and Step 9. This keeps a rapid
+  re-fire safe: it can only ever tighten risk, never open a duplicate position.
+
 ## Step 0 — Gate: is the regular session open?
 
 Get the current ET time. The strategy trades **regular hours only (09:30–16:00
@@ -77,6 +88,9 @@ Write a bundle to `data/cycle_bundle.json` with **all** of:
 `brokerPositions`, `quotes`, `candidates`.
 
 Run: `node scripts/trade_cycle.mjs data/cycle_bundle.json --json`
+(On a **MANAGE pass**, add `--manage` and the bundle needs only `now`, `today`,
+`marketOpen`, `account`, `state`, `brokerPositions`, and `quotes` for held names
+— no `regime`/`candidates`.)
 
 The output gives `actions` (ordered SELL→BUY), `nextState`, `dailyStop`,
 `halted`, `notes`. **This is the plan. Execute it verbatim.**
@@ -117,6 +131,22 @@ If it exits non-zero (e.g. `403 Host not in allowlist` — discord.com isn't in 
 environment's egress policy, or `DISCORD_WEBHOOK_URL` is unset), just note "Discord
 unreachable" and carry on — the git-committed `data/trade_cycles.jsonl` is the
 durable record regardless.
+
+## Step 9 — Seed the 15-min manage passes (FULL pass only)
+
+To get a 15-minute risk cadence between the hourly full cycles, after a FULL
+pass, if the **market is open**, it's **before ~3:55 PM ET**, and you **hold at
+least one open position**, schedule three MANAGE passes into this session using
+the `send_later` tool (claude-code-remote) at **+15, +30, +45 minutes**, each
+with a message beginning:
+
+> "Auto-trade MANAGE pass (15-min risk check) — real money, account 521158774.
+> Invoke the auto-trade skill as a MANAGE pass: check stops/trailing/daily-stop
+> on open positions only, place any exits, persist + report. No new entries."
+
+Skip this on a MANAGE pass (they don't re-seed — the next hourly FULL pass
+re-seeds), and skip if flat/halted (nothing to manage). This keeps exactly one
+full + three manage passes per hour — no runaway chains.
 
 ## Hard safety rails (always, even unattended)
 

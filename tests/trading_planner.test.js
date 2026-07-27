@@ -113,6 +113,37 @@ describe('planner — exit management', () => {
   });
 });
 
+describe('planner — manage-only pass (15-min heartbeat)', () => {
+  test('still exits a stopped-out position but places no new entries', () => {
+    const state = { ...emptyState(), day: DAY, baselineEquity: 100,
+      positions: { NVDA: { symbol: 'NVDA', tier: 'core', shares: 0.5, entryPrice: 120, entryTime: 0, stop: 116.4, peak: 120, trailArmed: false } } };
+    const r = planCycle(baseInput({
+      manageOnly: true,
+      state,
+      brokerPositions: [{ symbol: 'NVDA', shares: 0.5, avgPrice: 120, tier: 'core' }],
+      quotes: { NVDA: 115 },              // under stop → must still sell
+      candidates: [{ symbol: 'AMD', price: 100, avgDollarVol: 10e9, dayChangePct: 5, trendScore: 0.9 }], // strong buy, must be ignored
+    }), cfg);
+    assert.ok(r.actions.some(a => a.type === 'SELL' && a.symbol === 'NVDA'));
+    assert.equal(r.actions.filter(a => a.type === 'BUY').length, 0);
+  });
+
+  test('ratchets the trailing stop without buying anything', () => {
+    const state = { ...emptyState(), day: DAY, baselineEquity: 100,
+      positions: { NVDA: { symbol: 'NVDA', tier: 'core', shares: 0.5, entryPrice: 120, entryTime: 0, stop: 116.4, peak: 120, trailArmed: false } } };
+    const r = planCycle(baseInput({
+      manageOnly: true,
+      state,
+      brokerPositions: [{ symbol: 'NVDA', shares: 0.5, avgPrice: 120, tier: 'core' }],
+      quotes: { NVDA: 127 },              // +5.8% → arm + lock
+      candidates: [{ symbol: 'AMD', price: 100, avgDollarVol: 10e9, dayChangePct: 5, trendScore: 0.9 }],
+    }), cfg);
+    assert.equal(r.actions.length, 0);
+    assert.equal(r.nextState.positions.NVDA.trailArmed, true);
+    assert.ok(r.nextState.positions.NVDA.stop >= 120);
+  });
+});
+
 describe('planner — reentry cooldown', () => {
   test('does not re-buy a name just stopped out', () => {
     const state = { ...emptyState(), day: DAY, baselineEquity: 100,

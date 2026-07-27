@@ -109,11 +109,18 @@ faster cadence (see *Cadence*) or native whole-share stop orders.
 
 ## Cadence
 
-The scheduler fires at most **hourly**, so a Routine runs one cycle per hour of
-the regular session — intra-hour moves are unprotected until the next cycle. For
-tighter management while you're watching, run cycles by hand (or a short
-in-session loop) using the same `SKILL.md` path; it's the same code, just more
-often.
+The durable Routine scheduler floors at **hourly**, so we layer two pass types
+for a **15-minute risk cadence**:
+
+- **FULL pass** (hourly Routine, or "Run Auto Trades"): screen → enter → manage,
+  then seeds the manage passes.
+- **MANAGE pass** (+15/+30/+45 min, self-scheduled via `send_later`): checks
+  stops, ratchets trailing stops, and enforces the daily breaker on open
+  positions — **no new entries**, so a rapid re-fire can only tighten risk.
+
+Net: ~4 passes/hour (1 full + 3 manage), re-seeded each hour so a dropped manage
+pass self-heals at the next full cycle. Intra-**15-min** moves (and overnight
+gaps) remain unprotected — synthetic stops only act when a pass runs.
 
 ## Running it
 
