@@ -89,12 +89,9 @@ run started Fri Jul 24 20:25:54 UTC 2026
 SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step2 wrote 10 files
 levetf: 2 new, 1 closed this run, 3 graded total
-=== theme agent start Fri Jul 24 20:36:04 UTC 2026 ===
-SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-step2 wrote 20 files
-step3: theme: 20 scored, 6 setups
-TODAY=2026-07-24
-STEP1 SYMBOLS=TVTX,FROG,LNTH,VIK,URI,FTNT,TD,RY,BMO,WTS,CFG,IHG,OSCR,CIB,DAL,BNS,UHAL.B,PSMT,CVS,GE,BPOP,GH,UHAL,SIGI,SYY,SN,GPC,GOLF,USFD,PNC,REYN,TGTX,ALKS,RVMD,NBIX,SLF,PTGX,ENVA,MNST,HSIC,THG,SEZL,BTSG,AIZ,ALL,DFTX,KYMR,CVLT,CORT,PANW,AJG,TXG,XENE,QLYS,RDN,VRNS,HUM,ACA,VOYA,PRI,LTH,RGA,AHR
-step2 quotes written 15001
-swingcheck: 62 open, 1 closed this week, 13 total closed
-step4 done
+step1 ok
+BPOP,SIGI,URI,ENVA,TV,ATRC,MBLY,CALM,AAL,GOOGL
+step3 10905
+step4 saved 65095 bytes
+earnings: 5 posted, 8 swing picks upcoming
+step6 news appended
