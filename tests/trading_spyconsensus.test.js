@@ -48,17 +48,19 @@ describe('combineRegime', () => {
 });
 
 describe('optionIntent', () => {
-  test('disabled by default', () => {
-    assert.equal(optionIntent(normalizeSignal({ bias: 'STRONG_UP', confidence: 70 }), cfg).consider, false);
-  });
-  test('enabled + strong call-out → consider', () => {
-    const c = loadConfig({ options: { ...cfg.options, enabled: true } });
-    const r = optionIntent(normalizeSignal({ bias: 'STRONG_UP', confidence: 70 }), c);
+  test('enabled by default + strong call-out → consider a call', () => {
+    const r = optionIntent(normalizeSignal({ bias: 'STRONG_UP', confidence: 70 }), cfg);
     assert.equal(r.consider, true);
     assert.equal(r.target.side, 'call');
   });
-  test('enabled but only moderate → skip', () => {
-    const c = loadConfig({ options: { ...cfg.options, enabled: true } });
+  test('moderate meets the default minConviction (moderate)', () => {
+    assert.equal(optionIntent(normalizeSignal({ bias: 'UP', confidence: 50 }), cfg).consider, true);
+  });
+  test('neutral call-out → skip', () => {
+    assert.equal(optionIntent(normalizeSignal({ bias: 'NEUTRAL', confidence: 30 }), cfg).consider, false);
+  });
+  test('raising minConviction to strong filters out moderate', () => {
+    const c = loadConfig({ options: { ...cfg.options, minConviction: 'strong' } });
     assert.equal(optionIntent(normalizeSignal({ bias: 'UP', confidence: 50 }), c).consider, false);
   });
 });

@@ -42,10 +42,19 @@ describe('planner — entries', () => {
     assert.equal(r.actions.length, 0);
   });
 
-  test('risk-OFF regime → no new entries', () => {
-    const r = planCycle(baseInput({ regime: { riskOn: false, reason: 'SPY < 20-EMA' }, candidates: [NVDA], quotes: { NVDA: 120 } }), cfg);
+  test('bearish regime → no new entries', () => {
+    const r = planCycle(baseInput({ regime: { riskOn: false, posture: 'bearish', reason: 'SPY red, below EMA' }, candidates: [NVDA], quotes: { NVDA: 120 } }), cfg);
     assert.equal(r.actions.filter(a => a.type === 'BUY').length, 0);
-    assert.ok(r.notes.some(n => /Risk-OFF/.test(n)));
+    assert.ok(r.notes.some(n => /no new entries/i.test(n)));
+  });
+
+  test('chop regime → buys only strong names (≥ chop momentum floor)', () => {
+    const strong = { symbol: 'GOOGL', price: 328, avgDollarVol: 6e9, dayChangePct: 2.8, trendScore: 0.6 };
+    const weak = { symbol: 'MSFT', price: 390, avgDollarVol: 6e9, dayChangePct: 1.2, trendScore: 0.4 }; // below 2.5 chop floor
+    const r = planCycle(baseInput({ regime: { riskOn: false, posture: 'chop', reason: 'SPY green, below EMA' }, candidates: [strong, weak], quotes: { GOOGL: 328, MSFT: 390 } }), cfg);
+    const buys = r.actions.filter(a => a.type === 'BUY').map(a => a.symbol);
+    assert.ok(buys.includes('GOOGL'));
+    assert.ok(!buys.includes('MSFT'));
   });
 });
 

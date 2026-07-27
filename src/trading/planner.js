@@ -25,6 +25,7 @@ import { decidePositionExit, decideDailyStop, decideDailyGoal, reentryEligible, 
 import { rollDay, reconcilePositions, recordStopOut } from './state.js';
 import { screen } from './screener.js';
 import { planEntries } from './sizing.js';
+import { entryPosture } from './regime.js';
 
 export function planCycle(input, cfg) {
   const { now, today, marketOpen, account, quotes = {}, candidates = [] } = input;
@@ -93,20 +94,26 @@ export function planCycle(input, cfg) {
     return { actions, nextState: state, dailyStop, dailyGoal, halted: true, notes };
   }
 
-  // Regime gate: don't open new longs into a falling tape.
-  if (cfg.screen.requireRiskOn && !(input.regime && input.regime.riskOn)) {
-    notes.push(`Risk-OFF regime${input.regime?.reason ? ` (${input.regime.reason})` : ''} — no new entries, holding/trailing only.`);
+  // Regime gate (posture-aware): full participation when risk-on, strong-names-
+  // only in chop, stand aside when bearish.
+  const posture = cfg.screen.requireRiskOn
+    ? entryPosture(input.regime, cfg)
+    : { allowLongs: true, momentumFloor: cfg.screen.minMomentumPct, label: 'gate off' };
+  if (!posture.allowLongs) {
+    notes.push(`No new entries — ${posture.label}${input.regime?.reason ? ` (${input.regime.reason})` : ''}; holding/trailing only.`);
     state = { ...state, lastCycle: iso(now) };
     return { actions, nextState: state, dailyStop, dailyGoal, halted: state.halted, notes };
   }
+  if (posture.label.startsWith('chop')) notes.push(`Chop posture — strong names only (momentum ≥ ${posture.momentumFloor}%).`);
 
   const { picks, rejected } = screen(candidates, cfg);
   if (rejected.length) notes.push(`Screened out ${rejected.length} candidate(s).`);
 
-  // Drop names on reentry cooldown / cap.
+  // Drop names on reentry cooldown / cap, and (in chop) below the raised floor.
   const heldSyms = new Set(Object.keys(nextPositions));
   const buyable = picks.filter(p => {
     if (heldSyms.has(p.symbol)) return false;
+    if (p.dayChangePct < posture.momentumFloor) { notes.push(`${p.symbol}: momentum ${p.dayChangePct}% < posture floor ${posture.momentumFloor}%`); return false; }
     const gate = reentryEligible(state.stoppedOut[p.symbol], now, cfg);
     if (!gate.eligible) { notes.push(`${p.symbol}: ${gate.reason}`); return false; }
     return true;

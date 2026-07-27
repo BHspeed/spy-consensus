@@ -90,7 +90,7 @@ L('\n=================  AUTO-TRADE CYCLE  =================');
 L(`  ${bundle.today}   ${bundle.marketOpen ? 'RTH open' : 'MARKET CLOSED'}   ·   equity ${money(bundle.account.equity)}  ·  settled ${money(bundle.account.buyingPower)}`);
 L(`  ${result.dailyStop.reason}`);
 if (result.dailyGoal) L(`  ${result.dailyGoal.reason}`);
-if (regime) L(`  Regime: ${regime.riskOn ? 'RISK-ON' : 'RISK-OFF'} — ${regime.reason}`);
+if (regime) L(`  Regime: ${(regime.posture || (regime.riskOn ? 'long' : 'bearish')).toUpperCase()} — ${regime.reason}`);
 if (result.halted) L('  *** HALTED FOR THE DAY (daily stop/goal) ***');
 L('');
 

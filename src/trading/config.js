@@ -104,6 +104,11 @@ export const DEFAULT_CONFIG = {
       // Fold in the repo's SPY consensus call-out: a bearish call-out forces
       // risk-off even on a green day (confirming signal, only ever restricts).
       requireConsensusNotBearish: true,
+      // "Active" posture: when the index is merely CHOPPY (green but below trend,
+      // or vice-versa — not outright bearish), still trade the clearly strongest
+      // names, just with a higher momentum bar. Off → stand fully aside in chop.
+      activeInChop: true,
+      chopMinMomentumPct: 2.5, // in chop, a name needs ≥ this day-change to buy
     },
     // Weights for the composite candidate score (momentum-forward for a race).
     scoreWeights: { momentum: 0.6, trend: 0.3, liquidity: 0.1 },
@@ -124,19 +129,23 @@ export const DEFAULT_CONFIG = {
     syntheticStops: true,
   },
 
-  // ---- Options routing (gated OFF by default) ------------------------------
-  // When a SPY call-out is high-conviction bullish, optionally route a slice into
-  // a single-leg long call (account is options level 2). DISABLED by default:
-  // at ~$100 a SPY call costs more than the whole account (one contract ≈
-  // $100–300 premium), so this stays off until the account is funded enough or a
-  // cheaper underlying is set. Turn on deliberately via config override.
+  // ---- Options (ENABLED — single-leg long calls/puts, defined risk) --------
+  // Active options arm: a call when the tape is bullish, a put when it's breaking
+  // down. Long single-leg only → the premium is the entire max loss (no
+  // assignment risk at level 2). Sized to a small slice of the account, ATM-ish
+  // to limit theta, never 0-DTE. See src/trading/optionPlan.js.
   options: {
-    enabled: false,
-    underlying: 'SPY',
-    minConviction: 'strong', // only on a STRONG_UP call-out with high confidence
-    dte: [0, 3],             // near-dated
-    targetDelta: [0.35, 0.55],
-    maxPremiumUsd: 30,       // never spend more than this on one contract
+    enabled: true,
+    minConviction: 'moderate', // take a call/put on a moderate+ directional read
+    dte: [1, 7],              // near-dated but NOT 0-DTE (a bad hour isn't fatal)
+    targetDelta: [0.45, 0.62], // ATM-ish: moves with the underlying, less theta
+    minOpenInterest: 200,     // liquidity floor so we can get out
+    allocationPct: 30,        // at most this % of equity in one contract's premium
+    maxPremiumUsd: 45,        // hard $ cap on a single contract (= max loss)
+    minPremiumUsd: 8,         // don't bother below this
+    premiumTargetPct: 50,     // bank the contract at +50%
+    premiumStopPct: 35,       // cut the contract at -35% (defined-risk stop)
+    maxConcurrent: 1,         // at most one option position at a time (small acct)
   },
 
   // ---- Cash settlement / GFV protection (cash account) --------------------
