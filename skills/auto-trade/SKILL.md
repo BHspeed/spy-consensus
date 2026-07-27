@@ -1,6 +1,6 @@
 ---
 name: auto-trade
-description: Run one Robinhood auto-trading cycle — screen, manage stops/trailing, enforce the daily 3% halt, and place the exact orders the deterministic planner returns. Invoked by the market-hours schedule (or manually). Real money.
+description: Run one Robinhood auto-trading cycle — screen, manage stops/trailing, enforce the daily 3% halt, and place the exact orders the deterministic planner returns. Invoked by the market-hours schedule or manually. Trigger phrases include "Run Auto Trades", "run auto trade cycle", "start auto trading", "run the auto trader". Robinhood-only, real money.
 ---
 
 # Auto-Trade Cycle (Robinhood, agentic cash account)
@@ -50,8 +50,8 @@ Call in parallel:
 
 **Regime (always compute):** read SPY and QQQ — are they above their 20-day EMA
 and green on the day? Set `regime = { riskOn: <bool>, reason: "<why>" }`. Use
-Robinhood `get_equity_technical_indicators` / `get_equity_historicals` (or Webull
-bars). Risk-off ⇒ the planner takes no new entries (it still manages exits).
+Robinhood `get_equity_technical_indicators` / `get_equity_historicals`. Risk-off
+⇒ the planner takes no new entries (it still manages exits).
 
 **Screen (only if you may add positions):** skip if already at `maxPositions` or
 no settled cash. Otherwise, the universe is **fixed and curated** — the lists in
@@ -59,8 +59,8 @@ no settled cash. Otherwise, the universe is **fixed and curated** — the lists 
 tickers; only these are tradeable. For each symbol in the universe:
 
 - `price` and `dayChangePct` (intraday % change) — Robinhood `get_equity_quotes`
-  (batch) or Webull `get_stock_snapshot`.
-- `avgDollarVol` (avg volume × price) — from quotes/bars.
+  (batch).
+- `avgDollarVol` (avg volume × price) — from quotes / `get_equity_historicals`.
 - `trendScore` in [-1..+1] — a short-term trend read (e.g. price vs 20-EMA
   sign/magnitude) from `get_equity_technical_indicators`.
 

@@ -51,7 +51,7 @@ constraints, but no strategy promises alpha.**
 ```
 ┌── scheduled cycle (market hours) ──────────────────────────────────────┐
 │ agent gathers live data ─▶ node scripts/trade_cycle.mjs ─▶ order plan   │
-│   (Robinhood/Webull MCP)      (deterministic planner)      (SELL→BUY)   │
+│   (Robinhood MCP)             (deterministic planner)      (SELL→BUY)   │
 │                                        │                                │
 │ agent places EXACTLY the returned orders ◀──────────────┘              │
 │ agent persists nextState + logs + commits (audit trail)               │
@@ -115,26 +115,28 @@ tighter management while you're watching, run cycles by hand (or a short
 in-session loop) using the same `SKILL.md` path; it's the same code, just more
 often.
 
-## Arming / disarming
+## Running it
 
-**The cycle must run in a session that has the Robinhood (and Webull) MCP
-connector tools.** This is the one real constraint on going unattended:
+Just say **"Run Auto Trades"** (or "run an auto-trade cycle" / "start auto
+trading") in a session that has the **Robinhood** connector — that invokes the
+`auto-trade` skill and runs one cycle. Robinhood is the only connector needed;
+the strategy uses Robinhood data end-to-end.
+
+**The cycle must run in a session that has the Robinhood MCP connector tools** —
+that's the one real constraint on going unattended:
 
 - Scheduled sessions spawned by the CCR trigger tool in this org run **without**
-  connector (`mcp__*`) tools, so a cron-fired fresh session **cannot trade** — it
-  can't even read the account. (A trigger was attempted during setup and removed
-  for exactly this reason.)
+  connector (`mcp__*`) tools, so a cron-fired fresh session **cannot trade**.
 - Two ways to actually run cycles, both using the same committed code + `SKILL.md`:
-  1. **claude.ai Routines UI (recommended for unattended):** create a recurring
-     Routine there, on a session/environment that has the **RobinHood** connector
-     enabled, with the prompt "run the auto-trade skill" and a schedule of
-     `0 13-21 * * 1-5` UTC (hourly across US regular hours; the skill's Step 0
-     gate skips anything outside 09:30–16:00 ET). Because that Routine carries the
-     connector, its sessions can place orders.
-  2. **Active session (attended / semi-attended):** in a Claude Code session that
-     has the RobinHood connector (like the one this was built in), say "run an
-     auto-trade cycle" — or loop it (`/loop 60m run an auto-trade cycle`) while the
-     session/container stays alive.
+  1. **Session-bound Routine (what's armed now):** a Routine bound to a live
+     session that holds the connector, schedule `30 13-20 * * 1-5` UTC (hourly
+     across US market hours; the skill's Step 0 gate skips anything outside
+     09:30–16:00 ET). If a fire lands without the connector, the skill fails safe
+     (reports it, places nothing).
+  2. **claude.ai Routines UI (most robust for unattended):** create a recurring
+     Routine there with the **RobinHood** connector enabled and the prompt
+     "Run Auto Trades". Because it carries the connector through consent, its
+     sessions can always place orders.
 - **Disarm (stop all trading):** delete/disable the Routine (or stop the loop).
   Nothing trades once it's gone.
 - **Pause for a day:** set `"halted": true` in `data/trading_state.json` (with
