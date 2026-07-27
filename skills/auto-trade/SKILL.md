@@ -147,13 +147,12 @@ durable record regardless.
 
 ## Step 8b — SPY turn snipe (bidirectional, every pass)
 
-The snipe watches for a bull OR bear turn every pass, BUT the account is the
-master gate: **do NOT open a new snipe when `state.halted` is true** (the daily
-account-loss stop pauses snipes too — a red day is no time to recover-trade).
-Also honor the caps: at most `snipe.maxPerDay` snipes/day, and STOP sniping once
-cumulative snipe losses reach `snipe.maxDailyLossUsd` (track
-`snipeCount`/`snipeLossToday` in state). (You always still MANAGE an already-open
-snipe, even when halted.)
+The snipe watches for a bull OR bear turn every pass and runs the WHOLE session —
+it is NOT paused by the share-book halt (`snipe.gatedByShareHalt=false`). Take up
+to `snipe.maxPerDay` snipes/day. STOP opening new snipes only when: the daily %
+GOAL is reached (`stopOnDailyGoal`), OR cumulative snipe losses reach
+`snipe.maxDailyLossUsd`, OR settled buying power < the snipe cost. Track
+`snipeCount`/`snipeLossToday` in state. (Always still MANAGE an open snipe.)
 
 **Manage an OPEN snipe first** (by its option MARK, via
 `consensus/valueFlip.decideExit(entryPremium, marks, {config: cfg.snipe.exit})`,

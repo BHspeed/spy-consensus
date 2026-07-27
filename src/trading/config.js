@@ -159,17 +159,21 @@ export const DEFAULT_CONFIG = {
   // that fits a small account. Fires only on a detected reversal (see snipe.js).
   snipe: {
     enabled: true,
-    // BIDIRECTIONAL: call on a bullish turn, put on a bearish turn. Always
-    // WATCHING every pass — but PAUSED whenever the account's daily-loss stop is
-    // active (state.halted). The account $ is the master gate: a big red day is
-    // no time to recover-trade. Plus per-day caps below.
-    maxPerDay: 3,            // cap the number of snipes per day
-    maxDailyLossUsd: 25,     // stop sniping for the day after this much snipe loss
+    // BIDIRECTIONAL: call on a bullish turn, put on a bearish turn. Runs the
+    // whole session (independent of the SHARE daily-loss halt) — snipes are a
+    // separate scalp and keep hunting turns. They stop only on (a) hitting the
+    // daily % GOAL, or (b) the snipe-loss cap. Aim for up to maxPerDay/day.
+    maxPerDay: 5,            // take up to this many snipes per day
+    maxDailyLossUsd: 50,     // hard brake: stop sniping after this much snipe loss
+    gatedByShareHalt: false, // snipes are NOT paused by the share-book halt
+    stopOnDailyGoal: true,   // stop sniping once the daily % goal is reached
     underlying: 'SPY',
     dte: [0, 2],             // near-dated for a fast pop (0-DTE allowed here)
-    targetDelta: [0.25, 0.45], // cheaper OTM — flips 20–50% on a small SPY move
+    // Closer to ATM (0.40–0.55Δ) so a MODEST turn actually pays — the 743 miss
+    // was a too-far-OTM 0.20Δ strike that needed a big move. Costs more, so:
+    targetDelta: [0.40, 0.55],
     minOpenInterest: 500,
-    maxPremiumUsd: 45,       // whole cost = max loss
+    maxPremiumUsd: 60,       // whole cost = max loss; higher to reach ATM strikes
     // Value-flip exit (NOT a tight fixed stop): arm on a gain, TRAIL the peak so a
     // real pop runs, bank on the flip; only a WIDE hard-stop backstop so 0-DTE
     // noise doesn't cut a winner early. Fed to consensus/valueFlip.decideExit.
