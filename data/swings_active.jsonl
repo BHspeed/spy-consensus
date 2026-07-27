@@ -73,3 +73,4 @@
 {"symbol":"LTH","added":"2026-07-23","entry":43.5,"tier":"core","targetPct":10.3,"targetPrice":48,"stopPrice":40.4,"status":"open","lastGainPct":-2.7,"peakPct":null}
 {"symbol":"RGA","added":"2026-07-23","entry":234.3,"tier":"core","targetPct":10,"targetPrice":257.7,"stopPrice":217.9,"status":"open","lastGainPct":1.9,"peakPct":null}
 {"symbol":"AHR","added":"2026-07-24","entry":57.4,"tier":"core","targetPct":10,"targetPrice":63.2,"stopPrice":53.4,"status":"open","lastGainPct":0.1,"peakPct":null}
+{"symbol":"PBF","added":"2026-07-27","entry":63,"tier":"aggressive","targetPct":30,"targetPrice":81.9,"stopPrice":56.7,"status":"open"}
