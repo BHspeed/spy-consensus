@@ -145,12 +145,15 @@ environment's egress policy, or `DISCORD_WEBHOOK_URL` is unset), just note "Disc
 unreachable" and carry on — the git-committed `data/trade_cycles.jsonl` is the
 durable record regardless.
 
-## Step 8b — SPY reversal snipe (ALWAYS active, every pass)
+## Step 8b — SPY turn snipe (bidirectional, every pass)
 
-The snipe runs **even when the share book is halted** (`config.snipe.alwaysActive`)
-— it's a separate defined-risk scalp. Guardrails: at most `snipe.maxPerDay`
-snipes/day, and STOP sniping for the day once cumulative snipe losses reach
-`snipe.maxDailyLossUsd` (track `snipeCount`/`snipeLossToday` in state).
+The snipe watches for a bull OR bear turn every pass, BUT the account is the
+master gate: **do NOT open a new snipe when `state.halted` is true** (the daily
+account-loss stop pauses snipes too — a red day is no time to recover-trade).
+Also honor the caps: at most `snipe.maxPerDay` snipes/day, and STOP sniping once
+cumulative snipe losses reach `snipe.maxDailyLossUsd` (track
+`snipeCount`/`snipeLossToday` in state). (You always still MANAGE an already-open
+snipe, even when halted.)
 
 **Manage an OPEN snipe first** (by its option MARK, via
 `consensus/valueFlip.decideExit(entryPremium, marks, {config: cfg.snipe.exit})`,
@@ -160,13 +163,13 @@ where `marks = [entryPremium, peakPremium, currentMark]`):
 - Update `peakPremium = max(peakPremium, currentMark)` every pass.
 - 0-DTE: also force-close by ~15:40 ET.
 
-**Look for a NEW snipe** (only if none open, under the daily caps): pull ~6 recent
-SPY 5-min closes + SPY-below-10d-EMA, call `detectReversal(closes, belowEma, cfg)`.
-If `signal`:
-1. Pull the SPY call chain for the nearest `snipe.dte`.
-2. `selectOption({direction:'long', underlying:'SPY', chain, buyingPower, equity}, {...cfg, options: cfg.snipe})`.
+**Look for a NEW snipe** (only if none open, NOT halted, under the caps): pull ~6
+recent SPY 5-min closes, call `detectSignal(closes, cfg)`. If `signal`, it gives a
+`direction` — `'call'` (bullish turn) or `'put'` (bearish turn):
+1. Pull the SPY chain (calls for 'call', puts for 'put') for the nearest `snipe.dte`.
+2. `selectOption({direction: dir==='put'?'short':'long', underlying:'SPY', chain, buyingPower, equity}, {...cfg, options: cfg.snipe})`.
 3. `review_option_order` → `place_option_order` (buy-to-open, fresh ref_id); record it in state.options.
-No reversal → wait. Never snipe a still-falling tape (the detector enforces this).
+No clean turn → wait.
 
 ## Step 9 — Seed the 15-min manage passes (FULL pass only)
 

@@ -159,13 +159,13 @@ export const DEFAULT_CONFIG = {
   // that fits a small account. Fires only on a detected reversal (see snipe.js).
   snipe: {
     enabled: true,
-    alwaysActive: true,      // watch for the reversal even when the share book is
-                             // halted (snipe is a separate defined-risk scalp)
+    // BIDIRECTIONAL: call on a bullish turn, put on a bearish turn. Always
+    // WATCHING every pass — but PAUSED whenever the account's daily-loss stop is
+    // active (state.halted). The account $ is the master gate: a big red day is
+    // no time to recover-trade. Plus per-day caps below.
     maxPerDay: 3,            // cap the number of snipes per day
     maxDailyLossUsd: 25,     // stop sniping for the day after this much snipe loss
-                             // (prevents a repeat of a bleed day)
     underlying: 'SPY',
-    side: 'call',            // reversal-UP snipe
     dte: [0, 2],             // near-dated for a fast pop (0-DTE allowed here)
     targetDelta: [0.25, 0.45], // cheaper OTM — flips 20–50% on a small SPY move
     minOpenInterest: 500,
@@ -181,8 +181,7 @@ export const DEFAULT_CONFIG = {
     },
     reversal: {
       lookbackBars: 6,       // recent 5-min SPY closes to inspect
-      upRocPct: 0.12,        // last-2-bar SPY ROC must exceed this (turn up)
-      requireBelowEma: true, // only snipe bounces from a dip (SPY below 10d-EMA)
+      upRocPct: 0.12,        // |last-2-bar SPY ROC| must exceed this to fire a turn
     },
   },
 
