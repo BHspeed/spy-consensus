@@ -100,3 +100,7 @@ Running weeklygrade.mjs symbols
 SYMS=
 step1 empty SYMS, wrote empty whist.json
 step3 weeklygrade: graded 0 today, 42 total
+step1 7701
+step2 tickers: RDN,VRNS,CORT,LTH,ALKS,VOYA,PBF,PRI,TXG,ACA
+step3 17160
+step4: swings: 1 new, 75 already active
