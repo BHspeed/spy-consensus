@@ -7,3 +7,6 @@ step1 4535
 step2 tickers: VRNS,TXG,RDN,RGA,VOYA,ETSY,AHR,PRI
 step3 13826
 step4: swings: 0 new, 76 already active
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step2 wrote 10 files
+step3 levetf: 1 new, 0 closed this run, 5 graded total
