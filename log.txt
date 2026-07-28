@@ -3,3 +3,7 @@ SYMS=NVDA,SPY,TSLA
 step2 saved
 step2 3347
 step3 weeklygrade: graded 0 today, 48 total
+step1 4535
+step2 tickers: VRNS,TXG,RDN,RGA,VOYA,ETSY,AHR,PRI
+step3 13826
+step4: swings: 0 new, 76 already active
