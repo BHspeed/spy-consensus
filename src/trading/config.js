@@ -42,7 +42,12 @@ export const DEFAULT_CONFIG = {
 
   // ---- Daily account circuit breaker + profit goal ------------------------
   daily: {
-    stopPct: 3,              // down 3% on the day → flatten all + halt new entries
+    // DAILY LOSS BRAKE — the #1 rule from the owner's live P&L (see docs/LESSONS.md:
+    // entries win ~65% of days; uncapped loss days are what sink the account).
+    // A DOLLAR brake is primary on a small account (a 3% rule would be ~$9 and halt
+    // on noise). Set to null to fall back to stopPct. TUNE THIS to your risk.
+    maxLossUsd: 40,          // down $40 on the day → flatten all + halt
+    stopPct: 3,              // fallback % brake when maxLossUsd is null
     goalPct: 5,              // up 5% on the day → flatten all + bank the win, halt
     haltForRestOfDay: true,  // once tripped (either side), done for the session
     // Deposit/withdrawal guard: a same-day equity move larger than this is almost
@@ -164,7 +169,8 @@ export const DEFAULT_CONFIG = {
     // separate scalp and keep hunting turns. They stop only on (a) hitting the
     // daily % GOAL, or (b) the snipe-loss cap. Aim for up to maxPerDay/day.
     maxPerDay: 5,            // take up to this many snipes per day
-    maxDailyLossUsd: 50,     // hard brake: stop sniping after this much snipe loss
+    maxDailyLossUsd: 30,     // hard brake: stop sniping after this much snipe loss
+                             // (below the account-wide daily maxLossUsd)
     gatedByShareHalt: false, // snipes are NOT paused by the share-book halt
     stopOnDailyGoal: true,   // stop sniping once the daily % goal is reached
     underlying: 'SPY',

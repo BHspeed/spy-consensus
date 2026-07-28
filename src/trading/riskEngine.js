@@ -114,21 +114,28 @@ export function decidePositionExit(pos, currentPrice, cfg) {
  * @returns {{tripped:boolean, drawdownPct:number, reason:string}}
  */
 export function decideDailyStop(baselineEquity, currentEquity, cfg) {
-  if (!(baselineEquity > 0)) return { tripped: false, drawdownPct: 0, reason: 'No baseline yet.' };
+  if (!(baselineEquity > 0)) return { tripped: false, drawdownPct: 0, lossUsd: 0, reason: 'No baseline yet.' };
   const drawdownPct = round2(((baselineEquity - currentEquity) / baselineEquity) * 100);
+  const lossUsd = round2(baselineEquity - currentEquity);
   // A drawdown bigger than the suspect threshold is almost certainly a withdrawal,
   // not a loss — don't liquidate; flag for re-baseline.
   const suspect = cfg.daily.suspectMovePct != null && drawdownPct >= cfg.daily.suspectMovePct;
-  const tripped = drawdownPct >= cfg.daily.stopPct && !suspect;
+  // If a DOLLAR brake is set it is the primary limit (a small account shouldn't be
+  // halted on $9 of noise from a 3% rule); otherwise fall back to the % limit.
+  const usdBrake = cfg.daily.maxLossUsd != null;
+  const hit = usdBrake ? lossUsd >= cfg.daily.maxLossUsd : drawdownPct >= cfg.daily.stopPct;
+  const tripped = hit && !suspect;
+  const limitStr = usdBrake ? `$${cfg.daily.maxLossUsd}` : `${cfg.daily.stopPct}%`;
   return {
     tripped,
     drawdownPct,
+    lossUsd,
     suspectTransfer: suspect,
     reason: suspect
       ? `Drawdown ${drawdownPct}% exceeds ${cfg.daily.suspectMovePct}% — likely a withdrawal, not a loss. Re-baseline; NOT tripping the stop.`
       : tripped
-      ? `Daily stop TRIPPED: account down ${drawdownPct}% (limit ${cfg.daily.stopPct}%) — flatten + halt.`
-      : `Daily drawdown ${drawdownPct}% (limit ${cfg.daily.stopPct}%).`,
+      ? `Daily stop TRIPPED: account down $${lossUsd} (${drawdownPct}%), limit ${limitStr} — flatten + halt.`
+      : `Daily loss $${lossUsd} (${drawdownPct}%), limit ${limitStr}.`,
   };
 }
 

@@ -91,10 +91,15 @@ describe('position exit decision', () => {
   });
 });
 
-describe('daily circuit breaker', () => {
-  test('trips at exactly the 3% drawdown', () => {
-    assert.equal(decideDailyStop(100, 97, cfg).tripped, true);
-    assert.equal(decideDailyStop(100, 97.5, cfg).tripped, false);
+describe('daily circuit breaker ($ brake)', () => {
+  test('trips at the $40 daily-loss brake (below the suspect threshold)', () => {
+    assert.equal(decideDailyStop(400, 359, cfg).tripped, true);   // -$41
+    assert.equal(decideDailyStop(400, 361, cfg).tripped, false);  // -$39
+  });
+  test('falls back to % when maxLossUsd is null', () => {
+    const pct = loadConfig({ daily: { ...cfg.daily, maxLossUsd: null } });
+    assert.equal(decideDailyStop(100, 97, pct).tripped, true);    // -3%
+    assert.equal(decideDailyStop(100, 97.5, pct).tripped, false);
   });
   test('no baseline → never trips', () => {
     assert.equal(decideDailyStop(0, 50, cfg).tripped, false);
@@ -136,6 +141,6 @@ describe('deposit/withdrawal guard', () => {
   });
   test('normal goal/stop still fire under the suspect threshold', () => {
     assert.equal(decideDailyGoal(100, 105, cfg).reached, true);
-    assert.equal(decideDailyStop(100, 97, cfg).tripped, true);
+    assert.equal(decideDailyStop(400, 359, cfg).tripped, true); // -$41, ~10% < suspect
   });
 });

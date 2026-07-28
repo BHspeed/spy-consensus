@@ -59,11 +59,11 @@ describe('planner — entries', () => {
 });
 
 describe('planner — daily circuit breaker', () => {
-  test('down 3% flattens all and halts, emits no buys', () => {
-    const state = { ...emptyState(), day: DAY, baselineEquity: 100 };
+  test('daily $ loss brake flattens all and halts, emits no buys', () => {
+    const state = { ...emptyState(), day: DAY, baselineEquity: 400 };
     const r = planCycle(baseInput({
       state,
-      account: { equity: 96, buyingPower: 96 },
+      account: { equity: 355, buyingPower: 96 }, // -$45, ~11% (< suspect), > $40 brake
       brokerPositions: [{ symbol: 'NVDA', shares: 0.5, avgPrice: 120, tier: 'core' }],
       quotes: { NVDA: 110 },
       candidates: [NVDA],

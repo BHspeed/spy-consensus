@@ -53,6 +53,10 @@ export function rollDay(state, today, currentEquity) {
     baselineEquity: currentEquity,
     halted: false,
     stoppedOut,
+    // Fresh day → reset the daily loss/goal + snipe counters.
+    realizedToday: 0,
+    snipeCount: 0,
+    snipeLossToday: 0,
   };
 }
 
