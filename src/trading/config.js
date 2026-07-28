@@ -169,8 +169,9 @@ export const DEFAULT_CONFIG = {
     // separate scalp and keep hunting turns. They stop only on (a) hitting the
     // daily % GOAL, or (b) the snipe-loss cap. Aim for up to maxPerDay/day.
     maxPerDay: 5,            // take up to this many snipes per day
-    maxDailyLossUsd: 30,     // hard brake: stop sniping after this much snipe loss
-                             // (below the account-wide daily maxLossUsd)
+    maxDailyLossUsd: 60,     // hard brake: stop sniping after this much snipe loss
+                             // (raised with maxPremiumUsd so a full-stop snipe fits:
+                             //  $100 premium × 45% hard stop ≈ $45 max loss < $60 cap)
     gatedByShareHalt: false, // snipes are NOT paused by the share-book halt
     stopOnDailyGoal: true,   // stop sniping once the daily % goal is reached
     underlying: 'SPY',
@@ -179,7 +180,9 @@ export const DEFAULT_CONFIG = {
     // was a too-far-OTM 0.20Δ strike that needed a big move. Costs more, so:
     targetDelta: [0.40, 0.55],
     minOpenInterest: 500,
-    maxPremiumUsd: 60,       // whole cost = max loss; higher to reach ATM strikes
+    maxPremiumUsd: 100,      // whole cost = max loss; raised 60→100 so a real
+                             // ATM-ish (0.40–0.55Δ) SPY 0-DTE actually clears the
+                             // budget — the $60 cap declined 4 valid signals on 7/28.
     // Value-flip exit (NOT a tight fixed stop): arm on a gain, TRAIL the peak so a
     // real pop runs, bank on the flip; only a WIDE hard-stop backstop so 0-DTE
     // noise doesn't cut a winner early. Fed to consensus/valueFlip.decideExit.
