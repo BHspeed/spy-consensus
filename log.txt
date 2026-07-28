@@ -105,3 +105,13 @@ step2 wrote 20 files
 step3 starting
 theme: 20 scored, 6 setups
 step3 done
+STEP1 dirs output:
+SPY DOWN spot 739.09 move 0.69% -> pull PUTS strikes 740,739,738,737,736
+QQQ DOWN spot 682.12 move 1.34% -> pull PUTS strikes 683,682,681,680,679
+NVDA DOWN spot 196.51 move 2.5% -> pull PUTS strikes 198,197,196,195,194
+TSLA DOWN spot 309.22 move 2.5% -> pull PUTS strikes 310,309,308,307,306
+AMD DOWN spot 494.95 move 2.5% -> pull PUTS strikes 496,495,494,493,492
+step1 done
+opts 4544
+opts 4544
+weeklies: 3 picks (3 logged)
