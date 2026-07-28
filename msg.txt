@@ -1,15 +1,30 @@
-**SPY morning — 2026-07-27**
-CONSENSUS: SIDEWAYS · 38% (spot 743.43)
+**SPY morning — 2026-07-28**
+CONSENSUS: DOWN · 64% (spot 736.52)
 
-**📰 News check:** MIXED — neutral to the SIDEWAYS read — bullish AI/tech + Iran de-escalation offset by Mag-7 earnings + Fed policy event risk this week
+**📰 News check:** MIXED — neutral to the DOWN read — AI capex enthusiasm (Meta/BlackRock $14B data center) offsets Nvidia dot-com bubble warnings and Berkshire heir's 15-quarter net-selling streak
 
 ```
 ===================  SPY — RUN IT  ===================
-  as of 2026-07-27T13:52:54.593Z   price ~743.43
+  as of 2026-07-28T13:51:52Z   price ~736.52
 
-  CONSENSUS:   SIDEWAYS   ·   38% confident
+  CONSENSUS:   DOWN   ·   64% confident
 
-  >>> NO TRADE today — direction unclear / low confidence.
-      Sitting out is the call (a result, not a miss).
+  TRADE A — PUT spread  (BUY, scalp the move DOWN):   conf 83%
+     BUY 737/735P   (2026-07-30)
+     pay          $81
+     SCALP OUT  ~ $105    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $57    (-30%, or if consensus turns UP)
+     room to max  $200
+
+  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
+     BUY 732P   (2026-07-30)   ~34Δ
+     pay          $310   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $341    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $372
+     stop       ~ $248    (-20%, or if consensus turns UP)
+
+  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
+  size: normal (64% confidence).  never add to a loser.
+  read: trend is DOWN. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
