@@ -31,3 +31,9 @@ weeklygrade: graded 4 today, 52 total
 SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step2 wrote 10 files
 step3 done
+
+=== theme agent run Wed Jul 29 20:35:45 UTC 2026 ===
+TODAY=2026-07-29
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step2 wrote 20 files
+theme: 20 scored, 6 setups
