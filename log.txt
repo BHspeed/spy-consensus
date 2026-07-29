@@ -28,7 +28,6 @@ SYMS=TSLA,NVDA,QQQ,SPY
 step1 done
 step2 4449
 weeklygrade: graded 4 today, 52 total
-step1 5677
-step2 tickers: PTGX,PBF,RDN,MPC,TXG,ETSY
-step3 9297
-step4 output: swings: 1 new, 76 already active
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step2 wrote 10 files
+step3 done
