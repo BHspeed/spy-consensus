@@ -16,3 +16,11 @@ step3 10899
 step4 ok
 earnings: 0 posted, 11 swing picks upcoming
 step6 news appended
+=== Wed Jul 29 13:53:55 UTC 2026 STEP1 dirs ===
+SPY DOWN spot 740.86 move 0.68% -> pull PUTS strikes 742,741,740,739,738
+QQQ DOWN spot 675.49 move 1.37% -> pull PUTS strikes 676,675,674,673,672
+NVDA DOWN spot 197.01 move 2.5% -> pull PUTS strikes 198,197,196,195,194
+TSLA DOWN spot 307.44 move 2.5% -> pull PUTS strikes 308,307,306,305,304
+AMD DOWN spot 454.62 move 2.5% -> pull PUTS strikes 456,455,454,453,452
+step1 done
+opts 4539
