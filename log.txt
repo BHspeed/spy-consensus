@@ -37,3 +37,10 @@ TODAY=2026-07-29
 SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
 step2 wrote 20 files
 theme: 20 scored, 6 setups
+SPY DOWN spot 729.46 move 0.74% -> pull PUTS strikes 730,729,728,727,726
+QQQ DOWN spot 661.73 move 1.45% -> pull PUTS strikes 663,662,661,660,659
+NVDA DOWN spot 190.01 move 2.5% -> pull PUTS strikes 191,190,189,188,187
+TSLA DOWN spot 298.32 move 2.5% -> pull PUTS strikes 299,298,297,296,295
+AMD DOWN spot 429.56 move 2.5% -> pull PUTS strikes 431,430,429,428,427
+opts 3945
+weeklies: 2 picks (2 logged)
