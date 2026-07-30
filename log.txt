@@ -47,7 +47,8 @@ weeklies: 2 picks (2 logged)
 SYMS=NVDA,TSLA
 step2 2237
 weeklygrade: graded 2 today, 54 total
-step1 6995
-step2 tickers: PBF,ETSY,TXG,MPC,UHAL.B,UHAL,RDN,ACA,AHR
-step3 15071
-step4 stdout: swings: 0 new, 77 already active
+=== theme agent run Thu Jul 30 20:35:47 UTC 2026 ===
+TODAY=2026-07-30
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step2 wrote 20 files
+theme: 20 scored, 6 setups
