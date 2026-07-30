@@ -1,15 +1,30 @@
-**SPY morning — 2026-07-29**
-CONSENSUS: SIDEWAYS · 49% (spot 739.90)
+**SPY morning — 2026-07-30**
+CONSENSUS: DOWN · 66% (spot 737.03)
 
-**📰 News check:** RISK-OFF — ⚠️ DISAGREES with the SIDEWAYS read — US-Iran tensions escalate (Iraq strikes, missile attack), oil rising; geopolitical risk premium leans bearish
+**📰 News check:** MIXED — neutral to the DOWN read — Fed held rates (not cutting, rate pressure persists), META Q2 miss weighs on mega-cap sentiment, US-Iran oil tensions add risk-off undertone; MSFT +10% on record profit offsets but doesn't reverse the bear lean
+
 ```
-
 ===================  SPY — RUN IT  ===================
-  as of 2026-07-29T13:50:11.619Z   price ~739.9
+  as of 2026-07-30T13:50:22.819Z   price ~737.03
 
-  CONSENSUS:   SIDEWAYS   ·   49% confident
+  CONSENSUS:   DOWN   ·   66% confident
 
-  >>> NO TRADE today — direction unclear / low confidence.
-      Sitting out is the call (a result, not a miss).
+  TRADE A — PUT spread  (BUY, scalp the move DOWN):   conf 83%
+     BUY 737/735P   (2026-08-03)
+     pay          $75
+     SCALP OUT  ~ $98    <-- bank the pop (+31%); trail if it keeps flipping up
+     stop       ~ $53    (-29%, or if consensus turns UP)
+     room to max  $200
+
+  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
+     BUY 733P   (2026-08-03)   ~35Δ
+     pay          $288   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $317    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $346
+     stop       ~ $230    (-20%, or if consensus turns UP)
+
+  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
+  size: normal (66% confidence).  never add to a loser.
+  read: trend is DOWN. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
