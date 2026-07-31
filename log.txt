@@ -1,54 +1,9 @@
-Starting weekly grade Tue Jul 28 20:16:25 UTC 2026
-SYMS=NVDA,SPY,TSLA
-step2 saved
-step2 3347
-step3 weeklygrade: graded 0 today, 48 total
-step1 4535
-step2 tickers: VRNS,TXG,RDN,RGA,VOYA,ETSY,AHR,PRI
-step3 13826
-step4: swings: 0 new, 76 already active
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step2 wrote 10 files
-step3 levetf: 1 new, 0 closed this run, 5 graded total
-step1 ok
-SYMS=VRNS,THG,CVLT,CORZ,NEO,CZR,CURB,BA,XIFR,PII
-step3 10899
-step4 ok
-earnings: 0 posted, 11 swing picks upcoming
-step6 news appended
-=== Wed Jul 29 13:53:55 UTC 2026 STEP1 dirs ===
-SPY DOWN spot 740.86 move 0.68% -> pull PUTS strikes 742,741,740,739,738
-QQQ DOWN spot 675.49 move 1.37% -> pull PUTS strikes 676,675,674,673,672
-NVDA DOWN spot 197.01 move 2.5% -> pull PUTS strikes 198,197,196,195,194
-TSLA DOWN spot 307.44 move 2.5% -> pull PUTS strikes 308,307,306,305,304
-AMD DOWN spot 454.62 move 2.5% -> pull PUTS strikes 456,455,454,453,452
-step1 done
-opts 4539
-SYMS=TSLA,NVDA,QQQ,SPY
-step1 done
-step2 4449
-weeklygrade: graded 4 today, 52 total
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step2 wrote 10 files
-step3 done
-
-=== theme agent run Wed Jul 29 20:35:45 UTC 2026 ===
-TODAY=2026-07-29
-SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-step2 wrote 20 files
-theme: 20 scored, 6 setups
-SPY DOWN spot 729.46 move 0.74% -> pull PUTS strikes 730,729,728,727,726
-QQQ DOWN spot 661.73 move 1.45% -> pull PUTS strikes 663,662,661,660,659
-NVDA DOWN spot 190.01 move 2.5% -> pull PUTS strikes 191,190,189,188,187
-TSLA DOWN spot 298.32 move 2.5% -> pull PUTS strikes 299,298,297,296,295
-AMD DOWN spot 429.56 move 2.5% -> pull PUTS strikes 431,430,429,428,427
-opts 3945
-weeklies: 2 picks (2 logged)
-SYMS=NVDA,TSLA
-step2 2237
-weeklygrade: graded 2 today, 54 total
-=== theme agent run Thu Jul 30 20:35:47 UTC 2026 ===
-TODAY=2026-07-30
-SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-step2 wrote 20 files
-theme: 20 scored, 6 setups
+Run started: Fri Jul 31 13:50:38 UTC 2026
+TODAY=2026-07-31
+SPY UP spot 741.69 move 0.76% -> pull CALLS strikes 741,742,743,744,745
+QQQ DOWN spot 683.55 move 1.5% -> pull PUTS strikes 685,684,683,682,681
+NVDA DOWN spot 195.04 move 2.5% -> pull PUTS strikes 196,195,194,193,192
+TSLA DOWN spot 308.85 move 2.5% -> pull PUTS strikes 310,309,308,307,306
+AMD DOWN spot 485.39 move 2.5% -> pull PUTS strikes 486,485,484,483,482
+opts 4582
+weeklies: 5 picks (4 logged)
