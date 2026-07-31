@@ -75,3 +75,4 @@
 {"symbol":"AHR","added":"2026-07-24","entry":57.4,"tier":"core","targetPct":10,"targetPrice":63.2,"stopPrice":53.4,"status":"open","lastGainPct":0.1,"peakPct":null}
 {"symbol":"PBF","added":"2026-07-27","entry":63,"tier":"aggressive","targetPct":30,"targetPrice":81.9,"stopPrice":56.7,"status":"open"}
 {"symbol":"MPC","added":"2026-07-29","entry":308.7,"tier":"core","targetPct":13.4,"targetPrice":350.1,"stopPrice":287.1,"status":"open"}
+{"symbol":"TRV","added":"2026-07-31","entry":374.5,"tier":"core","targetPct":10,"targetPrice":411.9,"stopPrice":348.3,"status":"open"}
