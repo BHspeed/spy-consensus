@@ -34,21 +34,7 @@ step3: weeklies: 2 picks (2 logged)
 step1 SYMS=NVDA,QQQ
 step2 2237
 step3: weeklygrade graded 2 today, 60 total
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step2 wrote 10 files
-step2 files:
-hist_AMZU.json
-hist_FNGU.json
-hist_GGLL.json
-hist_METU.json
-hist_MSFU.json
-hist_NVDL.json
-hist_SOXL.json
-hist_TQQQ.json
-hist_TSLL.json
-hist_UPRO.json
-levetf: 0 new, 4 closed this run, 11 graded total
-step1 5050
-step2 tickers: TXG,UHAL,TRV,PRI,HOMB,KNSA,UHAL.B,ACA,PAG
-step3 16028
-step4: swings: 3 new, 78 already active
+SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step2 start: 2026-08-03T20:36:43Z
+step2 wrote 20 files
+step3 done: theme run 2026-08-03
