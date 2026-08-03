@@ -34,3 +34,17 @@ step3: weeklies: 2 picks (2 logged)
 step1 SYMS=NVDA,QQQ
 step2 2237
 step3: weeklygrade graded 2 today, 60 total
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step2 wrote 10 files
+step2 files:
+hist_AMZU.json
+hist_FNGU.json
+hist_GGLL.json
+hist_METU.json
+hist_MSFU.json
+hist_NVDL.json
+hist_SOXL.json
+hist_TQQQ.json
+hist_TSLL.json
+hist_UPRO.json
+levetf: 0 new, 4 closed this run, 11 graded total
