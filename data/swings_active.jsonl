@@ -76,3 +76,6 @@
 {"symbol":"PBF","added":"2026-07-27","entry":63,"tier":"aggressive","targetPct":30,"targetPrice":81.9,"stopPrice":56.7,"status":"open","lastGainPct":14.7,"peakPct":18.6}
 {"symbol":"MPC","added":"2026-07-29","entry":308.7,"tier":"core","targetPct":13.4,"targetPrice":350.1,"stopPrice":287.1,"status":"open","lastGainPct":2.5,"peakPct":2.5}
 {"symbol":"TRV","added":"2026-07-31","entry":374.5,"tier":"core","targetPct":10,"targetPrice":411.9,"stopPrice":348.3,"status":"open","lastGainPct":0,"peakPct":null}
+{"symbol":"KNSA","added":"2026-08-03","entry":74.3,"tier":"aggressive","targetPct":29.4,"targetPrice":96.2,"stopPrice":66.9,"status":"open"}
+{"symbol":"PAG","added":"2026-08-03","entry":217.5,"tier":"core","targetPct":10,"targetPrice":239.3,"stopPrice":202.3,"status":"open"}
+{"symbol":"HOMB","added":"2026-08-03","entry":31.3,"tier":"core","targetPct":10,"targetPrice":34.4,"stopPrice":29.1,"status":"open"}
