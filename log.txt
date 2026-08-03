@@ -48,3 +48,7 @@ hist_TQQQ.json
 hist_TSLL.json
 hist_UPRO.json
 levetf: 0 new, 4 closed this run, 11 graded total
+step1 5050
+step2 tickers: TXG,UHAL,TRV,PRI,HOMB,KNSA,UHAL.B,ACA,PAG
+step3 16028
+step4: swings: 3 new, 78 already active
