@@ -21,3 +21,13 @@ step4 ok
 earnings: 8 posted, 18 swing picks upcoming
 step6 news appended
 
+=== weekly run 2026-08-03 START ===
+step1: fetching daily historicals
+step1 dirs output:
+SPY UP spot 747.03 move 0.79% -> pull CALLS strikes 746,747,748,749,750
+QQQ UP spot 687.99 move 1.5% -> pull CALLS strikes 687,688,689,690,691
+NVDA DOWN spot 200.75 move 2.5% -> pull PUTS strikes 202,201,200,199,198
+TSLA DOWN spot 311.21 move 2.5% -> pull PUTS strikes 312,311,310,309,308
+AMD DOWN spot 476.15 move 2.5% -> pull PUTS strikes 477,476,475,474,473
+opts 2337
+step3: weeklies: 2 picks (2 logged)
