@@ -44,6 +44,33 @@ describe('selectOption', () => {
     const off = loadConfig({ options: { ...cfg.options, enabled: false } });
     assert.equal(selectOption({ direction: 'long', underlying: 'X', chain, buyingPower: 68, equity: 100 }, off).consider, false);
   });
+
+  // Regression: the snipe arm passes {...cfg, options: cfg.snipe}, and cfg.snipe
+  // defines maxPremiumUsd but NO allocationPct/minPremiumUsd. Budget must stay a
+  // real number (min(maxPremiumUsd, buyingPower)), not NaN — the NaN made every
+  // snipe silently unreachable.
+  test('snipe config (no allocationPct) → budget is not NaN, picks a call', () => {
+    const snipeCfg = { ...cfg, options: cfg.snipe };
+    // Near-ATM 0-DTE SPY-style chain in the snipe delta band (0.40–0.55), 0 DTE.
+    const spyChain = [
+      { id: 's1', type: 'call', strike: 748, expiration: '2026-07-31', dte: 0, delta: 0.42, ask: 0.48, mark: 0.475, openInterest: 16000, volume: 400000 }, // $48
+      { id: 's2', type: 'call', strike: 750, expiration: '2026-07-31', dte: 0, delta: 0.10, ask: 0.08, mark: 0.075, openInterest: 35000, volume: 200000 }, // delta too low
+    ];
+    const r = selectOption({ direction: 'long', underlying: 'SPY', chain: spyChain, buyingPower: 124, equity: 288 }, snipeCfg);
+    assert.equal(r.consider, true);
+    assert.equal(r.contract.id, 's1');
+    assert.equal(r.cost, 48);           // min($100 cap, $124 BP) = $100 budget; $48 fits
+    assert.ok(Number.isFinite(r.cost));
+  });
+
+  test('snipe config → still respects the maxPremiumUsd cap', () => {
+    const snipeCfg = { ...cfg, options: cfg.snipe };
+    const dear = [
+      { id: 'x', type: 'call', strike: 748, expiration: '2026-07-31', dte: 0, delta: 0.50, ask: 1.20, mark: 1.19, openInterest: 16000, volume: 400000 }, // $120 > $100 cap
+    ];
+    const r = selectOption({ direction: 'long', underlying: 'SPY', chain: dear, buyingPower: 500, equity: 5000 }, snipeCfg);
+    assert.equal(r.consider, false);    // $120 contract exceeds the $100 maxPremiumUsd cap
+  });
 });
 
 describe('decideOptionExit', () => {

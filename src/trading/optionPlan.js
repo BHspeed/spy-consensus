@@ -31,10 +31,16 @@ export function selectOption({ direction, underlying, chain, buyingPower, equity
   if (!o.enabled) return { consider: false, reason: 'options disabled' };
 
   const want = direction === 'short' ? 'put' : 'call';
-  // Budget = min(configured cap, an allocation of equity, settled cash).
-  const budget = Math.min(o.maxPremiumUsd, equity * (o.allocationPct / 100), buyingPower);
-  if (budget < o.minPremiumUsd) {
-    return { consider: false, reason: `budget $${round2(budget)} < min premium $${o.minPremiumUsd}` };
+  // Budget = min(configured $ cap, an allocation of equity, settled cash).
+  // allocationPct/minPremiumUsd are OPTIONAL: the snipe arm (cfg.snipe) sizes purely
+  // by maxPremiumUsd + buying power and defines neither. Treat a missing allocationPct
+  // as "no equity-fraction cap" (100%) and a missing minPremiumUsd as 0 — otherwise
+  // `equity * (undefined/100)` is NaN and every candidate is silently rejected.
+  const allocPct = Number.isFinite(o.allocationPct) ? o.allocationPct : 100;
+  const minPremium = Number.isFinite(o.minPremiumUsd) ? o.minPremiumUsd : 0;
+  const budget = Math.min(o.maxPremiumUsd, equity * (allocPct / 100), buyingPower);
+  if (budget < minPremium) {
+    return { consider: false, reason: `budget $${round2(budget)} < min premium $${minPremium}` };
   }
 
   const [dLo, dHi] = o.targetDelta;

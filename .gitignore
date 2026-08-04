@@ -28,3 +28,4 @@ data/discord_webhook.txt
 
 # transient per-cycle planner input (regenerated each run)
 data/cycle_bundle.json
+.claude/settings.local.json
