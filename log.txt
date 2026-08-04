@@ -2,7 +2,8 @@
 SYMS=TSLA,NVDA,AMD
 step2 3345
 weeklygrade: graded 3 today, 63 total
-step1 9202
-step2 tickers: RDN,UHAL,UHAL.B,LTH,PRI,KNSA,PBF,ACA,DINO,LAD
-step3 17533
-step4: swings: 2 new, 81 already active
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+Step 1 complete: 20 tickers
+step2 wrote 20 files
+STEP 3 exit: 0
+theme: 20 scored, 1 setups
