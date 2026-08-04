@@ -38,3 +38,14 @@ SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,
 step2 start: 2026-08-03T20:36:43Z
 step2 wrote 20 files
 step3 done: theme run 2026-08-03
+=== weekly run 2026-08-04 START ===
+step1: fetching daily historicals
+step1 dirs output:
+SPY UP spot 757.67 move 0.82% -> pull CALLS strikes 757,758,759,760,761
+QQQ UP spot 700.07 move 1.51% -> pull CALLS strikes 699,700,701,702,703
+NVDA UP spot 206.64 move 2.5% -> pull CALLS strikes 206,207,208,209,210
+TSLA UP spot 322.08 move 2.5% -> pull CALLS strikes 321,322,323,324,325
+AMD DOWN spot 484.64 move 2.5% -> pull PUTS strikes 486,485,484,483,482
+opts 2349
+step3: running weeklies run
+step3: weeklies: 3 picks (3 logged)
