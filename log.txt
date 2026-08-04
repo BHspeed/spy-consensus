@@ -2,3 +2,7 @@
 SYMS=TSLA,NVDA,AMD
 step2 3345
 weeklygrade: graded 3 today, 63 total
+step1 9202
+step2 tickers: RDN,UHAL,UHAL.B,LTH,PRI,KNSA,PBF,ACA,DINO,LAD
+step3 17533
+step4: swings: 2 new, 81 already active
