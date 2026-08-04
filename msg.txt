@@ -1,37 +1,36 @@
-**SPY morning — 2026-08-03**
-CONSENSUS: UP · 68% (spot 751.66)
-
-**📰 News check:** MIXED — neutral to the UP read — futures rising and Middle East diplomacy returning are bullish but Iran tension + NFP this week add uncertainty
+**SPY morning — 2026-08-04**
+CONSENSUS: UP · 78% (spot 762.29)
+**📰 News check:** MIXED — ⚠️ DISAGREES with the UP read — Iran/Hormuz control demand + US precision-missile depletion signal escalating geopolitical risk-off tail; Palantir +16% and AI infrastructure surge provide bull offset but don't neutralize oil-shock risk
 
 ```
 ===================  SPY — RUN IT  ===================
-  as of 2026-08-03T13:51:58.866Z   price ~751.66
+  as of 2026-08-04T13:51:06.670Z   price ~762.29
 
-  CONSENSUS:   UP   ·   68% confident
+  CONSENSUS:   UP   ·   78% confident
 
-  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 82%
-     BUY 752/754C   (2026-08-05)
-     pay          $111
-     SCALP OUT  ~ $144    <-- bank the pop (+30%); trail if it keeps flipping up
-     stop       ~ $78    (-30%, or if consensus turns DOWN)
+  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 89%
+     BUY 762/764C   (2026-08-06)
+     pay          $104.5
+     SCALP OUT  ~ $136    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $73    (-30%, or if consensus turns DOWN)
      room to max  $200
 
-  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 70%
-     SELL 749/747P   (2026-08-05)
-     collect      $41.5
-     TAKE HALF  ~ $21    <-- buy back here, bank ~$20.5 (don't hold for the last dollar)
-     max loss     $158.5   (if SPY drops below 747)
-     keeps profit if SPY stays above 749
+  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 75%
+     SELL 761/759P   (2026-08-06)
+     collect      $59
+     TAKE HALF  ~ $30    <-- buy back here, bank ~$29 (don't hold for the last dollar)
+     max loss     $141   (if SPY drops below 759)
+     keeps profit if SPY stays above 761
 
   TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
-     BUY 755C   (2026-08-05)   ~34Δ
-     pay          $137   (cheaper OTM — flips 10%+ on a small move)
-     BANK +10%  ~ $151    <-- take the flip when it comes (don't need to be right on strike)
-     TARGET +20% ~ $164
-     stop       ~ $110    (-20%, or if consensus turns DOWN)
+     BUY 765C   (2026-08-06)   ~38Δ
+     pay          $176   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $194    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $211
+     stop       ~ $141    (-20%, or if consensus turns DOWN)
 
   GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
-  size: normal (68% confidence).  never add to a loser.
+  size: normal (78% confidence).  never add to a loser.
   read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
