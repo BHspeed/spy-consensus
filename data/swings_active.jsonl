@@ -79,3 +79,5 @@
 {"symbol":"KNSA","added":"2026-08-03","entry":74.3,"tier":"aggressive","targetPct":29.4,"targetPrice":96.2,"stopPrice":66.9,"status":"open"}
 {"symbol":"PAG","added":"2026-08-03","entry":217.5,"tier":"core","targetPct":10,"targetPrice":239.3,"stopPrice":202.3,"status":"open"}
 {"symbol":"HOMB","added":"2026-08-03","entry":31.3,"tier":"core","targetPct":10,"targetPrice":34.4,"stopPrice":29.1,"status":"open"}
+{"symbol":"DINO","added":"2026-08-04","entry":88.3,"tier":"aggressive","targetPct":20.2,"targetPrice":106.1,"stopPrice":79.4,"status":"open"}
+{"symbol":"LAD","added":"2026-08-04","entry":371,"tier":"core","targetPct":10.4,"targetPrice":409.6,"stopPrice":345,"status":"open"}
