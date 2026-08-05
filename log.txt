@@ -1,19 +1,6 @@
-=== WEEKLY GRADE START Tue Aug  4 20:16:37 UTC 2026 ===
-SYMS=TSLA,NVDA,AMD
-step2 3345
-weeklygrade: graded 3 today, 63 total
-SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-Step 1 complete: 20 tickers
-step2 wrote 20 files
-STEP 3 exit: 0
-theme: 20 scored, 1 setups
+=== theme run start Wed Aug  5 20:36:33 UTC 2026 ===
 TODAY=2026-08-05
-=== STEP 1: Get symbols ===
-SYMS=
-step1: SYMS empty, wrote empty whist.json
-step3: graded 0 today, 63 total
-commit done
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step1 done
-step2 wrote 10 files
-levetf: 0 new, 0 closed this run, 13 graded total
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step2 wrote 20 files
+theme: 15 scored, 4 setups
+step3 done
