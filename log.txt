@@ -13,7 +13,7 @@ SYMS=
 step1: SYMS empty, wrote empty whist.json
 step3: graded 0 today, 63 total
 commit done
-step1 5916
-step2 tickers: VOYA,RDN,CIB,TXG,PBF,PRI,LTH,DINO,KNSA,ACA
-step3 16157
-step4: swings: 0 new, 83 already active
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 done
+step2 wrote 10 files
+levetf: 0 new, 0 closed this run, 13 graded total
