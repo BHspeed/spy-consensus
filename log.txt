@@ -17,3 +17,6 @@ opts 4320
 STEP 3 output:
 weeklies: 5 picks (4 logged)
 STEP 3 done
+SPY,QQQ,TSLA,NVDA
+step2 4452
+weeklygrade: graded 8 today, 71 total
