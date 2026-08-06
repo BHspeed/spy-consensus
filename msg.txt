@@ -1,36 +1,37 @@
-**TSLA morning — 2026-08-06**
-CONSENSUS: DOWN · 84% (spot 319.00)
+**SPY morning — 2026-08-06**
+CONSENSUS: UP · 82% (spot 770.78)
 
-**📰 TSLA news check:** mixed — neutral to the DOWN read — dip-buying narrative vs noted red flags; SpaceX $99B selling pressure adds Musk-empire headwind; broad market backdrop neutral
+**📰 News check:** MIXED — neutral to the UP read — earnings optimism (European stocks rising) is risk-on and agrees with the bullish thesis, but worsening Iran deal odds keep oil elevated and add geopolitical uncertainty as a headwind
+
 ```
-===================  TSLA — RUN IT  ===================
-  as of 2026-08-06T13:51:48.417Z   price ~319
+===================  SPY — RUN IT  ===================
+  as of 2026-08-06T13:54:08.049Z   price ~770.78
 
-  CONSENSUS:   DOWN   ·   84% confident
+  CONSENSUS:   UP   ·   82% confident
 
-  TRADE A — PUT spread  (BUY, scalp the move DOWN):   conf 86%
-     BUY 320/310P   (2026-08-10)
-     pay          $390
-     SCALP OUT  ~ $507    <-- bank the pop (+30%); trail if it keeps flipping up
-     stop       ~ $273    (-30%, or if consensus turns UP)
-     room to max  $1000
+  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 91%
+     BUY 771/773C   (2026-08-10)
+     pay          $101.5
+     SCALP OUT  ~ $132    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $71    (-30%, or if consensus turns DOWN)
+     room to max  $200
 
-  TRADE B — CALL spread  (SELL, slower — collect & scalp half):   conf 73%
-     SELL 325/335C   (2026-08-10)
-     collect      $188
-     TAKE HALF  ~ $94    <-- buy back here, bank ~$94 (don't hold for the last dollar)
-     max loss     $812   (if TSLA runs above 335)
-     keeps profit if TSLA stays below 325
+  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 79%
+     SELL 769/767P   (2026-08-10)
+     collect      $64
+     TAKE HALF  ~ $32    <-- buy back here, bank ~$32 (don't hold for the last dollar)
+     max loss     $136   (if SPY drops below 767)
+     keeps profit if SPY stays above 769
 
   TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
-     BUY 315P   (2026-08-10)   ~37Δ
-     pay          $343   (cheaper OTM — flips 10%+ on a small move)
-     BANK +10%  ~ $377    <-- take the flip when it comes (don't need to be right on strike)
-     TARGET +20% ~ $412
-     stop       ~ $274    (-20%, or if consensus turns UP)
+     BUY 775C   (2026-08-10)   ~36Δ
+     pay          $221   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $243    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $265
+     stop       ~ $177    (-20%, or if consensus turns DOWN)
 
   GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
-  size: normal (84% confidence).  never add to a loser.
-  read: trend is DOWN. A rides+scalps the move; B is slower income if it just doesn't reverse.
+  size: normal (82% confidence).  never add to a loser.
+  read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
