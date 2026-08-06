@@ -20,3 +20,7 @@ STEP 3 done
 SPY,QQQ,TSLA,NVDA
 step2 4452
 weeklygrade: graded 8 today, 71 total
+step1 8419
+step2 PRI,PAG,RUSHA,TXG,ACA,LTH,CIB,CORT,HOMB,MEDP
+step3 16847
+step4 swings: 0 new, 85 already active
