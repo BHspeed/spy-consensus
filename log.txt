@@ -1,26 +1,7 @@
-=== theme run start Wed Aug  5 20:36:33 UTC 2026 ===
-TODAY=2026-08-05
+
+=== Quantum & Nuclear Theme Agent ===
+date: 2026-08-06
+start: Thu Aug  6 20:36:16 UTC 2026
 SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 complete: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
 step2 wrote 20 files
-theme: 15 scored, 4 setups
-step3 done
-STEP 1 start
-Thu Aug  6 13:51:45 UTC 2026
-STEP 1 dirs output:
-SPY UP spot 769.79 move 0.88% -> pull CALLS strikes 769,770,771,772,773
-QQQ UP spot 717.30 move 1.53% -> pull CALLS strikes 716,717,718,719,720
-NVDA UP spot 219.22 move 2.5% -> pull CALLS strikes 218,219,220,221,222
-TSLA UP spot 321.55 move 2.5% -> pull CALLS strikes 321,322,323,324,325
-AMD UP spot 482.05 move 2.5% -> pull CALLS strikes 481,482,483,484,485
-STEP 1 complete
-opts 4320
-STEP 3 output:
-weeklies: 5 picks (4 logged)
-STEP 3 done
-SPY,QQQ,TSLA,NVDA
-step2 4452
-weeklygrade: graded 8 today, 71 total
-step1 8419
-step2 PRI,PAG,RUSHA,TXG,ACA,LTH,CIB,CORT,HOMB,MEDP
-step3 16847
-step4 swings: 0 new, 85 already active
