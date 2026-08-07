@@ -83,3 +83,5 @@
 {"symbol":"LAD","added":"2026-08-04","entry":371,"tier":"core","targetPct":10.4,"targetPrice":409.6,"stopPrice":345,"status":"open"}
 {"symbol":"RUSHA","added":"2026-08-06","entry":79.7,"tier":"core","targetPct":10.4,"targetPrice":88,"stopPrice":74.1,"status":"open"}
 {"symbol":"MEDP","added":"2026-08-06","entry":585.1,"tier":"core","targetPct":10.2,"targetPrice":644.7,"stopPrice":544.1,"status":"open"}
+{"symbol":"BMY","added":"2026-08-07","entry":64.7,"tier":"core","targetPct":10,"targetPrice":71.2,"stopPrice":60.2,"status":"open"}
+{"symbol":"SCI","added":"2026-08-07","entry":85,"tier":"core","targetPct":10,"targetPrice":93.5,"stopPrice":79.1,"status":"open"}
