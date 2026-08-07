@@ -1,37 +1,39 @@
-**SPY morning — 2026-08-06**
-CONSENSUS: UP · 82% (spot 770.78)
+⚠️ MACRO RISK: NFP jobs report today — a scheduled report can override the technical read; size down or wait for the reaction.
 
-**📰 News check:** MIXED — neutral to the UP read — earnings optimism (European stocks rising) is risk-on and agrees with the bullish thesis, but worsening Iran deal odds keep oil elevated and add geopolitical uncertainty as a headwind
+**SPY morning — 2026-08-07**
+CONSENSUS: UP · 68% (spot 772.16)
+
+**📰 News check:** MIXED — ⚠️ DISAGREES with the UP read — oil firming on Strait of Hormuz concerns and dollar gaining on Iran talks signal risk-off headwinds; NFP print today is the dominant catalyst
 
 ```
 ===================  SPY — RUN IT  ===================
-  as of 2026-08-06T13:54:08.049Z   price ~770.78
+  as of 2026-08-07T13:57:06.026Z   price ~772.16
 
-  CONSENSUS:   UP   ·   82% confident
+  CONSENSUS:   UP   ·   68% confident
 
-  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 91%
+  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 85%
      BUY 771/773C   (2026-08-10)
-     pay          $101.5
-     SCALP OUT  ~ $132    <-- bank the pop (+30%); trail if it keeps flipping up
-     stop       ~ $71    (-30%, or if consensus turns DOWN)
+     pay          $95.5
+     SCALP OUT  ~ $124    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $67    (-30%, or if consensus turns DOWN)
      room to max  $200
 
-  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 79%
-     SELL 769/767P   (2026-08-10)
-     collect      $64
-     TAKE HALF  ~ $32    <-- buy back here, bank ~$32 (don't hold for the last dollar)
-     max loss     $136   (if SPY drops below 767)
-     keeps profit if SPY stays above 769
+  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 72%
+     SELL 770/768P   (2026-08-10)
+     collect      $65.5
+     TAKE HALF  ~ $33    <-- buy back here, bank ~$32.5 (don't hold for the last dollar)
+     max loss     $134.5   (if SPY drops below 768)
+     keeps profit if SPY stays above 770
 
   TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
-     BUY 775C   (2026-08-10)   ~36Δ
-     pay          $221   (cheaper OTM — flips 10%+ on a small move)
-     BANK +10%  ~ $243    <-- take the flip when it comes (don't need to be right on strike)
-     TARGET +20% ~ $265
-     stop       ~ $177    (-20%, or if consensus turns DOWN)
+     BUY 774C   (2026-08-10)   ~34Δ
+     pay          $142   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $156    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $170
+     stop       ~ $114    (-20%, or if consensus turns DOWN)
 
   GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
-  size: normal (82% confidence).  never add to a loser.
+  size: normal (68% confidence).  never add to a loser.
   read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
