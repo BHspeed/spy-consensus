@@ -45,3 +45,7 @@ step1 done
 step2 wrote 10 files
 step3 done
 FINISH commit ok
+step1 7048
+step2 tickers: CORT,PAG,MEDP,CIB,SCI,KNSA,BMY,ACA,LAD
+step3 14973
+step4: swings: 2 new, 85 already active
