@@ -39,3 +39,9 @@ FINISH commit ok
 STEP1: SYMS=
 step1 empty - wrote empty whist.json
 step3 weeklygrade: graded 0 today, 71 total
+TODAY=2026-08-07
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 done
+step2 wrote 10 files
+step3 done
+FINISH commit ok
