@@ -34,3 +34,8 @@ step6 news appended
 
 step6 news appended
 FINISH commit ok
+
+=== weekly grade 2026-08-07 ===
+STEP1: SYMS=
+step1 empty - wrote empty whist.json
+step3 weeklygrade: graded 0 today, 71 total
