@@ -49,6 +49,14 @@ step1 7048
 step2 tickers: CORT,PAG,MEDP,CIB,SCI,KNSA,BMY,ACA,LAD
 step3 14973
 step4: swings: 2 new, 85 already active
+<<<<<<< Updated upstream
 STEP1 SYMBOLS: CFG,BNS,PSMT,CVS,GE,BPOP,SIGI,SYY,PNC,REYN,TGTX,ALKS,RVMD,NBIX,SLF,PTGX,ENVA,MNST,HSIC,THG,BTSG,AIZ,KYMR,AJG,XENE,QLYS,RDN,ACA,VOYA,PRI,LTH,RGA,AHR,PBF,MPC,TRV,KNSA,PAG,HOMB,DINO,LAD,RUSHA,MEDP,BMY,SCI
 step3 236965
 step4: swingcheck: 27 open, 0 closed this week, 60 total closed
+=======
+step1 ok
+SYMS=ACA,RVMD,CVS,RDN,RGA,PTGX,KYMR,PRI,AHR,SLF
+step3 12691
+earnings: 9 posted, 0 swing picks upcoming
+step6 news appended
+>>>>>>> Stashed changes
