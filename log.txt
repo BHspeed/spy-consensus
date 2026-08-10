@@ -77,3 +77,8 @@ step2 tickers: MEDP,CORT,BMY,LAD,KNSA,PAG,ACA,LNC,SCI,ATR
 step3 17974
 step4 swings: 2 new, 87 already active
 FINISH commit ok
+step1 ok
+SBET,ASST,HIMS,LINC,BKD,NYAX,WBTN,EROK,ACVA,RUM
+step3 9043
+step5 done
+step6 news appended
