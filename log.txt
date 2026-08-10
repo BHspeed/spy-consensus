@@ -72,3 +72,7 @@ weeklies: 5 picks (4 logged)
 SYMS=QQQ,SPY,TSLA,AMD
 step2 4438
 weeklygrade: graded 4 today, 75 total
+step1 5538
+step2 tickers: MEDP,CORT,BMY,LAD,KNSA,PAG,ACA,LNC,SCI,ATR
+step3 17974
+step4 swings: 2 new, 87 already active
