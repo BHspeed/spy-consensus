@@ -69,3 +69,6 @@ AMD UP spot 483.36 move 2.5% -> pull CALLS strikes 482,483,484,485,486
 step1 done Mon Aug 10 14:02:32 UTC 2026
 opts 3468
 weeklies: 5 picks (4 logged)
+SYMS=QQQ,SPY,TSLA,AMD
+step2 4438
+weeklygrade: graded 4 today, 75 total
