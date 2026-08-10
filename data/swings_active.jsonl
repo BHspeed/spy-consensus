@@ -85,3 +85,5 @@
 {"symbol":"MEDP","added":"2026-08-06","entry":585.1,"tier":"core","targetPct":10.2,"targetPrice":644.7,"stopPrice":544.1,"status":"open","lastGainPct":0.9,"peakPct":0.8}
 {"symbol":"BMY","added":"2026-08-07","entry":64.7,"tier":"core","targetPct":10,"targetPrice":71.2,"stopPrice":60.2,"status":"open","lastGainPct":0,"peakPct":null}
 {"symbol":"SCI","added":"2026-08-07","entry":85,"tier":"core","targetPct":10,"targetPrice":93.5,"stopPrice":79.1,"status":"open","lastGainPct":0,"peakPct":null}
+{"symbol":"LNC","added":"2026-08-10","entry":46,"tier":"core","targetPct":10,"targetPrice":50.6,"stopPrice":42.8,"status":"open"}
+{"symbol":"ATR","added":"2026-08-10","entry":133.7,"tier":"core","targetPct":10,"targetPrice":147,"stopPrice":124.3,"status":"open"}
