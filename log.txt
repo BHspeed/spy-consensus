@@ -20,7 +20,8 @@ TODAY=2026-08-11
 SYMS=QQQ,SPY,NVDA,TSLA
 step2 4442
 step3 weeklygrade: graded 0 today, 79 total
-step1 7466
-step2 tickers: CIB,KNSA,MAAS,LNC,BMY,PAG,LAD,UHAL,CORT,MEDP
-step3 17087
-step4 stdout: swings: 1 new, 89 already active
+=== levetf run START Tue Aug 11 20:26:48 UTC 2026 TODAY=2026-08-11 ===
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 complete: 10 tickers
+step2 wrote 10 files
+step3: levetf: 0 new, 0 closed this run, 14 graded total
