@@ -20,3 +20,7 @@ TODAY=2026-08-11
 SYMS=QQQ,SPY,NVDA,TSLA
 step2 4442
 step3 weeklygrade: graded 0 today, 79 total
+step1 7466
+step2 tickers: CIB,KNSA,MAAS,LNC,BMY,PAG,LAD,UHAL,CORT,MEDP
+step3 17087
+step4 stdout: swings: 1 new, 89 already active
