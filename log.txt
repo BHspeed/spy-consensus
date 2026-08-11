@@ -6,3 +6,12 @@ step1 complete: 20 tickers
 step2 wrote 20 files
 step3 complete: node scripts/theme.mjs run 2026-08-10 . → theme: 20 scored, 6 setups
 step3 complete: node scripts/theme.mjs run 2026-08-10 . → theme: 20 scored, 6 setups
+=== weekly-options run START Tue Aug 11 14:00:56 UTC 2026 TODAY=2026-08-11 ===
+STEP1 dirs output:
+SPY UP spot 773.03 move 0.8% -> pull CALLS strikes 772,773,774,775,776
+QQQ UP spot 720.87 move 1.38% -> pull CALLS strikes 720,721,722,723,724
+NVDA UP spot 217.55 move 2.5% -> pull CALLS strikes 217,218,219,220,221
+TSLA UP spot 330.88 move 2.5% -> pull CALLS strikes 330,331,332,333,334
+AMD DOWN spot 469.56 move 2.5% -> pull PUTS strikes 471,470,469,468,467
+opts 4539
+weeklies: 5 picks (4 logged)
