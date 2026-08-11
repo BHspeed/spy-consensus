@@ -87,3 +87,4 @@
 {"symbol":"SCI","added":"2026-08-07","entry":85,"tier":"core","targetPct":10,"targetPrice":93.5,"stopPrice":79.1,"status":"open","lastGainPct":0,"peakPct":null}
 {"symbol":"LNC","added":"2026-08-10","entry":46,"tier":"core","targetPct":10,"targetPrice":50.6,"stopPrice":42.8,"status":"open"}
 {"symbol":"ATR","added":"2026-08-10","entry":133.7,"tier":"core","targetPct":10,"targetPrice":147,"stopPrice":124.3,"status":"open"}
+{"symbol":"MAAS","added":"2026-08-11","entry":20.9,"tier":"aggressive","targetPct":30,"targetPrice":27.2,"stopPrice":18.8,"status":"open"}
