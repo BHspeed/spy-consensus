@@ -25,3 +25,9 @@ SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step1 complete: 10 tickers
 step2 wrote 10 files
 step3: levetf: 0 new, 0 closed this run, 14 graded total
+=== news agent start Tue Aug 11 20:50:58 UTC 2026 ===
+step1 ok
+SBET,ASST,HPK,HIMS,KARD,MLYS,BKD,NYAX,WBTN,EROK
+step3 10733
+earnings: 3 posted, 0 swing picks upcoming
+step6 news appended
