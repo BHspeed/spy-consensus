@@ -31,3 +31,6 @@ SBET,ASST,HPK,HIMS,KARD,MLYS,BKD,NYAX,WBTN,EROK
 step3 10733
 earnings: 3 posted, 0 swing picks upcoming
 step6 news appended
+SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step2 wrote 20 files
+step3 done: theme: 20 scored, 1 setups
