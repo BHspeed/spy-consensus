@@ -34,3 +34,12 @@ step6 news appended
 SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
 step2 wrote 20 files
 step3 done: theme: 20 scored, 1 setups
+=== weekly agent start Wed Aug 12 13:50:59 UTC 2026 TODAY=2026-08-12 ===
+SPY DOWN spot 770.56 move 0.82% -> pull PUTS strikes 772,771,770,769,768
+QQQ DOWN spot 718.45 move 1.4% -> pull PUTS strikes 719,718,717,716,715
+NVDA UP spot 217.50 move 2.49% -> pull CALLS strikes 217,218,219,220,221
+TSLA UP spot 332.81 move 2.5% -> pull CALLS strikes 332,333,334,335,336
+AMD DOWN spot 474.32 move 2.5% -> pull PUTS strikes 475,474,473,472,471
+opts 4587
+weeklies: 4 picks (4 logged)
+=== DONE push succeeded ===
