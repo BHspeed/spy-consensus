@@ -1,37 +1,30 @@
-**SPY morning — 2026-08-10**
-CONSENSUS: UP · 82% (spot 772.87)
+**SPY morning — 2026-08-12**
+CONSENSUS: UP · 61% (spot 772.43)
 
-**📰 News check:** MIXED — neutral to the UP read — cold jobs data supports Fed dovish pivot but Hormuz/Iran oil supply risk adds geopolitical headwind
+**📰 News check:** MIXED — neutral to the UP read — Nvidia/AI capex upgrade bullish but Iran/Hormuz shipping disruption and oil risk add geopolitical headwind
 
 ```
 ===================  SPY — RUN IT  ===================
-  as of 2026-08-10T13:58:27.415Z   price ~772.87
+  as of 2026-08-12T13:52:16Z   price ~772.43
 
-  CONSENSUS:   UP   ·   82% confident
+  CONSENSUS:   UP   ·   61% confident
 
-  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 91%
-     BUY 773/775C   (2026-08-12)
-     pay          $98.5
-     SCALP OUT  ~ $128    <-- bank the pop (+30%); trail if it keeps flipping up
-     stop       ~ $69    (-30%, or if consensus turns DOWN)
+  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 81%
+     BUY 773/775C   (2026-08-14)
+     pay          $96
+     SCALP OUT  ~ $125    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $67    (-30%, or if consensus turns DOWN)
      room to max  $200
 
-  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 78%
-     SELL 771/769P   (2026-08-12)
-     collect      $59.5
-     TAKE HALF  ~ $30    <-- buy back here, bank ~$29.5 (don't hold for the last dollar)
-     max loss     $140.5   (if SPY drops below 769)
-     keeps profit if SPY stays above 771
-
   TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
-     BUY 776C   (2026-08-12)   ~37Δ
-     pay          $183   (cheaper OTM — flips 10%+ on a small move)
-     BANK +10%  ~ $201    <-- take the flip when it comes (don't need to be right on strike)
-     TARGET +20% ~ $220
-     stop       ~ $146    (-20%, or if consensus turns DOWN)
+     BUY 776C   (2026-08-14)   ~35Δ
+     pay          $171   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $188    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $205
+     stop       ~ $137    (-20%, or if consensus turns DOWN)
 
   GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
-  size: normal (82% confidence).  never add to a loser.
+  size: normal (61% confidence).  never add to a loser.
   read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
