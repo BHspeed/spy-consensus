@@ -48,3 +48,7 @@ SYMS=SPY,TSLA,AMD,NVDA
 step1 complete
 step2 4449
 weeklygrade: graded 0 today, 87 total
+step1 7185
+step2 tickers: MAAS,MEDP,KNSA,EAT,PAG,CORT,ORA,CHE,BZ,HQY
+step3 15544
+step4: swings: 5 new, 90 already active
