@@ -43,3 +43,8 @@ AMD DOWN spot 474.32 move 2.5% -> pull PUTS strikes 475,474,473,472,471
 opts 4587
 weeklies: 4 picks (4 logged)
 === DONE push succeeded ===
+TODAY=2026-08-12
+SYMS=SPY,TSLA,AMD,NVDA
+step1 complete
+step2 4449
+weeklygrade: graded 0 today, 87 total
