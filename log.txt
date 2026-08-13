@@ -61,3 +61,7 @@ AMD UP spot 482.93 move 2.5% -> pull CALLS strikes 482,483,484,485,486
 opts 4586
 === run ===
 weeklies: 2 picks (2 logged)
+=== WEEKLY GRADE RUN Thu Aug 13 20:27:26 UTC 2026 ===
+SYMS=TSLA,NVDA
+step2 2236
+step3 weeklygrade: graded 4 today, 91 total
