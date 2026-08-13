@@ -93,3 +93,6 @@
 {"symbol":"ORA","added":"2026-08-12","entry":113.4,"tier":"core","targetPct":10,"targetPrice":124.7,"stopPrice":105.5,"status":"open"}
 {"symbol":"CHE","added":"2026-08-12","entry":541,"tier":"core","targetPct":10,"targetPrice":595.1,"stopPrice":503.1,"status":"open"}
 {"symbol":"HQY","added":"2026-08-12","entry":105.5,"tier":"core","targetPct":10,"targetPrice":116.1,"stopPrice":98.1,"status":"open"}
+{"symbol":"PAY","added":"2026-08-13","entry":42.2,"tier":"aggressive","targetPct":20.9,"targetPrice":51,"stopPrice":38,"status":"open"}
+{"symbol":"BAX","added":"2026-08-13","entry":27.1,"tier":"core","targetPct":11.3,"targetPrice":30.2,"stopPrice":25.2,"status":"open"}
+{"symbol":"AWI","added":"2026-08-13","entry":181.7,"tier":"core","targetPct":10,"targetPrice":199.8,"stopPrice":169,"status":"open"}
