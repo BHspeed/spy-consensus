@@ -52,3 +52,12 @@ SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,N
 step1 done
 step2 wrote 20 files
 step3: theme: 20 scored, 6 setups
+=== dirs ===
+SPY UP spot 772.49 move 0.77% -> pull CALLS strikes 771,772,773,774,775
+QQQ UP spot 723.70 move 1.33% -> pull CALLS strikes 723,724,725,726,727
+NVDA UP spot 224.09 move 2.45% -> pull CALLS strikes 223,224,225,226,227
+TSLA UP spot 327.51 move 2.34% -> pull CALLS strikes 327,328,329,330,331
+AMD UP spot 482.93 move 2.5% -> pull CALLS strikes 482,483,484,485,486
+opts 4586
+=== run ===
+weeklies: 2 picks (2 logged)
