@@ -65,3 +65,7 @@ weeklies: 2 picks (2 logged)
 SYMS=TSLA,NVDA
 step2 2236
 step3 weeklygrade: graded 4 today, 91 total
+step1 8787
+step2 tickers: HQY,CHE,LAD,CORT,BAX,PAY,SCI,AWI,UHAL,PAG
+step3 17640
+step4 stdout: swings: 3 new, 95 already active
