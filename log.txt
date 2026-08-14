@@ -85,12 +85,10 @@ run:
 weeklies: 4 picks (4 logged)
 === DONE push succeeded ===
 TODAY=2026-08-14
-step1 8376
-step2 tickers: CORT,PAG,BAX,CHE,AWI,KNSA,WTW,HQY,BMY,LAD
-step3 17237
-step4 stdout: swings: 1 new, 98 already active
-step1 ok
-EAT,AADX,ANDG,SA,RMIX,PBLS,VWDRY,MGTX,EQPT,FRVO
-step3 10817
-earnings: 5 posted, 0 swing picks upcoming
-step6 news appended
+START Fri Aug 14 20:36:19 UTC 2026
+TODAY=2026-08-14
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 complete: 20 tickers
+step2 wrote 20 files
+step3 done: theme: 15 scored, 2 setups
+step3 done (final): theme: 20 scored, 2 setups
