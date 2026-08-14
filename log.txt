@@ -85,3 +85,7 @@ run:
 weeklies: 4 picks (4 logged)
 === DONE push succeeded ===
 TODAY=2026-08-14
+step1 8376
+step2 tickers: CORT,PAG,BAX,CHE,AWI,KNSA,WTW,HQY,BMY,LAD
+step3 17237
+step4 stdout: swings: 1 new, 98 already active
