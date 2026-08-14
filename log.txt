@@ -69,3 +69,19 @@ step1 SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU
 Thu Aug 13 20:38:05 UTC 2026 — starting quantum/nuclear theme run
 step2 wrote 20 files
 step3 done: theme: 20 scored, 5 setups
+
+=== WEEKLY VALUE-FLIP OPTIONS RUN Fri Aug 14 17:26:33 UTC 2026 ===
+TODAY=2026-08-14
+STEP1 dirs output:
+SPY UP spot 777.88 move 0.76% -> pull CALLS strikes 777,778,779,780,781
+QQQ UP spot 732.07 move 1.32% -> pull CALLS strikes 731,732,733,734,735
+NVDA UP spot 225.30 move 2.35% -> pull CALLS strikes 224,225,226,227,228
+TSLA UP spot 339.96 move 2.26% -> pull CALLS strikes 339,340,341,342,343
+AMD DOWN spot 483.01 move 2.5% -> pull PUTS strikes 484,483,482,481,480
+step1 complete
+opts 4605
+step2 complete
+run:
+weeklies: 4 picks (4 logged)
+=== DONE push succeeded ===
+TODAY=2026-08-14
