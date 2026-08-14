@@ -96,3 +96,4 @@
 {"symbol":"PAY","added":"2026-08-13","entry":42.2,"tier":"aggressive","targetPct":20.9,"targetPrice":51,"stopPrice":38,"status":"open"}
 {"symbol":"BAX","added":"2026-08-13","entry":27.1,"tier":"core","targetPct":11.3,"targetPrice":30.2,"stopPrice":25.2,"status":"open"}
 {"symbol":"AWI","added":"2026-08-13","entry":181.7,"tier":"core","targetPct":10,"targetPrice":199.8,"stopPrice":169,"status":"open"}
+{"symbol":"WTW","added":"2026-08-14","entry":331.6,"tier":"core","targetPct":10,"targetPrice":364.7,"stopPrice":308.4,"status":"open"}
