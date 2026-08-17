@@ -7,3 +7,8 @@ step1 8056
 step2 tickers: LAD,MANH,AWI,ALLE,HQY,WTW,BAX,KNSA,CORT,TXG
 step3 16892
 step4 stdout: swings: 2 new, 99 already active
+step1 ok
+PPTA,EMAT,HTHT,FN,XP
+step3 5313
+earnings: 0 posted, 0 swing picks upcoming
+step6 news appended
