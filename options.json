@@ -1,12 +1,1 @@
-[
-  {"strike":335,"type":"call","mark_price":9.25,"bid_price":9.15,"ask_price":9.35,"delta":0.735281,"implied_volatility":0.447407,"open_interest":664,"volume":1507,"break_even_price":344.25,"chance_of_profit_long":0.428295,"chance_of_profit_short":0.571705},
-  {"strike":340,"type":"call","mark_price":6.025,"bid_price":5.95,"ask_price":6.10,"delta":0.581980,"implied_volatility":0.449196,"open_interest":3881,"volume":3072,"break_even_price":346.03,"chance_of_profit_long":0.372142,"chance_of_profit_short":0.627858},
-  {"strike":345,"type":"call","mark_price":3.65,"bid_price":3.60,"ask_price":3.70,"delta":0.419180,"implied_volatility":0.453815,"open_interest":1691,"volume":3337,"break_even_price":348.65,"chance_of_profit_long":0.296442,"chance_of_profit_short":0.703558},
-  {"strike":350,"type":"call","mark_price":2.12,"bid_price":2.10,"ask_price":2.14,"delta":0.278051,"implied_volatility":0.467375,"open_interest":3303,"volume":1881,"break_even_price":352.12,"chance_of_profit_long":0.214839,"chance_of_profit_short":0.785161},
-  {"strike":355,"type":"call","mark_price":1.205,"bid_price":1.19,"ask_price":1.22,"delta":0.174814,"implied_volatility":0.486299,"open_interest":1500,"volume":625,"break_even_price":356.21,"chance_of_profit_long":0.143993,"chance_of_profit_short":0.856007},
-  {"strike":345,"type":"put","mark_price":6.275,"bid_price":6.20,"ask_price":6.35,"delta":-0.582996,"implied_volatility":0.445172,"open_interest":260,"volume":1705,"break_even_price":338.72,"chance_of_profit_long":0.389242,"chance_of_profit_short":0.610758},
-  {"strike":340,"type":"put","mark_price":3.65,"bid_price":3.60,"ask_price":3.70,"delta":-0.416691,"implied_volatility":0.439510,"open_interest":1013,"volume":2301,"break_even_price":336.35,"chance_of_profit_long":0.312567,"chance_of_profit_short":0.687433},
-  {"strike":335,"type":"put","mark_price":1.92,"bid_price":1.90,"ask_price":1.94,"delta":-0.262147,"implied_volatility":0.441447,"open_interest":589,"volume":1655,"break_even_price":333.08,"chance_of_profit_long":0.221301,"chance_of_profit_short":0.778699},
-  {"strike":330,"type":"put","mark_price":0.915,"bid_price":0.90,"ask_price":0.93,"delta":-0.145944,"implied_volatility":0.448450,"open_interest":895,"volume":1155,"break_even_price":329.08,"chance_of_profit_long":0.136107,"chance_of_profit_short":0.863893},
-  {"strike":325,"type":"put","mark_price":0.43,"bid_price":0.42,"ask_price":0.44,"delta":-0.075577,"implied_volatility":0.464991,"open_interest":549,"volume":277,"break_even_price":324.57,"chance_of_profit_long":0.075622,"chance_of_profit_short":0.924378}
-]
+[]
