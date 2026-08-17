@@ -3,3 +3,7 @@ TODAY=2026-08-17
 SYMS=SPY,TSLA,QQQ,NVDA
 step2 4445
 step3 done: graded 4 today, 95 total
+step1 8056
+step2 tickers: LAD,MANH,AWI,ALLE,HQY,WTW,BAX,KNSA,CORT,TXG
+step3 16892
+step4 stdout: swings: 2 new, 99 already active
