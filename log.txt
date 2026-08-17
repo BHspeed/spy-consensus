@@ -92,3 +92,11 @@ step1 complete: 20 tickers
 step2 wrote 20 files
 step3 done: theme: 15 scored, 2 setups
 step3 done (final): theme: 20 scored, 2 setups
+=== dirs 2026-08-17T13:54:52Z ===
+SPY UP spot 776.34 move 0.72% -> pull CALLS strikes 775,776,777,778,779
+QQQ UP spot 731.07 move 1.25% -> pull CALLS strikes 730,731,732,733,734
+NVDA UP spot 225.16 move 2.13% -> pull CALLS strikes 224,225,226,227,228
+TSLA UP spot 342.27 move 2.29% -> pull CALLS strikes 341,342,343,344,345
+AMD UP spot 514.39 move 2.5% -> pull CALLS strikes 513,514,515,516,517
+opts 3470
+weeklies: 5 picks (4 logged)
