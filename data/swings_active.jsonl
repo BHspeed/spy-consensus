@@ -99,3 +99,7 @@
 {"symbol":"WTW","added":"2026-08-14","entry":331.6,"tier":"core","targetPct":10,"targetPrice":364.7,"stopPrice":308.4,"status":"open"}
 {"symbol":"MANH","added":"2026-08-17","entry":196.6,"tier":"core","targetPct":10.7,"targetPrice":217.6,"stopPrice":182.8,"status":"open"}
 {"symbol":"ALLE","added":"2026-08-17","entry":162.1,"tier":"core","targetPct":10,"targetPrice":178.3,"stopPrice":150.8,"status":"open"}
+{"symbol":"CAKE","added":"2026-08-18","entry":106.4,"tier":"aggressive","targetPct":29.2,"targetPrice":137.4,"stopPrice":95.7,"status":"open"}
+{"symbol":"FIVE","added":"2026-08-18","entry":238.5,"tier":"core","targetPct":10.8,"targetPrice":264.3,"stopPrice":221.8,"status":"open"}
+{"symbol":"ACAD","added":"2026-08-18","entry":30.2,"tier":"core","targetPct":10,"targetPrice":33.2,"stopPrice":28.1,"status":"open"}
+{"symbol":"PRU","added":"2026-08-18","entry":124.5,"tier":"core","targetPct":10,"targetPrice":137,"stopPrice":115.8,"status":"open"}
