@@ -1,17 +1,5 @@
-=== WEEKLY GRADE START Mon Aug 17 20:16:08 UTC 2026 ===
-TODAY=2026-08-17
+=== Weekly Grade Run 2026-08-18 ===
+step1 start
 SYMS=SPY,TSLA,QQQ,NVDA
-step2 4445
-step3 done: graded 4 today, 95 total
-=== START Mon Aug 17 20:35:44 UTC 2026 ===
-SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-step1 complete
-step2 wrote 20 files
-theme: 20 scored, 0 setups
-SPY DOWN spot 772.67 move 0.71% -> pull PUTS strikes 774,773,772,771,770
-QQQ UP spot 729.87 move 1.19% -> pull CALLS strikes 729,730,731,732,733
-NVDA UP spot 225.01 move 2.06% -> pull CALLS strikes 224,225,226,227,228
-TSLA UP spot 339.30 move 2.27% -> pull CALLS strikes 338,339,340,341,342
-AMD UP spot 506.00 move 2.5% -> pull CALLS strikes 505,506,507,508,509
-opts 4515
-weeklies: 3 picks (3 logged)
+step2 4439
+step3: graded 3 today, 98 total
