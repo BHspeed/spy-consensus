@@ -3,3 +3,7 @@ step1 start
 SYMS=SPY,TSLA,QQQ,NVDA
 step2 4439
 step3: graded 3 today, 98 total
+step1 6763
+step2 tickers: PAY,ACAD,PAG,CORT,KNSA,PRU,CAKE,FIVE
+step3 13318
+step4: swings: 4 new, 101 already active
