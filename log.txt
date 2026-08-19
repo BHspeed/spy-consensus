@@ -21,3 +21,7 @@ step3: outbox/theme-2026-08-19.md written
 SYMS=SPY,TSLA,QQQ,NVDA
 step2 4452
 step3 graded 0 today, 98 total
+step1 5911
+step2 tickers: RGEN,TXG,KNSA,BMY,IDCC,FIVE,EAT,CORT,PRU,CAKE
+step3 15638
+step4 stdout: swings: 2 new, 105 already active
