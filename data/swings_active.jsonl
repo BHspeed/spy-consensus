@@ -103,3 +103,5 @@
 {"symbol":"FIVE","added":"2026-08-18","entry":238.5,"tier":"core","targetPct":10.8,"targetPrice":264.3,"stopPrice":221.8,"status":"open"}
 {"symbol":"ACAD","added":"2026-08-18","entry":30.2,"tier":"core","targetPct":10,"targetPrice":33.2,"stopPrice":28.1,"status":"open"}
 {"symbol":"PRU","added":"2026-08-18","entry":124.5,"tier":"core","targetPct":10,"targetPrice":137,"stopPrice":115.8,"status":"open"}
+{"symbol":"RGEN","added":"2026-08-19","entry":176.4,"tier":"core","targetPct":10,"targetPrice":194,"stopPrice":164,"status":"open"}
+{"symbol":"IDCC","added":"2026-08-19","entry":344.9,"tier":"core","targetPct":10,"targetPrice":379.3,"stopPrice":320.7,"status":"open"}
