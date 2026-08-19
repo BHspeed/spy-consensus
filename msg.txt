@@ -1,14 +1,14 @@
-**SPY morning — 2026-08-18**
-CONSENSUS: SIDEWAYS · 44% (spot 768.70)
+**SPY morning — 2026-08-19**
+CONSENSUS: SIDEWAYS · 31% (spot 770.19)
 
-**📰 News check:** RISK-OFF — agrees with the SIDEWAYS read — Hormuz Strait closure (Iran), oil above $90, and 30-yr Treasury yields at a 19-yr high all signal a headwind that supports staying sidelined
+**📰 News check:** RISK-OFF — neutral to the SIDEWAYS read — 30yr yields at 19yr high + Hormuz supply uncertainty + tech/chip selloff weigh on risk appetite; no catalyst to break higher
 
 ```
 
 ===================  SPY — RUN IT  ===================
-  as of 2026-08-18T13:50:33.448Z   price ~768.7
+  as of 2026-08-19T13:50:36.362Z   price ~770.19
 
-  CONSENSUS:   SIDEWAYS   ·   44% confident
+  CONSENSUS:   SIDEWAYS   ·   31% confident
 
   >>> NO TRADE today — direction unclear / low confidence.
       Sitting out is the call (a result, not a miss).
