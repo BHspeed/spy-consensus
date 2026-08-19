@@ -13,3 +13,7 @@ PPTA,KLAR,AS,IQ,RNW,PONY,EMAT,CAAP,KEYS,IMTX
 step3 10820
 earnings: 6 posted, 0 swing picks upcoming
 step6 news appended
+step1: SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+start: 2026-08-19 quantum nuclear theme run
+step2 wrote 20 files
+step3: outbox/theme-2026-08-19.md written
