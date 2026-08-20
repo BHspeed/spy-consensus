@@ -4,3 +4,4 @@ BULL,PPTA,KLAR,ALVO,AS,COTY,KC,WOLF,IQ,RNW
 step3 10723
 earnings: 1 posted, 0 swing picks upcoming
 step6 news appended
+FINISH: pushed outbox/weekly-2026-08-20.md at 2026-08-20T13:57:37Z
