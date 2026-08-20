@@ -9,3 +9,8 @@ step1 8441
 step2 tickers: PAG,NTNX,EAT,SN,WTW,J,ZBRA,IDCC,MTG,PTGX
 step3 17034
 step4: swings: 4 new, 107 already active
+step1 ok
+BULL,KLAR,ALVO,AS,COTY,KC,RERE,WOLF,IQ,ROST
+step3 11493
+earnings: 1 posted, 1 swing picks upcoming
+step6 news appended
