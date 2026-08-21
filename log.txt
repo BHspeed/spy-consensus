@@ -18,7 +18,7 @@ STEP1: TSLA UP spot 345.13 move 2.23% -> pull CALLS strikes 344,345,346,347,348
 STEP1: AMD DOWN spot 469.45 move 2.5% -> pull PUTS strikes 470,469,468,467,466
 opts 4526
 weeklies: 4 picks (4 logged)
-step1 11071
-step2 tickers: GPN,EAT,ZBRA,TX,SCHW,QLYS,CAKE,IDCC,FIVE,SN
-step3 17389
-step4 done: 3 new, 111 already active
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 done
+Fri Aug 21 20:25:52 UTC 2026
+step2 wrote 10 files
