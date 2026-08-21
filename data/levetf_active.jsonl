@@ -13,4 +13,4 @@
 {"etf":"SOXL","parent":"Semis","lev":3,"added":"2026-07-30","entry":91.99,"rsi":33,"floor":39.52,"targetPct":25,"target":114.99,"stopPct":15,"stop":78.19,"status":"closed","daysHeld":4,"high":133.88,"low":105.12,"verdict":"RIGHT","closed":true}
 {"etf":"TQQQ","parent":"Nasdaq-100","lev":3,"added":"2026-07-30","entry":57.75,"rsi":32,"floor":37.32,"targetPct":17.6,"target":67.91,"stopPct":10.6,"stop":51.63,"status":"closed","daysHeld":5,"high":68.4062,"low":60.74,"verdict":"RIGHT","closed":true}
 {"etf":"METU","parent":"META","lev":2,"added":"2026-07-30","entry":21.4,"rsi":41,"floor":18.62,"targetPct":21.5,"target":26,"stopPct":12.9,"stop":18.64,"status":"closed","daysHeld":4,"high":19.1547,"low":16.85,"verdict":"WRONG","closed":true}
-{"etf":"METU","parent":"META","lev":2,"added":"2026-08-20","entry":18.07,"rsi":36,"floor":16.85,"targetPct":19.2,"target":21.54,"stopPct":11.5,"stop":15.99,"status":"open"}
+{"etf":"METU","parent":"META","lev":2,"added":"2026-08-20","entry":18.07,"rsi":36,"floor":16.85,"targetPct":19.2,"target":21.54,"stopPct":11.5,"stop":15.99,"status":"open","daysHeld":1,"high":18.32,"low":17.63,"verdict":null,"closed":false}
