@@ -109,3 +109,6 @@
 {"symbol":"ZBRA","added":"2026-08-20","entry":360.5,"tier":"core","targetPct":11.8,"targetPrice":403.1,"stopPrice":335.3,"status":"open"}
 {"symbol":"J","added":"2026-08-20","entry":148,"tier":"core","targetPct":10,"targetPrice":162.8,"stopPrice":137.6,"status":"open"}
 {"symbol":"MTG","added":"2026-08-20","entry":30.7,"tier":"core","targetPct":10,"targetPrice":33.8,"stopPrice":28.6,"status":"open"}
+{"symbol":"TX","added":"2026-08-21","entry":55.4,"tier":"core","targetPct":10.5,"targetPrice":61.2,"stopPrice":51.5,"status":"open"}
+{"symbol":"GPN","added":"2026-08-21","entry":93.5,"tier":"core","targetPct":10,"targetPrice":102.8,"stopPrice":86.9,"status":"open"}
+{"symbol":"SCHW","added":"2026-08-21","entry":112.3,"tier":"core","targetPct":10,"targetPrice":123.5,"stopPrice":104.4,"status":"open"}
