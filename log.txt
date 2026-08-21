@@ -9,3 +9,12 @@ STEP 1 — SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UE
 Today: 2026-08-20, start_time: 2026-04-22T00:00:00Z (120 days back)
 step2 wrote 20 files
 theme: 20 scored, 1 setups
+=== WEEKLY VALUE-FLIP START Fri Aug 21 13:51:39 UTC 2026 ===
+TODAY=2026-08-21
+STEP1: SPY DOWN spot 762.60 move 0.59% -> pull PUTS strikes 764,763,762,761,760
+STEP1: QQQ DOWN spot 710.93 move 1.03% -> pull PUTS strikes 712,711,710,709,708
+STEP1: NVDA DOWN spot 216.85 move 2.03% -> pull PUTS strikes 218,217,216,215,214
+STEP1: TSLA UP spot 345.13 move 2.23% -> pull CALLS strikes 344,345,346,347,348
+STEP1: AMD DOWN spot 469.45 move 2.5% -> pull PUTS strikes 470,469,468,467,466
+opts 4526
+weeklies: 4 picks (4 logged)
