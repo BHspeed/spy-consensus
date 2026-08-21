@@ -22,3 +22,8 @@ SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step1 done
 Fri Aug 21 20:25:52 UTC 2026
 step2 wrote 10 files
+step1 ok
+SYMS=BULL,DQ,ALVO,COTY,KC,WOLF,BEKE,ROST,ZIM,BMA
+step3 11532
+step5 earnings done
+step6 news appended
