@@ -25,8 +25,10 @@ theme: 20 scored, 1 setups
 SYMS=SPY,TSLA,QQQ,NVDA
 step2 4447
 step3: graded 0 today, 102 total
-step1 ok
-NSSC,PDD,PICS,XPEV
-step3 3665
-earnings: 0 posted, 2 swing picks upcoming
-step6 news appended
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 done
+step2 wrote 10 files
+levetf: 0 new, 0 closed this run, 15 graded total
+
+step2 wrote 10 files
+levetf: 0 new, 0 closed this run, 15 graded total
