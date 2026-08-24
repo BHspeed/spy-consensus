@@ -1,37 +1,16 @@
-**SPY morning — 2026-08-21**
-CONSENSUS: DOWN · 45% (spot 765.17)
+**SPY morning — 2026-08-24**
+CONSENSUS: SIDEWAYS · 43% (spot 762.76)
 
-**📰 News check:** RISK-OFF — AGREES with the DOWN read — Iran/Hormuz oil supply tightening (ships through Strait in single digits, US blockade biting) elevates energy/inflation risk; Mideast war in 6th month adds macro uncertainty
+**📰 News check:** MIXED — ⚠️ slight risk-off skew vs SIDEWAYS read — Iran Hormuz threats, US sanctions pressure, and gold at $4,600 signal macro fear; lean cautious within the range
 
 ```
+
 ===================  SPY — RUN IT  ===================
-  as of 2026-08-21T13:49:57.658Z   price ~765.17
+  as of 2026-08-24T13:50:55.152Z   price ~762.76
 
-  CONSENSUS:   DOWN   ·   45% confident
+  CONSENSUS:   SIDEWAYS   ·   43% confident
 
-  TRADE A — PUT spread  (BUY, scalp the move DOWN):   conf 74%
-     BUY 765/763P   (2026-08-24)
-     pay          $76.5
-     SCALP OUT  ~ $99    <-- bank the pop (+29%); trail if it keeps flipping up
-     stop       ~ $54    (-29%, or if consensus turns UP)
-     room to max  $200
-
-  TRADE B — CALL spread  (SELL, slower — collect & scalp half):   conf 60%
-     SELL 767/769C   (2026-08-24)
-     collect      $61.5
-     TAKE HALF  ~ $31    <-- buy back here, bank ~$30.5 (don't hold for the last dollar)
-     max loss     $138.5   (if SPY runs above 769)
-     keeps profit if SPY stays below 767
-
-  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
-     BUY 763P   (2026-08-24)   ~37Δ
-     pay          $157   (cheaper OTM — flips 10%+ on a small move)
-     BANK +10%  ~ $173    <-- take the flip when it comes (don't need to be right on strike)
-     TARGET +20% ~ $188
-     stop       ~ $126    (-20%, or if consensus turns UP)
-
-  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
-  size: half (45% confidence).  never add to a loser.
-  read: trend is DOWN. A rides+scalps the move; B is slower income if it just doesn't reverse.
+  >>> NO TRADE today — direction unclear / low confidence.
+      Sitting out is the call (a result, not a miss).
 =====================================================
 ```
