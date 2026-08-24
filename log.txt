@@ -22,3 +22,6 @@ SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,N
 step2 starting
 step2 wrote 20 files
 theme: 20 scored, 1 setups
+SYMS=SPY,TSLA,QQQ,NVDA
+step2 4447
+step3: graded 0 today, 102 total
