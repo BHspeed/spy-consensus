@@ -25,10 +25,7 @@ theme: 20 scored, 1 setups
 SYMS=SPY,TSLA,QQQ,NVDA
 step2 4447
 step3: graded 0 today, 102 total
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step1 done
-step2 wrote 10 files
-levetf: 0 new, 0 closed this run, 15 graded total
-
-step2 wrote 10 files
-levetf: 0 new, 0 closed this run, 15 graded total
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+Mon Aug 24 20:36:42 UTC 2026
+step2 wrote 20 files
+step3 theme run 2026-08-24 ok
