@@ -112,3 +112,5 @@
 {"symbol":"TX","added":"2026-08-21","entry":55.4,"tier":"core","targetPct":10.5,"targetPrice":61.2,"stopPrice":51.5,"status":"open","lastGainPct":0,"peakPct":null}
 {"symbol":"GPN","added":"2026-08-21","entry":93.5,"tier":"core","targetPct":10,"targetPrice":102.8,"stopPrice":86.9,"status":"open","lastGainPct":0,"peakPct":null}
 {"symbol":"SCHW","added":"2026-08-21","entry":112.3,"tier":"core","targetPct":10,"targetPrice":123.5,"stopPrice":104.4,"status":"open","lastGainPct":0,"peakPct":null}
+{"symbol":"LDOS","added":"2026-08-24","entry":138.4,"tier":"core","targetPct":13.5,"targetPrice":157.1,"stopPrice":128.7,"status":"open"}
+{"symbol":"TECH","added":"2026-08-24","entry":72.3,"tier":"core","targetPct":10,"targetPrice":79.6,"stopPrice":67.3,"status":"open"}
