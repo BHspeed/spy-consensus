@@ -114,3 +114,5 @@
 {"symbol":"SCHW","added":"2026-08-21","entry":112.3,"tier":"core","targetPct":10,"targetPrice":123.5,"stopPrice":104.4,"status":"open","lastGainPct":0,"peakPct":null}
 {"symbol":"LDOS","added":"2026-08-24","entry":138.4,"tier":"core","targetPct":13.5,"targetPrice":157.1,"stopPrice":128.7,"status":"open"}
 {"symbol":"TECH","added":"2026-08-24","entry":72.3,"tier":"core","targetPct":10,"targetPrice":79.6,"stopPrice":67.3,"status":"open"}
+{"symbol":"TWST","added":"2026-08-25","entry":151.4,"tier":"aggressive","targetPct":30,"targetPrice":196.8,"stopPrice":136.3,"status":"open"}
+{"symbol":"NEU","added":"2026-08-25","entry":931.2,"tier":"core","targetPct":10,"targetPrice":1024.4,"stopPrice":866.1,"status":"open"}
