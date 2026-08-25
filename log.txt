@@ -40,3 +40,7 @@ weeklies: 3 picks (3 logged)
 SYMS=SPY,TSLA,QQQ,NVDA
 step2 4440
 step3: graded 3 today, 105 total
+step1 10017
+step2 tickers: LDOS,BMY,ACAD,KNSA,TWST,IDCC,PAG,TX,NEU,NTNX
+step3 16050
+step4: swings 2 new, 116 already active
