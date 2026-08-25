@@ -2,3 +2,9 @@
 SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step2 wrote 11 files
 levetf: 0 new, 0 closed this run, 15 graded total
+step1 ok
+SYMS=NCNO,VIPS,QFIN,SMTC,INTU,BOX,BZ,ZM,HEI,DKS
+step3 10960
+step4 ok
+step5 ok
+step6 news appended
