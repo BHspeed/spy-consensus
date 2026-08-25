@@ -29,3 +29,11 @@ SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,N
 Mon Aug 24 20:36:42 UTC 2026
 step2 wrote 20 files
 step3 theme run 2026-08-24 ok
+step1: dirs
+SPY DOWN spot 763.47 move 0.47% -> pull PUTS strikes 764,763,762,761,760
+QQQ DOWN spot 706.32 move 0.86% -> pull PUTS strikes 707,706,705,704,703
+NVDA DOWN spot 208.48 move 1.98% -> pull PUTS strikes 209,208,207,206,205
+TSLA UP spot 348.95 move 2.4% -> pull CALLS strikes 348,349,350,351,352
+AMD DOWN spot 456.75 move 2.5% -> pull PUTS strikes 458,457,456,455,454
+opts 2333
+weeklies: 3 picks (3 logged)
