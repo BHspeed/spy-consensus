@@ -116,3 +116,6 @@
 {"symbol":"TECH","added":"2026-08-24","entry":72.3,"tier":"core","targetPct":10,"targetPrice":79.6,"stopPrice":67.3,"status":"open"}
 {"symbol":"TWST","added":"2026-08-25","entry":151.4,"tier":"aggressive","targetPct":30,"targetPrice":196.8,"stopPrice":136.3,"status":"open"}
 {"symbol":"NEU","added":"2026-08-25","entry":931.2,"tier":"core","targetPct":10,"targetPrice":1024.4,"stopPrice":866.1,"status":"open"}
+{"symbol":"PCOR","added":"2026-08-26","entry":61.5,"tier":"core","targetPct":14.6,"targetPrice":70.5,"stopPrice":57.2,"status":"open"}
+{"symbol":"HRB","added":"2026-08-26","entry":52.7,"tier":"core","targetPct":13.5,"targetPrice":59.8,"stopPrice":49,"status":"open"}
+{"symbol":"SXT","added":"2026-08-26","entry":137,"tier":"core","targetPct":10,"targetPrice":150.7,"stopPrice":127.4,"status":"open"}
