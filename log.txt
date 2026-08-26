@@ -19,3 +19,8 @@ SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step2 complete: 10 hist files
 step3 exit: 0
 levetf: 0 new, 0 closed this run, 15 graded total
+step1 ok
+SYMS=NTNX,LI,SFL,BBWI,KSS,CRM,NCNO,VIPS,SJM,QFIN
+step3 10898
+earnings: 1 posted, 1 swing picks upcoming
+step6 news appended
