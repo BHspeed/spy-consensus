@@ -8,3 +8,10 @@ step3 10960
 step4 ok
 step5 ok
 step6 news appended
+SPY DOWN spot 765.91 move 0.44% -> pull PUTS strikes 767,766,765,764,763
+QQQ DOWN spot 710.72 move 0.83% -> pull PUTS strikes 712,711,710,709,708
+NVDA DOWN spot 213.05 move 1.84% -> pull PUTS strikes 214,213,212,211,210
+TSLA UP spot 350.25 move 2.4% -> pull CALLS strikes 349,350,351,352,353
+AMD DOWN spot 479.18 move 2.5% -> pull PUTS strikes 480,479,478,477,476
+opts 2342
+weeklies: 5 picks (4 logged)
