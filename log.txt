@@ -15,3 +15,8 @@ TSLA UP spot 350.25 move 2.4% -> pull CALLS strikes 349,350,351,352,353
 AMD DOWN spot 479.18 move 2.5% -> pull PUTS strikes 480,479,478,477,476
 opts 2342
 weeklies: 5 picks (4 logged)
+Starting swing scan - Wed Aug 26 20:40:32 UTC 2026
+step1 9888
+step2 tickers: SCHW,PAG,NTNX,HRB,PCOR,IDCC,NEU,SN,BMY,SXT
+step3 16480
+step4 stdout: swings: 3 new, 118 already active
