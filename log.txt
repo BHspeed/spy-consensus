@@ -11,7 +11,6 @@ weeklies: 3 picks (3 logged)
 weekly-grade SYMS=SPY,TSLA,QQQ,NVDA
 step2 4435
 step3: weeklygrade: graded 3 today, 112 total
-step1 10678
-step2 tickers: VEEV,EAT,THC,NTNX,TX,WTW,PCOR,U,NEU,CIB
-step3 15736
-step4 swings: 3 new, 121 already active
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step2 wrote 10 files
+levetf: 1 new, 0 closed this run, 15 graded total
