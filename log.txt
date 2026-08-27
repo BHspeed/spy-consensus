@@ -1,26 +1,10 @@
-=== levetf scan start Tue Aug 25 20:26:01 UTC 2026 ===
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step2 wrote 11 files
-levetf: 0 new, 0 closed this run, 15 graded total
-step1 ok
-SYMS=NCNO,VIPS,QFIN,SMTC,INTU,BOX,BZ,ZM,HEI,DKS
-step3 10960
-step4 ok
-step5 ok
-step6 news appended
-SPY DOWN spot 765.91 move 0.44% -> pull PUTS strikes 767,766,765,764,763
-QQQ DOWN spot 710.72 move 0.83% -> pull PUTS strikes 712,711,710,709,708
-NVDA DOWN spot 213.05 move 1.84% -> pull PUTS strikes 214,213,212,211,210
-TSLA UP spot 350.25 move 2.4% -> pull CALLS strikes 349,350,351,352,353
-AMD DOWN spot 479.18 move 2.5% -> pull PUTS strikes 480,479,478,477,476
-opts 2342
-weeklies: 5 picks (4 logged)
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step2 complete: 10 hist files
-step3 exit: 0
-levetf: 0 new, 0 closed this run, 15 graded total
-step1 ok
-SYMS=NTNX,LI,SFL,BBWI,KSS,CRM,NCNO,VIPS,SJM,QFIN
-step3 10898
-earnings: 1 posted, 1 swing picks upcoming
-step6 news appended
+weekly-value-flip run start Thu Aug 27 13:51:03 UTC 2026
+TODAY=2026-08-27 60d_ago=2026-06-28
+SPY DOWN spot 766.08 move 0.44% -> pull PUTS strikes 767,766,765,764,763
+QQQ DOWN spot 711.37 move 0.79% -> pull PUTS strikes 712,711,710,709,708
+NVDA DOWN spot 209.66 move 1.82% -> pull PUTS strikes 211,210,209,208,207
+TSLA DOWN spot 345.82 move 2.46% -> pull PUTS strikes 347,346,345,344,343
+AMD UP spot 480.93 move 2.5% -> pull CALLS strikes 480,481,482,483,484
+opts 2338
+---step3 stdout---
+weeklies: 3 picks (3 logged)
