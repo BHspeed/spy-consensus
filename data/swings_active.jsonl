@@ -119,3 +119,6 @@
 {"symbol":"PCOR","added":"2026-08-26","entry":61.5,"tier":"core","targetPct":14.6,"targetPrice":70.5,"stopPrice":57.2,"status":"open"}
 {"symbol":"HRB","added":"2026-08-26","entry":52.7,"tier":"core","targetPct":13.5,"targetPrice":59.8,"stopPrice":49,"status":"open"}
 {"symbol":"SXT","added":"2026-08-26","entry":137,"tier":"core","targetPct":10,"targetPrice":150.7,"stopPrice":127.4,"status":"open"}
+{"symbol":"U","added":"2026-08-27","entry":43.7,"tier":"aggressive","targetPct":30,"targetPrice":56.7,"stopPrice":39.3,"status":"open"}
+{"symbol":"VEEV","added":"2026-08-27","entry":281.7,"tier":"core","targetPct":13.7,"targetPrice":320.3,"stopPrice":261.9,"status":"open"}
+{"symbol":"THC","added":"2026-08-27","entry":267.8,"tier":"core","targetPct":10,"targetPrice":294.5,"stopPrice":249,"status":"open"}
