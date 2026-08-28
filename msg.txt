@@ -1,30 +1,37 @@
-**SPY morning — 2026-08-27**
-CONSENSUS: UP · 69% (spot 769.55)
+**SPY morning — 2026-08-28**
+CONSENSUS: UP · 77% (spot 772.34)
 
-**📰 News check:** MIXED — neutral to the UP read — NVDA/CRM/CRWD earnings tonight and Jackson Hole (Warsh) hawkish rate risk offset Okta AI demand beat and Iran-Oman de-escalation
+**📰 News check:** MIXED — neutral to the UP read — big-tech/chip beats (NVDA, Salesforce, Marvell) support the bull case but Iran war becoming open-ended raises oil/gas prices and adds macro uncertainty
 
 ```
 ===================  SPY — RUN IT  ===================
-  as of 2026-08-27T13:49:49.454Z   price ~769.55
+  as of 2026-08-28T13:50:39.171Z   price ~772.34
 
-  CONSENSUS:   UP   ·   69% confident
+  CONSENSUS:   UP   ·   77% confident
 
-  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 82%
-     BUY 769/771C   (2026-08-31)
-     pay          $90
-     SCALP OUT  ~ $117    <-- bank the pop (+30%); trail if it keeps flipping up
-     stop       ~ $63    (-30%, or if consensus turns DOWN)
+  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 88%
+     BUY 772/774C   (2026-08-31)
+     pay          $99
+     SCALP OUT  ~ $129    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $69    (-30%, or if consensus turns DOWN)
      room to max  $200
 
+  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 75%
+     SELL 769/767P   (2026-08-31)
+     collect      $45
+     TAKE HALF  ~ $23    <-- buy back here, bank ~$22 (don't hold for the last dollar)
+     max loss     $155   (if SPY drops below 767)
+     keeps profit if SPY stays above 769
+
   TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
-     BUY 771C   (2026-08-31)   ~37Δ
-     pay          $206   (cheaper OTM — flips 10%+ on a small move)
-     BANK +10%  ~ $227    <-- take the flip when it comes (don't need to be right on strike)
-     TARGET +20% ~ $247
-     stop       ~ $165    (-20%, or if consensus turns DOWN)
+     BUY 774C   (2026-08-31)   ~39Δ
+     pay          $162   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $178    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $194
+     stop       ~ $130    (-20%, or if consensus turns DOWN)
 
   GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
-  size: normal (69% confidence).  never add to a loser.
+  size: normal (77% confidence).  never add to a loser.
   read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
