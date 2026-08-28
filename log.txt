@@ -35,7 +35,6 @@ opts 4526
 step2 complete Fri Aug 28 13:57:53 UTC 2026
 weeklies: 5 picks (4 logged)
 step3 complete Fri Aug 28 13:57:57 UTC 2026
-step1 13488
-step2 tickers: PYPL,ACAD,ABNB,HRB,CIB,LDOS,PFE,GPN,BMY,MRNA
-step3 15395
-step4 swings: 4 new, 124 already active
+STEP1: SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step2 wrote 10 files
+levetf: 0 new, 0 closed this run, 15 graded total
