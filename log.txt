@@ -35,6 +35,6 @@ opts 4526
 step2 complete Fri Aug 28 13:57:53 UTC 2026
 weeklies: 5 picks (4 logged)
 step3 complete Fri Aug 28 13:57:57 UTC 2026
-STEP1: SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step2 wrote 10 files
-levetf: 0 new, 0 closed this run, 15 graded total
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step2 wrote 20 files
+theme: 20 scored, 2 setups
