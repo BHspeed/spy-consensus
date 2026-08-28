@@ -122,3 +122,7 @@
 {"symbol":"U","added":"2026-08-27","entry":43.7,"tier":"aggressive","targetPct":30,"targetPrice":56.7,"stopPrice":39.3,"status":"open"}
 {"symbol":"VEEV","added":"2026-08-27","entry":281.7,"tier":"core","targetPct":13.7,"targetPrice":320.3,"stopPrice":261.9,"status":"open"}
 {"symbol":"THC","added":"2026-08-27","entry":267.8,"tier":"core","targetPct":10,"targetPrice":294.5,"stopPrice":249,"status":"open"}
+{"symbol":"MRNA","added":"2026-08-28","entry":137.2,"tier":"core","targetPct":15,"targetPrice":157.8,"stopPrice":127.6,"status":"open"}
+{"symbol":"PYPL","added":"2026-08-28","entry":53.6,"tier":"core","targetPct":13.3,"targetPrice":60.8,"stopPrice":49.9,"status":"open"}
+{"symbol":"ABNB","added":"2026-08-28","entry":189.1,"tier":"core","targetPct":10,"targetPrice":208,"stopPrice":175.8,"status":"open"}
+{"symbol":"PFE","added":"2026-08-28","entry":27.9,"tier":"core","targetPct":10,"targetPrice":30.7,"stopPrice":26,"status":"open"}
