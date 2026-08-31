@@ -126,3 +126,6 @@
 {"symbol":"PYPL","added":"2026-08-28","entry":53.6,"tier":"core","targetPct":13.3,"targetPrice":60.8,"stopPrice":49.9,"status":"open","lastGainPct":0.1,"peakPct":null}
 {"symbol":"ABNB","added":"2026-08-28","entry":189.1,"tier":"core","targetPct":10,"targetPrice":208,"stopPrice":175.8,"status":"open","lastGainPct":0.2,"peakPct":null}
 {"symbol":"PFE","added":"2026-08-28","entry":27.9,"tier":"core","targetPct":10,"targetPrice":30.7,"stopPrice":26,"status":"open","lastGainPct":0.2,"peakPct":null}
+{"symbol":"NTRA","added":"2026-08-31","entry":322.6,"tier":"core","targetPct":14.8,"targetPrice":370.3,"stopPrice":300,"status":"open"}
+{"symbol":"MRK","added":"2026-08-31","entry":147.8,"tier":"core","targetPct":12.8,"targetPrice":166.7,"stopPrice":137.4,"status":"open"}
+{"symbol":"AMGN","added":"2026-08-31","entry":429.9,"tier":"core","targetPct":10,"targetPrice":472.9,"stopPrice":399.8,"status":"open"}
