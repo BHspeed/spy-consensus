@@ -45,3 +45,14 @@ step4 start
 step4 done: 42 open, 7 closed this week, 86 total closed
 finish start Fri Aug 28 21:14:04 UTC 2026
 pushed ok Fri Aug 28 21:14:10 UTC 2026
+step1 start Mon Aug 31 13:54:36 UTC 2026
+SPY UP spot 769.35 move 0.46% -> pull CALLS strikes 768,769,770,771,772
+QQQ UP spot 716.43 move 0.82% -> pull CALLS strikes 715,716,717,718,719
+NVDA UP spot 217.55 move 2.21% -> pull CALLS strikes 217,218,219,220,221
+TSLA DOWN spot 348.75 move 2.49% -> pull PUTS strikes 350,349,348,347,346
+AMD DOWN spot 465.58 move 2.5% -> pull PUTS strikes 467,466,465,464,463
+step1 complete Mon Aug 31 13:54:36 UTC 2026
+opts 4515
+step2 complete Mon Aug 31 13:57:22 UTC 2026
+weeklies: 5 picks (4 logged)
+step3 complete Mon Aug 31 13:57:30 UTC 2026
