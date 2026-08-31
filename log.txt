@@ -56,3 +56,6 @@ opts 4515
 step2 complete Mon Aug 31 13:57:22 UTC 2026
 weeklies: 5 picks (4 logged)
 step3 complete Mon Aug 31 13:57:30 UTC 2026
+SYMS=QQQ,SPY,NVDA,TSLA
+step2 4446
+step3: graded 4 today, 77 total
