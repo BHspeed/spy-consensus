@@ -2,3 +2,8 @@
 SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 STEP2 complete: all 10 hist files saved
 STEP3 complete: node scripts/levetf.mjs run 2026-09-01 -> 1 new, 0 closed, 16 graded total
+step1 ok
+GTLB,MDB,DELL,SAIC,PANW,CRDO,MDT
+step3 7715
+earnings: 1 posted, 1 swing picks upcoming
+step6 news appended
