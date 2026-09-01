@@ -1,15 +1,36 @@
-**SPY morning — 2026-09-01**
-CONSENSUS: SIDEWAYS · 40% (spot 762.11)
+**TSLA morning — 2026-09-01**
+CONSENSUS: UP · 57% (spot 357.88)
 
-**📰 News check:** MIXED — neutral to the SIDEWAYS read — $90 oil + rising rates entering historically tough September tilt risk skew bearish; AI/tech (NVDA, GOOGL) partially offset; Citadel warns risk-reward deteriorating
-
+**📰 TSLA news check:** mixed for TSLA — ⚠️ DISAGREES with the UP read — rising rates + $90 oil + risk-off September signal macro drag; no TSLA-specific catalysts to offset
 ```
-===================  SPY — RUN IT  ===================
-  as of 2026-09-01T13:50:17.608Z   price ~762.11
+===================  TSLA — RUN IT  ===================
+  as of 2026-09-01T13:52:43Z   price ~357.88
 
-  CONSENSUS:   SIDEWAYS   ·   40% confident
+  CONSENSUS:   UP   ·   57% confident
 
-  >>> NO TRADE today — direction unclear / low confidence.
-      Sitting out is the call (a result, not a miss).
+  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 77%
+     BUY 355/365C   (2026-09-04)
+     pay          $460
+     SCALP OUT  ~ $598    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $322    (-30%, or if consensus turns DOWN)
+     room to max  $1000
+
+  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 64%
+     SELL 355/345P   (2026-09-04)
+     collect      $294
+     TAKE HALF  ~ $147    <-- buy back here, bank ~$147 (don't hold for the last dollar)
+     max loss     $706   (if TSLA drops below 345)
+     keeps profit if TSLA stays above 355
+
+  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
+     BUY 365C   (2026-09-04)   ~37Δ
+     pay          $425   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $468    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $510
+     stop       ~ $340    (-20%, or if consensus turns DOWN)
+
+  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
+  size: half (57% confidence).  never add to a loser.
+  read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
