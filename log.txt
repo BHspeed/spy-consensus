@@ -1,9 +1,94 @@
-=== levetf run 2026-09-01 ===
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-STEP2 complete: all 10 hist files saved
-STEP3 complete: node scripts/levetf.mjs run 2026-09-01 -> 1 new, 0 closed, 16 graded total
+weekly-value-flip run start Thu Aug 27 13:51:03 UTC 2026
+TODAY=2026-08-27 60d_ago=2026-06-28
+SPY DOWN spot 766.08 move 0.44% -> pull PUTS strikes 767,766,765,764,763
+QQQ DOWN spot 711.37 move 0.79% -> pull PUTS strikes 712,711,710,709,708
+NVDA DOWN spot 209.66 move 1.82% -> pull PUTS strikes 211,210,209,208,207
+TSLA DOWN spot 345.82 move 2.46% -> pull PUTS strikes 347,346,345,344,343
+AMD UP spot 480.93 move 2.5% -> pull CALLS strikes 480,481,482,483,484
+opts 2338
+---step3 stdout---
+weeklies: 3 picks (3 logged)
+weekly-grade SYMS=SPY,TSLA,QQQ,NVDA
+step2 4435
+step3: weeklygrade: graded 3 today, 112 total
+step1 10678
+step2 tickers: VEEV,EAT,THC,NTNX,TX,WTW,PCOR,U,NEU,CIB
+step3 15736
+step4 swings: 3 new, 121 already active
 step1 ok
-GTLB,MDB,DELL,SAIC,PANW,CRDO,MDT
-step3 7715
-earnings: 1 posted, 1 swing picks upcoming
+NTNX,VEEV,HQY,LI,LUCK,RBRK,AFRM,STDN,SFL,BBWI
+step3 10950
+earnings: 3 posted, 0 swing picks upcoming
 step6 news appended
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 done
+[step2 complete: all 20 hist files written 2026-08-27T20:58:31Z]
+theme: 20 scored, 4 setups
+[step3 complete: theme-2026-08-27.md written 2026-08-27T20:58:40Z]
+SPY UP spot 771.10 move 0.44% -> pull CALLS strikes 770,771,772,773,774
+QQQ UP spot 721.11 move 0.78% -> pull CALLS strikes 720,721,722,723,724
+NVDA UP spot 227.98 move 2% -> pull CALLS strikes 227,228,229,230,231
+TSLA UP spot 354.81 move 2.34% -> pull CALLS strikes 354,355,356,357,358
+AMD UP spot 476.67 move 2.5% -> pull CALLS strikes 476,477,478,479,480
+step1 complete Fri Aug 28 13:54:51 UTC 2026
+opts 4526
+step2 complete Fri Aug 28 13:57:53 UTC 2026
+weeklies: 5 picks (4 logged)
+step3 complete Fri Aug 28 13:57:57 UTC 2026
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step2 wrote 20 files
+theme: 20 scored, 2 setups
+step1 start Fri Aug 28 21:07:18 UTC 2026
+SYMBOLS=PBF,TRV,KNSA,PAG,HOMB,DINO,LAD,RUSHA,MEDP,BMY,SCI,ATR,EAT,ORA,CHE,HQY,PAY,BAX,AWI,WTW,MANH,ALLE,CAKE,FIVE,ACAD,PRU,RGEN,IDCC,NTNX,ZBRA,J,MTG,TX,GPN,SCHW,LDOS,TECH,TWST,NEU,PCOR,HRB,SXT,U,VEEV,THC,MRNA,PYPL,ABNB,PFE
+step3 247286
+step4 start
+step4 done: 42 open, 7 closed this week, 86 total closed
+finish start Fri Aug 28 21:14:04 UTC 2026
+pushed ok Fri Aug 28 21:14:10 UTC 2026
+step1 start Mon Aug 31 13:54:36 UTC 2026
+SPY UP spot 769.35 move 0.46% -> pull CALLS strikes 768,769,770,771,772
+QQQ UP spot 716.43 move 0.82% -> pull CALLS strikes 715,716,717,718,719
+NVDA UP spot 217.55 move 2.21% -> pull CALLS strikes 217,218,219,220,221
+TSLA DOWN spot 348.75 move 2.49% -> pull PUTS strikes 350,349,348,347,346
+AMD DOWN spot 465.58 move 2.5% -> pull PUTS strikes 467,466,465,464,463
+step1 complete Mon Aug 31 13:54:36 UTC 2026
+opts 4515
+step2 complete Mon Aug 31 13:57:22 UTC 2026
+weeklies: 5 picks (4 logged)
+step3 complete Mon Aug 31 13:57:30 UTC 2026
+SYMS=QQQ,SPY,NVDA,TSLA
+step2 4446
+step3: graded 4 today, 77 total
+step1 14426
+step2 tickers: CAKE,PFE,AMGN,LDOS,HRB,MRK,TWST,NTRA,TECH,TXG
+step3 16492
+step4 swings: 3 new, 128 already active
+finish pushed ok Mon Aug 31 20:46:48 UTC 2026
+step1 ok
+SAIC
+step3 1692
+earnings: 0 posted, 1 swing picks upcoming
+step6 news appended
+=== weekly value-flip 2026-09-01 ===
+step1 start Tue Sep  1 13:51:29 UTC 2026
+SPY UP spot 767.05 move 0.46% -> pull CALLS strikes 766,767,768,769,770
+QQQ UP spot 716.76 move 0.8% -> pull CALLS strikes 716,717,718,719,720
+NVDA UP spot 220.78 move 2.16% -> pull CALLS strikes 220,221,222,223,224
+TSLA UP spot 367.95 move 2.5% -> pull CALLS strikes 367,368,369,370,371
+AMD UP spot 470.72 move 2.5% -> pull CALLS strikes 470,471,472,473,474
+step1 complete Tue Sep  1 13:54:39 UTC 2026
+opts 4574
+step2 complete Tue Sep  1 13:57:24 UTC 2026
+weeklies: 3 picks (3 logged)
+step3 complete Tue Sep  1 13:57:29 UTC 2026
+finish start Tue Sep  1 13:57:34 UTC 2026
+=== WEEKLY GRADE START Tue Sep  1 20:16:27 UTC 2026 ===
+SYMS=TSLA,NVDA,AMD
+step2 3337
+step3 graded 6 today, 83 total
+=== Theme run 2026-09-01 ===
+SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 done
+Start: Tue Sep  1 20:36:26 UTC 2026
+step2 wrote 20 hist files
+theme: 20 scored, 1 setups
