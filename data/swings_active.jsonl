@@ -129,3 +129,7 @@
 {"symbol":"NTRA","added":"2026-08-31","entry":322.6,"tier":"core","targetPct":14.8,"targetPrice":370.3,"stopPrice":300,"status":"open"}
 {"symbol":"MRK","added":"2026-08-31","entry":147.8,"tier":"core","targetPct":12.8,"targetPrice":166.7,"stopPrice":137.4,"status":"open"}
 {"symbol":"AMGN","added":"2026-08-31","entry":429.9,"tier":"core","targetPct":10,"targetPrice":472.9,"stopPrice":399.8,"status":"open"}
+{"symbol":"VCTR","added":"2026-09-01","entry":113.1,"tier":"core","targetPct":14.6,"targetPrice":129.6,"stopPrice":105.2,"status":"open"}
+{"symbol":"ROKU","added":"2026-09-01","entry":155.5,"tier":"core","targetPct":13,"targetPrice":175.7,"stopPrice":144.6,"status":"open"}
+{"symbol":"AEM","added":"2026-09-01","entry":194.5,"tier":"core","targetPct":11.2,"targetPrice":216.3,"stopPrice":180.9,"status":"open"}
+{"symbol":"MMSI","added":"2026-09-01","entry":90.7,"tier":"core","targetPct":10,"targetPrice":99.7,"stopPrice":84.3,"status":"open"}
