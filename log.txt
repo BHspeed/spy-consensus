@@ -92,3 +92,11 @@ step1 done
 Start: Tue Sep  1 20:36:26 UTC 2026
 step2 wrote 20 hist files
 theme: 20 scored, 1 setups
+=== STEP 1 dirs ===
+dirs output:
+SPY DOWN spot 761.78 move 0.48% -> pull PUTS strikes 763,762,761,760,759
+QQQ DOWN spot 707.64 move 0.83% -> pull PUTS strikes 709,708,707,706,705
+NVDA UP spot 217.44 move 2.15% -> pull CALLS strikes 216,217,218,219,220
+TSLA UP spot 356.09 move 2.5% -> pull CALLS strikes 355,356,357,358,359
+AMD DOWN spot 459.61 move 2.5% -> pull PUTS strikes 461,460,459,458,457
+step1 done
