@@ -100,3 +100,8 @@ NVDA UP spot 217.44 move 2.15% -> pull CALLS strikes 216,217,218,219,220
 TSLA UP spot 356.09 move 2.5% -> pull CALLS strikes 355,356,357,358,359
 AMD DOWN spot 459.61 move 2.5% -> pull PUTS strikes 461,460,459,458,457
 step1 done
+SYMS=SPY,QQQ,TSLA,NVDA
+step1 done
+step2 4445
+step3_exit=0
+weeklygrade: graded 4 today, 87 total
