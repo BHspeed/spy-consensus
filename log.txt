@@ -105,3 +105,7 @@ step1 done
 step2 4445
 step3_exit=0
 weeklygrade: graded 4 today, 87 total
+step1 7687
+step2 tickers=ICE,BDX,REGN,MMSI,SEIC,AMGN,MRK,EXLS,ESTC,ELF
+step3 18642
+step4 swings: 7 new, 135 already active
