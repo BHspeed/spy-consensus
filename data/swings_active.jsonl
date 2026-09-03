@@ -140,3 +140,5 @@
 {"symbol":"BDX","added":"2026-09-02","entry":187.5,"tier":"core","targetPct":10,"targetPrice":206.3,"stopPrice":174.4,"status":"open"}
 {"symbol":"SEIC","added":"2026-09-02","entry":110.5,"tier":"core","targetPct":10,"targetPrice":121.5,"stopPrice":102.7,"status":"open"}
 {"symbol":"ICE","added":"2026-09-02","entry":157.9,"tier":"core","targetPct":10,"targetPrice":173.6,"stopPrice":146.8,"status":"open"}
+{"symbol":"AVTR","added":"2026-09-03","entry":15.2,"tier":"core","targetPct":14.9,"targetPrice":17.5,"stopPrice":14.1,"status":"open"}
+{"symbol":"CRL","added":"2026-09-03","entry":293.4,"tier":"core","targetPct":13.8,"targetPrice":333.8,"stopPrice":272.8,"status":"open"}
