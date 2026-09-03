@@ -14,3 +14,7 @@ SYMS=QQQ,NVDA,SPY
 step2 3333
 === STEP 3: grade ===
 step3: graded 3 today, 90 total
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 complete
+step2 wrote 10 files
+step3 complete
