@@ -24,3 +24,8 @@ step1 7672
 step2 tickers: TECH,ESTC,SEIC,EXLS,CRL,ROKU,MANH,MMSI,AVTR,BDX
 step3 18565
 step4: swings: 2 new, 142 already active
+step1 ok
+FIVE,SNOW,AMBA,MMED,NIO,ASAN,GTLB,NTSK,DOO,FCEL
+step3 10863
+earnings: 2 posted, 0 swing picks upcoming
+step6 news appended
