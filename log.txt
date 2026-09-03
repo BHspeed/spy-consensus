@@ -18,3 +18,9 @@ SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
 step1 complete
 step2 wrote 10 files
 step3 complete
+=== SWING SCAN 2026-09-03 ===
+step1 start Thu Sep  3 20:41:20 UTC 2026
+step1 7672
+step2 tickers: TECH,ESTC,SEIC,EXLS,CRL,ROKU,MANH,MMSI,AVTR,BDX
+step3 18565
+step4: swings: 2 new, 142 already active
