@@ -25,3 +25,6 @@ step1 start Fri Sep  4 13:54:41 UTC 2026
 step1 dirs done: SPY UP QQQ DOWN NVDA UP TSLA UP AMD DOWN
 opts 4519
 weeklies: 3 picks (3 logged)
+SYMS=SPY,NVDA,QQQ
+step2 3336
+step3 graded 3 today, 93 total
