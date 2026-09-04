@@ -28,3 +28,7 @@ weeklies: 3 picks (3 logged)
 SYMS=SPY,NVDA,QQQ
 step2 3336
 step3 graded 3 today, 93 total
+step1 11772
+step2 tickers: EXLS,NTNX,CIB,BDX,ROKU,MRNA,PAG,CRL,REGN,TPG
+step3 17629
+step4 done: 1 new, 144 already active
