@@ -28,7 +28,8 @@ weeklies: 3 picks (3 logged)
 SYMS=SPY,NVDA,QQQ
 step2 3336
 step3 graded 3 today, 93 total
-step1 11772
-step2 tickers: EXLS,NTNX,CIB,BDX,ROKU,MRNA,PAG,CRL,REGN,TPG
-step3 17629
-step4 done: 1 new, 144 already active
+=== LEVETF 2026-09-04 ===
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 complete
+step2 wrote 10 files
+step3 complete: 0 new, 0 closed, 16 graded
