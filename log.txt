@@ -1,40 +1,7 @@
-=== STEP 1 ===
-SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-step2 wrote 20 files
-step3 done
-finish 2026-09-02
-re-fire 2026-09-02 21:06:07Z outbox already exists
-IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-=== WEEKLY VALUE-FLIP 2026-09-03 ===
-step1 start Thu Sep  3 13:51:12 UTC 2026
-step1 dirs done: SPY DOWN QQQ DOWN NVDA UP TSLA UP AMD DOWN
-TODAY=2026-09-03
-=== STEP 1: get symbols ===
-SYMS=QQQ,NVDA,SPY
-step2 3333
-=== STEP 3: grade ===
-step3: graded 3 today, 90 total
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step1 complete
-step2 wrote 10 files
-step3 complete
-TODAY=2026-09-03 SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
-step1 complete
-=== WEEKLY VALUE-FLIP 2026-09-04 ===
-step1 start Fri Sep  4 13:54:41 UTC 2026
-step1 dirs done: SPY UP QQQ DOWN NVDA UP TSLA UP AMD DOWN
-opts 4519
-weeklies: 3 picks (3 logged)
-SYMS=SPY,NVDA,QQQ
-step2 3336
-step3 graded 3 today, 93 total
-=== LEVETF 2026-09-04 ===
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step1 complete
-step2 wrote 10 files
-step3 complete: 0 new, 0 closed, 16 graded
-step1 ok
-FIVE,LTGO,PL,SNOW,AMBA,ASAN,NTSK,DOO,FCEL,GOLD
-step3 10877
-earnings: 5 posted, 0 swing picks upcoming
-step6 news appended
+
+=== SWING SCORECARD RUN 2026-09-04 21:04:37 UTC ===
+SYMBOLS=KNSA,PAG,HOMB,DINO,LAD,RUSHA,MEDP,BMY,SCI,ATR,EAT,BAX,AWI,WTW,ALLE,CAKE,FIVE,ACAD,PRU,RGEN,IDCC,NTNX,ZBRA,J,MTG,TX,GPN,SCHW,LDOS,TECH,TWST,NEU,PCOR,HRB,SXT,U,VEEV,THC,MRNA,PYPL,ABNB,PFE,NTRA,MRK,AMGN,VCTR,ROKU,AEM,MMSI,ELF,ESTC,EXLS,REGN,BDX,SEIC,ICE,AVTR,CRL,TPG
+step1 done — 59 symbols
+step3 252870
+step4 done: 45 open, 14 closed this week, 100 total closed
+finish step: committing
