@@ -20,3 +20,8 @@ step2 wrote 10 files
 step3 complete
 TODAY=2026-09-03 SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
 step1 complete
+=== WEEKLY VALUE-FLIP 2026-09-04 ===
+step1 start Fri Sep  4 13:54:41 UTC 2026
+step1 dirs done: SPY UP QQQ DOWN NVDA UP TSLA UP AMD DOWN
+opts 4519
+weeklies: 3 picks (3 logged)
