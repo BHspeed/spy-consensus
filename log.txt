@@ -5,3 +5,8 @@ step1 done — 59 symbols
 step3 252870
 step4 done: 45 open, 14 closed this week, 100 total closed
 finish step: committing
+=== WEEKLY VALUE-FLIP RUN 2026-09-07 13:51:07 UTC ===
+TODAY=2026-09-07, starting STEP 1 — direction
+dirs: SPY UP spot 770.19 | QQQ UP spot 718.96 | NVDA UP spot 230.36 | TSLA UP spot 354.08 | AMD UP spot 477.57
+opts 4550
+weeklies: 5 picks (4 logged)
