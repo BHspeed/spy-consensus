@@ -143,3 +143,4 @@
 {"symbol":"AVTR","added":"2026-09-03","entry":15.2,"tier":"core","targetPct":14.9,"targetPrice":17.5,"stopPrice":14.1,"status":"open","lastGainPct":-1.5,"peakPct":null}
 {"symbol":"CRL","added":"2026-09-03","entry":293.4,"tier":"core","targetPct":13.8,"targetPrice":333.8,"stopPrice":272.8,"status":"open","lastGainPct":-1.6,"peakPct":null}
 {"symbol":"TPG","added":"2026-09-04","entry":52.7,"tier":"core","targetPct":11.3,"targetPrice":58.6,"stopPrice":49,"status":"open","lastGainPct":-0.1,"peakPct":null}
+{"symbol":"BMNR","added":"2026-09-07","entry":25,"tier":"aggressive","targetPct":30,"targetPrice":32.5,"stopPrice":22.5,"status":"open"}
