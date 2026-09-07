@@ -15,3 +15,7 @@ SYMS=TSLA,SPY,AMD,QQQ
 step2 279
 step3 done
 step3 weeklygrade: graded 0 today, 93 total
+step1 10895
+step2 tickers: MRNA,PFE,NTNX,PAG,SEIC,TECH,MRK,BMNR,AMGN,REGN
+step3 17505
+step4 done: 1 new, 145 already active
