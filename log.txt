@@ -20,3 +20,6 @@ step3 weeklygrade: graded 0 today, 93 total
 step4 done: 1 new, 145 already active
 step4 done: 45 open, 14 closed this week, 100 total closed
 weeklies: 5 picks (4 logged)
+step1 ok
+SYMS empty, wrote fallback
+step6 news appended
