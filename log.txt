@@ -1,21 +1,22 @@
 
-=== SWING SCORECARD RUN 2026-09-04 21:04:37 UTC ===
 SYMBOLS=KNSA,PAG,HOMB,DINO,LAD,RUSHA,MEDP,BMY,SCI,ATR,EAT,BAX,AWI,WTW,ALLE,CAKE,FIVE,ACAD,PRU,RGEN,IDCC,NTNX,ZBRA,J,MTG,TX,GPN,SCHW,LDOS,TECH,TWST,NEU,PCOR,HRB,SXT,U,VEEV,THC,MRNA,PYPL,ABNB,PFE,NTRA,MRK,AMGN,VCTR,ROKU,AEM,MMSI,ELF,ESTC,EXLS,REGN,BDX,SEIC,ICE,AVTR,CRL,TPG
-step1 done — 59 symbols
-step3 252870
-step4 done: 45 open, 14 closed this week, 100 total closed
-finish step: committing
-=== WEEKLY VALUE-FLIP RUN 2026-09-07 13:51:07 UTC ===
+SYMS=TSLA,SPY,AMD,QQQ
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+TODAY=2026-09-07
 TODAY=2026-09-07, starting STEP 1 — direction
 dirs: SPY UP spot 770.19 | QQQ UP spot 718.96 | NVDA UP spot 230.36 | TSLA UP spot 354.08 | AMD UP spot 477.57
+finish step: committing
 opts 4550
-weeklies: 5 picks (4 logged)
-=== STEP 1 ===
-SYMS=TSLA,SPY,AMD,QQQ
-step2 279
-step3 done
-step3 weeklygrade: graded 0 today, 93 total
 step1 10895
+step1 done — 59 symbols
+step2 279
 step2 tickers: MRNA,PFE,NTNX,PAG,SEIC,TECH,MRK,BMNR,AMGN,REGN
+step2 wrote 10 files
 step3 17505
+step3 252870
+step3 done
+step3 done 2026-09-07
+step3 weeklygrade: graded 0 today, 93 total
 step4 done: 1 new, 145 already active
+step4 done: 45 open, 14 closed this week, 100 total closed
+weeklies: 5 picks (4 logged)
