@@ -35,9 +35,7 @@ SYMS=TSLA,SPY,AMD,QQQ,NVDA
 step1 done
 step2 5537
 step3: graded 4 today, 97 total
-step1 11780
-step2 tickers: AMGN,PAG,MRK,TXG,PFE,SEIC,PAYC,AVTR,VEEV,TECH
-step3 18066
-step4 done: swings: 0 new, 147 already active
-step4 done: 1 new PAYC, 146 already active
-finish: committing
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1: SYMS logged, start_time=2026-03-12T00:00:00Z
+step2 wrote 10 files
+levetf: 0 new, 0 closed this run, 16 graded total
