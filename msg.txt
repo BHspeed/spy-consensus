@@ -1,36 +1,16 @@
-**SPY morning — 2026-09-07**
-CONSENSUS: UP · 61% (spot 770.23)
-**📰 News check:** RISK-OFF — ⚠️ DISAGREES with the UP read — hot payrolls reloading September rate-hike bets, Iran/Gulf tensions raising oil risk, diesel inflation pressuring rate-cut doves
+**SPY morning — 2026-09-08**
+CONSENSUS: SIDEWAYS · 45% (spot 767.46)
+
+**📰 News check:** RISK-OFF — ⚠️ DISAGREES with the SIDEWAYS read — Iran conflict sending oil back toward $100 has index futures sliding; geopolitical risk + energy shock add a downside skew the technical read doesn't capture
 
 ```
+
 ===================  SPY — RUN IT  ===================
-  as of 2026-09-07T13:50:11.134Z   price ~770.23
+  as of 2026-09-08T13:50:16.513Z   price ~767.46
 
-  CONSENSUS:   UP   ·   61% confident
+  CONSENSUS:   SIDEWAYS   ·   45% confident
 
-  TRADE A — CALL spread  (BUY, scalp the move UP):   conf 81%
-     BUY 770/772C   (2026-09-09)
-     pay          $95
-     SCALP OUT  ~ $124    <-- bank the pop (+31%); trail if it keeps flipping up
-     stop       ~ $67    (-29%, or if consensus turns DOWN)
-     room to max  $200
-
-  TRADE B — PUT spread  (SELL, slower — collect & scalp half):   conf 68%
-     SELL 769/767P   (2026-09-09)
-     collect      $64
-     TAKE HALF  ~ $32    <-- buy back here, bank ~$32 (don't hold for the last dollar)
-     max loss     $136   (if SPY drops below 767)
-     keeps profit if SPY stays above 769
-
-  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
-     BUY 772C   (2026-09-09)   ~39Δ
-     pay          $148   (cheaper OTM — flips 10%+ on a small move)
-     BANK +10%  ~ $163    <-- take the flip when it comes (don't need to be right on strike)
-     TARGET +20% ~ $178
-     stop       ~ $118    (-20%, or if consensus turns DOWN)
-
-  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
-  size: normal (61% confidence).  never add to a loser.
-  read: trend is UP. A rides+scalps the move; B is slower income if it just doesn't reverse.
+  >>> NO TRADE today — direction unclear / low confidence.
+      Sitting out is the call (a result, not a miss).
 =====================================================
 ```
