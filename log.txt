@@ -35,12 +35,5 @@ SYMS=TSLA,SPY,AMD,QQQ,NVDA
 step1 done
 step2 5537
 step3: graded 4 today, 97 total
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step1: SYMS logged, start_time=2026-03-12T00:00:00Z
-step2 wrote 10 files
-levetf: 0 new, 0 closed this run, 16 graded total
-step1 ok
-GME,BRZE,AVO,TTAN,INNV,UNFI,CASY,ABM
-step3 5960
-step5 ok earnings: 0 posted, 0 swing picks upcoming
-step6 news appended
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step2 wrote 20 files
