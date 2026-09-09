@@ -37,3 +37,12 @@ step2 5537
 step3: graded 4 today, 97 total
 SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
 step2 wrote 20 files
+TODAY=2026-09-09, starting STEP 1 — direction
+SPY DOWN spot 765.96 move 0.5% -> pull PUTS strikes 767,766,765,764,763
+QQQ UP spot 718.36 move 0.75% -> pull CALLS strikes 717,718,719,720,721
+NVDA UP spot 225.73 move 2.42% -> pull CALLS strikes 225,226,227,228,229
+TSLA UP spot 368.16 move 2.5% -> pull CALLS strikes 367,368,369,370,371
+AMD UP spot 505.74 move 2.5% -> pull CALLS strikes 505,506,507,508,509
+step1 done - starting STEP 2 option chains
+opts 4606
+weeklies: 4 picks (4 logged)
