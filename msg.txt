@@ -1,14 +1,13 @@
-**SPY morning — 2026-09-08**
-CONSENSUS: SIDEWAYS · 45% (spot 767.46)
+**SPY morning — 2026-09-09**
+CONSENSUS: SIDEWAYS · 34% (spot 763.64)
 
-**📰 News check:** RISK-OFF — ⚠️ DISAGREES with the SIDEWAYS read — Iran conflict sending oil back toward $100 has index futures sliding; geopolitical risk + energy shock add a downside skew the technical read doesn't capture
+**📰 News check:** RISK-OFF — AGREES with the SIDEWAYS read — Brent crude spiked above $100 on escalating Middle East conflict + merchant vessels hit in the Gulf; Dow futures falling on oil; Apple iPhone event adds intraday vol risk
 
 ```
-
 ===================  SPY — RUN IT  ===================
-  as of 2026-09-08T13:50:16.513Z   price ~767.46
+  as of 2026-09-09T13:50:34Z   price ~763.64
 
-  CONSENSUS:   SIDEWAYS   ·   45% confident
+  CONSENSUS:   SIDEWAYS   ·   34% confident
 
   >>> NO TRADE today — direction unclear / low confidence.
       Sitting out is the call (a result, not a miss).
