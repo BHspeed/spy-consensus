@@ -51,13 +51,11 @@ SYMS=TSLA,SPY,AMD,QQQ,NVDA
 step2 5551
 step3: graded 4 today, 101 total
 FINISH: committing
-SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
-step1 done
-step2 wrote 10 files
-levetf: 0 new, 0 closed this run, 16 graded total
-step3 exit=0
-step1 ok
-SYMS=APMD,BRVE,GME,AEO,AVAV,BRZE,AVO,TTAN,WLTH,SIG
-step3 9131
-earnings: 1 posted, 0 swing picks upcoming
-step6 news appended
+=== 2026-09-09T20:36:13Z ===
+TODAY=2026-09-09
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 complete
+step2 wrote 20 files
+theme: 20 scored, 0 setups
+step2 wrote 20 files
+theme 2026-09-09: 20 scored, 0 setups
