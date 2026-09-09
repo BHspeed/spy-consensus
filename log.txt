@@ -51,7 +51,8 @@ SYMS=TSLA,SPY,AMD,QQQ,NVDA
 step2 5551
 step3: graded 4 today, 101 total
 FINISH: committing
-step1 4635
-step2 tickers: BIO,GTLB,TECH,HALO,BMNR,MRNA,TXG,RNG
-step3 12621
-step4: swings: 4 new, 147 already active
+SYMS=TSLL,NVDL,TQQQ,SOXL,UPRO,AMZU,GGLL,MSFU,METU,FNGU
+step1 done
+step2 wrote 10 files
+levetf: 0 new, 0 closed this run, 16 graded total
+step3 exit=0
