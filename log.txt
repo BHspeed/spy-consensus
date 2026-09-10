@@ -68,13 +68,6 @@ TSLA UP spot 367.81 move 2.5% -> pull CALLS strikes 367,368,369,370,371
 AMD UP spot 521.10 move 2.49% -> pull CALLS strikes 520,521,522,523,524
 opts 4491
 run complete 13:59:49Z
-step1 2858
-step2 tickers: HALO,TEAM,GTLB,TXG
-step3 5803
-step4: swings: 1 new, 151 already active
-starting run
-step1 ok
-step2 SYMS=APMD,BRVE,NAVN,GME,AEO,AVAV,BRZE,AVO,TTAN,RH
-step3 9175
-step5 earnings: 5 posted, 0 swing picks upcoming
-step6 news appended
+SYMS=IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step2 wrote 20 files
+theme: 20 scored, 0 setups
