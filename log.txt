@@ -68,3 +68,7 @@ TSLA UP spot 367.81 move 2.5% -> pull CALLS strikes 367,368,369,370,371
 AMD UP spot 521.10 move 2.49% -> pull CALLS strikes 520,521,522,523,524
 opts 4491
 run complete 13:59:49Z
+step1 2858
+step2 tickers: HALO,TEAM,GTLB,TXG
+step3 5803
+step4: swings: 1 new, 151 already active
