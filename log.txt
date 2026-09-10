@@ -59,3 +59,12 @@ step2 wrote 20 files
 theme: 20 scored, 0 setups
 step2 wrote 20 files
 theme 2026-09-09: 20 scored, 0 setups
+=== STEP 1 2026-09-10T13:54:23Z ===
+step1 dirs output:
+SPY UP spot 762.40 move 0.5% -> pull CALLS strikes 761,762,763,764,765
+QQQ UP spot 716.31 move 0.73% -> pull CALLS strikes 715,716,717,718,719
+NVDA UP spot 223.67 move 2.37% -> pull CALLS strikes 223,224,225,226,227
+TSLA UP spot 367.81 move 2.5% -> pull CALLS strikes 367,368,369,370,371
+AMD UP spot 521.10 move 2.49% -> pull CALLS strikes 520,521,522,523,524
+opts 4491
+run complete 13:59:49Z
