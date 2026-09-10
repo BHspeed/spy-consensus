@@ -1,17 +1,30 @@
-**TSLA morning — 2026-09-09**
-CONSENSUS: SIDEWAYS · 51% (spot 373.53)
+**SPY morning — 2026-09-10**
+CONSENSUS: DOWN · 54% (spot 758.41)
 
-**📰 TSLA news check:** mixed for TSLA — neutral to the SIDEWAYS read — no TSLA-specific headlines (Elon/deliveries/EV/robotaxi absent); macro backdrop mildly bearish (Brent crude back at $100 on Middle East tensions) but not a direct TSLA driver
-
+**📰 News check:** MIXED — neutral to the DOWN read — rising Treasury yields + pending PPI wholesale inflation data add macro pressure; oil climbing compounds inflation concerns; Nvidia analyst optimism and strong retail (Macy's) offer partial support but insufficient to override the bearish technical lean
 
 ```
+===================  SPY — RUN IT  ===================
+  as of 2026-09-10T13:50:21.944Z   price ~758.41
 
-===================  TSLA — RUN IT  ===================
-  as of 2026-09-09T13:52:13.646Z   price ~373.53
+  CONSENSUS:   DOWN   ·   54% confident
 
-  CONSENSUS:   SIDEWAYS   ·   51% confident
+  TRADE A — PUT spread  (BUY, scalp the move DOWN):   conf 68%
+     BUY 758/756P   (2026-09-14)
+     pay          $71
+     SCALP OUT  ~ $92    <-- bank the pop (+30%); trail if it keeps flipping up
+     stop       ~ $50    (-30%, or if consensus turns UP)
+     room to max  $200
 
-  >>> NO TRADE today — direction unclear / low confidence.
-      Sitting out is the call (a result, not a miss).
+  TRADE C — SINGLE OPTION  (BUY one leg, value-flip scalp):
+     BUY 755P   (2026-09-14)   ~35Δ
+     pay          $259   (cheaper OTM — flips 10%+ on a small move)
+     BANK +10%  ~ $285    <-- take the flip when it comes (don't need to be right on strike)
+     TARGET +20% ~ $311
+     stop       ~ $207    (-20%, or if consensus turns UP)
+
+  GOAL: scalp the value flip — bank the pop, don't wait to be 100% right.
+  size: half (54% confidence).  never add to a loser.
+  read: trend is DOWN. A rides+scalps the move; B is slower income if it just doesn't reverse.
 =====================================================
 ```
