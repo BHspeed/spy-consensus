@@ -149,3 +149,4 @@
 {"symbol":"GTLB","added":"2026-09-09","entry":46.1,"tier":"aggressive","targetPct":30,"targetPrice":60,"stopPrice":41.5,"status":"open"}
 {"symbol":"HALO","added":"2026-09-09","entry":107.4,"tier":"core","targetPct":10.2,"targetPrice":118.3,"stopPrice":99.9,"status":"open"}
 {"symbol":"BIO","added":"2026-09-09","entry":377,"tier":"core","targetPct":10,"targetPrice":414.7,"stopPrice":350.6,"status":"open"}
+{"symbol":"TEAM","added":"2026-09-10","entry":179.7,"tier":"core","targetPct":15,"targetPrice":206.6,"stopPrice":167.1,"status":"open"}
