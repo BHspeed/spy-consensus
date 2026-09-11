@@ -82,3 +82,8 @@ step1 2855
 step2 tickers: GTLB,TXG,TEAM,HALO
 step3 5803
 step4: swings: 0 new, 152 already active
+step1 ok
+SYMS=NAVN,AEO,AVAV,RH,TEN,WLTH,SIG,DSGX,CNM,SUNB
+step3 9165
+step5 earnings: 8 posted
+step6 news appended
