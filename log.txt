@@ -87,3 +87,8 @@ SYMS=NAVN,AEO,AVAV,RH,TEN,WLTH,SIG,DSGX,CNM,SUNB
 step3 9165
 step5 earnings: 8 posted
 step6 news appended
+=== theme scan 2026-09-11 ===
+SYMS: IONQ,RGTI,QBTS,QUBT,ARQQ,LAES,INFQ,OKLO,SMR,NNE,LEU,BWXT,CCJ,UEC,UUUU,DNN,NXE,URA,VST,CEG
+step1 complete
+step2 wrote 20 files
+step3 complete: outbox/theme-2026-09-11.md
