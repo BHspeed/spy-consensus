@@ -78,3 +78,7 @@ weeklies: 3 picks (3 logged)
 SYMS=TSLA,SPY,AMD,QQQ,NVDA
 step2 5540
 step3: graded 3 today, 107 total
+step1 2855
+step2 tickers: GTLB,TXG,TEAM,HALO
+step3 5803
+step4: swings: 0 new, 152 already active
